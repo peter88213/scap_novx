@@ -48,7 +48,9 @@ See the [instructions for use](usage)
 
 ## License
 
-scap2novx is distributed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+This is Open Source software, and scap2novx is licensed under GPLv3. See the
+[GNU General Public License website](https://www.gnu.org/licenses/gpl-3.0.en.html) for more
+details, or consult the [LICENSE](https://github.com/peter88213/scap2novx/blob/main/LICENSE) file.
 
 
  
