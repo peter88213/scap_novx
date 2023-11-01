@@ -1,8 +1,8 @@
-# novelyst_scapple
+# scap2novx
 
-A [novelyst](https://peter88213.github.io/novelyst) plugin for creating new projects from scapple diagrams.
+A Python script for creating new novelyst projects from scapple diagrams 
 
-For more information, see the [project homepage](https://peter88213.github.io/novelyst_scapple) with description and download instructions.
+For more information, see the [project homepage](https://peter88213.github.io/scap2novx) with description and download instructions.
 
 ## License
 

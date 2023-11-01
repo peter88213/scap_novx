@@ -167,5 +167,5 @@ export_items = Yes
 
 The setup script installs *scap2novx.pyw* in the user profile. This is the installation path on Windows: 
 
-`c:\Users\<user name>\.pywriter\scap2novx`
+`c:\Users\<user name>\.novelyst\scap2novx`
     
