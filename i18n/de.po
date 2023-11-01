@@ -1,4 +1,4 @@
-# novelyst_plugin Dictionary (English-German)
+# novelyst_scapple Dictionary (English-German)
 # Copyright (C) 2022 Peter Triesberger
 #
 msgid ""
@@ -13,6 +13,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 
-msgid "novelyst_plugin Online help"
-msgstr "novelyst_plugin Online-Hilfe"
+msgid "novelyst_scapple Online help"
+msgstr "novelyst_scapple Online-Hilfe"
 

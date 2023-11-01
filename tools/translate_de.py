@@ -1,20 +1,20 @@
 """Generate German translation files for GNU gettext.
 
 - Update the project's 'de.po' translation file.
-- Generate the language specific 'pywriter.mo' dictionary.
+- Generate the language specific 'novxlib.mo' dictionary.
 
 Usage: 
 translate_de.py
 
 File structure:
 
-├── PyWriter/
+├── novxlib/
 │   ├── i18n/
 │   │   └── de.json
 │   └── src/
 │       ├── translations.py
 │       └── msgfmt.py
-└── novelyst_plugin/
+└── novelyst_scapple/
     ├── src/ 
     ├── tools/ 
     │   └── translate_de.py
@@ -24,24 +24,24 @@ File structure:
         ├── locale/
         │   └─ de/
         │      └─ LC_MESSAGES/
-        │         └─ pywriter.mo
+        │         └─ novxlib.mo
         └── plugin_locale/
             └─ de/
                └─ LC_MESSAGES/
-                  └─ novelyst_plugin.mo
+                  └─ novelyst_scapple.mo
     
 Copyright (c) 2023 Peter Triesberger
-For further information see https://github.com/peter88213/novelyst_plugin
+For further information see https://github.com/peter88213/novelyst_scapple
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
 import sys
-sys.path.insert(0, f'{os.getcwd()}/../../PyWriter/src')
+sys.path.insert(0, f'{os.getcwd()}/../../novxlib/src')
 import translations
 from shutil import copyfile
 import msgfmt
 
-APP_NAME = 'novelyst_plugin'
+APP_NAME = 'novelyst_scapple'
 PO_PATH = '../i18n/de.po'
 MO_PATH = f'../i18n/locale/de/LC_MESSAGES/{APP_NAME}.mo'
 MO_COPY = f'../../novelyst/src/locale/de/LC_MESSAGES/{APP_NAME}.mo'

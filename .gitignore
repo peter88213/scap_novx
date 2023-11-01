@@ -1,5 +1,5 @@
 /build/
 *.pyc
 *.bak
-.pydevproject
-.project
+/test/work/
+/test/temp/
