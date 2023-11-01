@@ -14,10 +14,10 @@ class ScapNote:
     
     Public instance variables:
         text -- str: note text.
-        isScene -- bool: True, if the note represents a yWriter scene.
-        isNotesScene -- bool: True, if the note represents a yWriter "Notes" scene.
-        isTag -- bool: True, if the note represents a yWriter tag.
-        isNote -- bool: True, if the note represents a yWriter note.
+        isSection -- bool: True, if the note represents a novelyst section.
+        isNotesSection -- bool: True, if the note represents a novelyst "Notes" section.
+        isTag -- bool: True, if the note represents a novelyst tag.
+        isNote -- bool: True, if the note represents a novelyst note.
         textColor -- str: text color; RGB components in a single string.
         connections -- list of connected note IDs.
         pointTo -- list of note IDs pointed to.
@@ -34,8 +34,8 @@ class ScapNote:
 
     def __init__(self):
         self.text = None
-        self.isScene = None
-        self.isNotesScene = None
+        self.isSection = None
+        self.isNotesSection = None
         self.isTag = None
         self.isNote = None
         self.isMajorChara = None
@@ -55,7 +55,7 @@ class ScapNote:
             xmlNote -- Scapple <Note> XML subtree
 
         Write instance variables:
-        isScene, isTag, isNote, textColor, connections, pointTo
+        isSection, isTag, isNote, textColor, connections, pointTo
         """
 
         def str_to_rgb(colorStr):
@@ -77,8 +77,8 @@ class ScapNote:
 
             return True
 
-        self.isScene = False
-        self.isNotesScene = False
+        self.isSection = False
+        self.isNotesSection = False
         self.isTag = False
         self.isNote = False
         self.isMajorChara = False
@@ -91,7 +91,7 @@ class ScapNote:
         self.position = float(positionStr[1]) * self.Y_FACTOR + float(positionStr[0])
 
         # Set UID.
-        # Because Scapple UIDs begin with zero, they are all incremented by 1 for yWriter use.
+        # Because Scapple UIDs begin with zero, they are all incremented by 1 for novelyst use.
         scappId = xmlNote.attrib['ID']
         self.uid = str(int(scappId) + 1)
         appearance = xmlNote.find('Appearance')
@@ -104,9 +104,9 @@ class ScapNote:
         else:
             borderStyle = ''
         if 'Shadow' in xmlNote.attrib:
-            self.isScene = True
+            self.isSection = True
             if borderStyle == 'Cloud':
-                self.isNotesScene = True
+                self.isNotesSection = True
         elif borderStyle == 'Square':
             self.isTag = True
         elif borderStyle == 'Cloud':

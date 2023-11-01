@@ -5,14 +5,16 @@ For further information see https://github.com/peter88213/novelyst_scapple
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
+from novxlib.model.novel import Novel
+from novxlib.model.nv_tree import NvTree
 from novxlib.novx_globals import *
 from novxlib.novx.novx_file import NovxFile
 from novxlib.novx.data_writer import DataWriter
+from scap2novxlib.scap_file import ScapFile
 from novxlib.converter.converter import Converter
-from nvscapplelib.scap_file import ScapFile
 
 
-class ScapConverter(Converter):
+class ScapConverter:
     """A converter class for Scapple diagram import.
 
     Public methods:
@@ -32,12 +34,16 @@ class ScapConverter(Converter):
             return
         fileName, fileExtension = os.path.splitext(sourcePath)
         if fileExtension == ScapFile.EXTENSION:
-            sourceFile = ScapFile(sourcePath, **kwargs)
-            if os.path.isfile(f'{fileName}{NovxFile.EXTENSION}'):
-                targetFile = DataWriter(f'{fileName}{DataWriter.EXTENSION}', **kwargs)
-                self.import_to_novx(sourceFile, targetFile)
+            if not os.path.isfile(f'{fileName}{NovxFile.EXTENSION}'):
+                target = NovxFile(f'{fileName}{NovxFile.EXTENSION}', **kwargs)
             else:
-                targetFile = NovxFile(f'{fileName}{NovxFile.EXTENSION}', **kwargs)
-                self.create_novx(sourceFile, targetFile)
+                target = DataWriter(f'{fileName}{DataWriter.SUFFIX}{DataWriter.EXTENSION}', **kwargs)
+            source = ScapFile(sourcePath, **kwargs)
+            source.novel = Novel(tree=NvTree())
+            source.read()
+            target.novel = source.novel
+            target.write()
         else:
             self.ui.set_info_how(f'!File type of "{os.path.normpath(sourcePath)}" not supported.')
+        self.ui.set_info_how(f'{target.DESCRIPTION} successfully created.')
+

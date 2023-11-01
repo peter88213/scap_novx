@@ -1,13 +1,13 @@
-"""Regression test for the scappex project.
+"""Regression test for the scap2novx project.
 
 Copyright (c) 2023 Peter Triesberger
-For further information see https://github.com/peter88213/scappex
+For further information see https://github.com/peter88213/scap2novx
 Published under the MIT License (https://opensource.org/licenses/mit-license.php)
 """
 from shutil import copyfile
 import os
 import unittest
-import scappex_
+import scap2novx_
 
 # Test environment
 
@@ -19,19 +19,19 @@ TEST_DATA_PATH = TEST_PATH + '/data/'
 TEST_EXEC_PATH = TEST_PATH + '/'
 
 # To be placed in TEST_DATA_PATH:
-NORMAL_YW7 = TEST_DATA_PATH + 'normal.yw7'
+NORMAL_YW7 = TEST_DATA_PATH + 'normal.novx'
 NORMAL_SCAP = TEST_DATA_PATH + 'normal.scap'
-NORMAL_CHARACTERS_XML = TEST_DATA_PATH + 'normal_Characters.xml'
-NORMAL_LOCATIONS_XML = TEST_DATA_PATH + 'normal_Locations.xml'
-NORMAL_ITEMS_XML = TEST_DATA_PATH + 'normal_Items.xml'
-INI_FILE = 'scappex.ini'
+NORMAL_CHARACTERS_XML = TEST_DATA_PATH + 'normal_data_Characters.xml'
+NORMAL_LOCATIONS_XML = TEST_DATA_PATH + 'normal_data_Locations.xml'
+NORMAL_ITEMS_XML = TEST_DATA_PATH + 'normal_data_Items.xml'
+INI_FILE = 'scap2novx.ini'
 
 # Test data
-TEST_YW7 = TEST_EXEC_PATH + 'yw7 Sample Project.yw7'
+TEST_NOVX = TEST_EXEC_PATH + 'yw7 Sample Project.novx'
 TEST_SCAP = TEST_EXEC_PATH + 'yw7 Sample Project.scap'
-TEST_CHARACTERS_XML = TEST_EXEC_PATH + 'yw7 Sample Project_Characters.xml'
-TEST_LOCATIONS_XML = TEST_EXEC_PATH + 'yw7 Sample Project_Locations.xml'
-TEST_ITEMS_XML = TEST_EXEC_PATH + 'yw7 Sample Project_Items.xml'
+TEST_CHARACTERS_XML = TEST_EXEC_PATH + 'yw7 Sample Project_data_Characters.xml'
+TEST_LOCATIONS_XML = TEST_EXEC_PATH + 'yw7 Sample Project_data_Locations.xml'
+TEST_ITEMS_XML = TEST_EXEC_PATH + 'yw7 Sample Project_data_Items.xml'
 
 
 def read_file(inputFile):
@@ -47,7 +47,7 @@ def read_file(inputFile):
 def remove_all_testfiles():
 
     try:
-        os.remove(TEST_YW7)
+        os.remove(TEST_NOVX)
 
     except:
         pass
@@ -94,14 +94,14 @@ class NormalOperation(unittest.TestCase):
     def test_scap_to_new_yw(self):
         copyfile(NORMAL_SCAP, TEST_SCAP)
         os.chdir(TEST_EXEC_PATH)
-        scappex_.run(TEST_SCAP, silentMode=True)
-        self.assertEqual(read_file(TEST_YW7), read_file(NORMAL_YW7))
+        scap2novx_.run(TEST_SCAP, silentMode=True)
+        self.assertEqual(read_file(TEST_NOVX), read_file(NORMAL_YW7))
 
     def test_scap_to_data(self):
         copyfile(NORMAL_SCAP, TEST_SCAP)
-        copyfile(NORMAL_YW7, TEST_YW7)
+        copyfile(NORMAL_YW7, TEST_NOVX)
         os.chdir(TEST_EXEC_PATH)
-        scappex_.run(TEST_SCAP, silentMode=True)
+        scap2novx_.run(TEST_SCAP, silentMode=True)
         self.assertEqual(read_file(TEST_CHARACTERS_XML), read_file(NORMAL_CHARACTERS_XML))
         self.assertEqual(read_file(TEST_LOCATIONS_XML), read_file(NORMAL_LOCATIONS_XML))
         self.assertEqual(read_file(TEST_ITEMS_XML), read_file(NORMAL_ITEMS_XML))

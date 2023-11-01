@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LOCATIONS>
+    <LOCATION id="lc6">
+      <Title>Location 1</Title>
+    </LOCATION>
+    <LOCATION id="lc8">
+      <Title>Location 2</Title>
+      <Tags>Tag 2</Tags>
+    </LOCATION>
+  </LOCATIONS>
+  

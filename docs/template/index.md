@@ -1,23 +1,40 @@
-# novelyst_scapple
+[novelyst](http://spacejock.com/novelyst7.html) is a free word processor written by Australian author and programmer Simon Haynes. 
+[Scapple](https://www.literatureandlatte.com/scapple/overview) is a commercial free-form diagramming software for visualizing entities and relationships of all kinds. *Scappex* is a Python script that exports outlines made with Scapple to new novelyst projects.
 
-The [novelyst](https://peter88213.github.io/novelyst/) Python program helps authors organize novels.  
+![Screenshot: Example](Screenshots/screen01.png)
 
-*novelyst_scapple* is a plugin providing . 
+## Features
 
-![Screenshot](Screenshots/screen01.png)
+- Notes with a shadow are converted to sections in one single chapter.
+- Notes with a "cloud" border and shadow are converted to "Notes" sections.
+- Notes with a "cloud" border without shadow are converted to section and character notes.
+- Notes with a square border are converted to tags.
+- Notes with colored text are converted to characters, locations, or items.
+- Connections between sections and characters/locations/items are considered.
+- If a novelyst project already exists, Character/Location/Item XML files are generated instead.
+- The *scap2novx* release includes a sample Scapple file with note styles to import.
 
+ 
 ## Requirements
 
-- [novelyst](https://peter88213.github.io/novelyst/) version 4.28+
+- [Python](https://www.python.org/) version 3.6+.
+- [Scapple 1.x](https://www.literatureandlatte.com/scapple/overview).
+
 
 ## Download and install
 
-[Download the latest release (version 0.99.0)](https://github.com/peter88213/novelyst_scapple/raw/main/dist/novelyst_scapple_v0.99.0.zip)
+[Download the latest release (version 0.99.0)](https://raw.githubusercontent.com/peter88213/scap2novx/main/dist/scap2novx_v0.99.0.zip)
 
-- Extract the "novelyst_scapple_v0.99.0" folder from the downloaded zipfile "novelyst_scapple_v0.99.0.zip".
-- Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
+- Unzip the downloaded zipfile "scap2novx_v0.99.0.zip" into a new folder.
+- Move into this new folder and launch **setup.pyw**. This installs the script for the local user.
+- Create a shortcut on the desktop when asked.
+- Open "README.md" for usage instructions.
 
----
+### Note for Linux users
+
+Please make sure that your Python3 installation has the *tkinter* module. On Ubuntu, for example, it is not available out of the box and must be installed via a separate package. 
+
+------------------------------------------------------------------
 
 [Changelog](changelog)
 
@@ -25,10 +42,18 @@ The [novelyst](https://peter88213.github.io/novelyst/) Python program helps auth
 
 See the [instructions for use](usage)
 
----
+## Credits
+
+- Frederik Lundh published the [xml pretty print algorithm](http://effbot.org/zone/element-lib.htm#prettyprint).
+
 
 ## License
 
-This is Open Source software, and the *novelyst_scapple* plugin is licensed under GPLv3. See the
-[GNU General Public License website](https://www.gnu.org/licenses/gpl-3.0.en.html) for more
-details, or consult the [LICENSE](https://github.com/peter88213/novelyst_scapple/blob/main/LICENSE) file.
+scap2novx is distributed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+
+
+ 
+
+
+
+

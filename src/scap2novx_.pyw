@@ -1,4 +1,4 @@
-"""Scapple to yWriter converter 
+"""Scapple to novelyst converter 
 
 Version @release
 Requires Python 3.6+
@@ -12,10 +12,10 @@ from pathlib import Path
 from novxlib.ui.ui import Ui
 from novxlib.ui.ui_tk import UiTk
 from novxlib.config.configuration import Configuration
-from nvscapplelib.scap_converter import ScapConverter
+from scap2novxlib.scap_converter import ScapConverter
 
 SUFFIX = ''
-APPNAME = 'scappex'
+APPNAME = 'scap2novx'
 GREEN = '0.0 0.5 0.0'
 BLUE = '0.0 0.0 1.0'
 RED = '1.0 0.0 0.0'
@@ -27,7 +27,7 @@ SETTINGS = dict(
     minor_chara_color=PURPLE,
 )
 OPTIONS = dict(
-    export_scenes=True,
+    export_sections=True,
     export_characters=True,
     export_locations=True,
     export_items=True,
@@ -38,7 +38,7 @@ def run(sourcePath, silentMode=True, installDir='.'):
     if silentMode:
         ui = Ui('')
     else:
-        ui = UiTk('Scapple to yWriter converter @release')
+        ui = UiTk('Scapple to novelyst converter @release')
 
     #--- Try to get persistent configuration data
     sourceDir = os.path.dirname(sourcePath)
@@ -60,7 +60,7 @@ def run(sourcePath, silentMode=True, installDir='.'):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Scapple to yWriter converter',
+        description='Scapple to novelyst converter',
         epilog='')
     parser.add_argument('sourcePath',
                         metavar='Sourcefile',
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     try:
         homeDir = str(Path.home()).replace('\\', '/')
-        installDir = f'{homeDir}/.novxlib/{APPNAME}/config'
+        installDir = f'{homeDir}/.novelyst/{APPNAME}/config'
     except:
         installDir = '.'
     run(args.sourcePath, args.silent, installDir)

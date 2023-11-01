@@ -7,12 +7,13 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 import os
 import xml.etree.ElementTree as ET
 from novxlib.novx_globals import *
+from novxlib.model.id_generator import create_id
 from novxlib.novx.novx_file import NovxFile
 from novxlib.model.chapter import Chapter
 from novxlib.model.section import Section
 from novxlib.model.character import Character
 from novxlib.model.world_element import WorldElement
-from nvscapplelib.scap_note import ScapNote
+from scap2novxlib.scap_note import ScapNote
 
 
 class ScapFile(NovxFile):
@@ -68,10 +69,11 @@ class ScapFile(NovxFile):
         root = self._tree.getroot()
 
         #--- Create a single chapter and assign all sections to it.
-        chId = '1'
-        self.chapters[chId] = Chapter()
-        self.chapters[chId].title = 'Chapter 1'
+        chId = f'{CHAPTER_PREFIX}1'
+        self.novel.chapters[chId] = Chapter(chLevel=2, chType=0)
+        self.novel.chapters[chId].title = 'Chapter 1'
         self.srtChapters = [chId]
+        self.novel.tree.append(CH_ROOT, chId)
 
         #--- Parse Scapple notes.
         scapNotes = {}
@@ -85,90 +87,109 @@ class ScapFile(NovxFile):
             # Create Novel elements.
             if note.isSection:
                 if self._exportSections:
-                    section = Section()
-                    section.title = note.text
-                    section.isNotesSection = note.isNotesSection
-                    section.status = 1
+                    scId = f'{SECTION_PREFIX}{note.uid}'
+                    self.novel.sections[scId] = Section(scPacing=0)
+                    self.novel.sections[scId].title = note.text
+                    if note.isNotesSection:
+                        self.novel.sections[scId].scType = 1
+                    else:
+                        self.novel.sections[scId].scType = 0
+                    self.novel.sections[scId].status = 1
                     # Status = Outline
-                    self.sections[note.uid] = section
             elif note.isMajorChara:
                 if self._exportCharacters:
-                    character = Character()
-                    character.title = note.text
-                    character.fullName = note.text
-                    character.isMajor = True
-                    self.characters[note.uid] = character
-                    self.srtCharacters.append(note.uid)
+                    crId = f'{CHARACTER_PREFIX}{note.uid}'
+                    self.novel.characters[crId] = Character()
+                    self.novel.characters[crId].title = note.text
+                    self.novel.characters[crId].fullName = note.text
+                    self.novel.characters[crId].isMajor = True
+                    self.novel.tree.append(CR_ROOT, crId)
             elif note.isMinorChara:
                 if self._exportCharacters:
-                    character = Character()
-                    character.title = note.text
-                    character.fullName = note.text
-                    character.isMajor = False
-                    self.characters[note.uid] = character
-                    self.srtCharacters.append(note.uid)
+                    crId = f'{CHARACTER_PREFIX}{note.uid}'
+                    self.novel.characters[crId] = Character()
+                    self.novel.characters[crId].title = note.text
+                    self.novel.characters[crId].fullName = note.text
+                    self.novel.characters[crId].isMajor = False
+                    self.novel.tree.append(CR_ROOT, crId)
             elif note.isLocation:
                 if self._exportLocations:
-                    location = WorldElement()
-                    location.title = note.text
-                    self.locations[note.uid] = location
-                    self.srtLocations.append(note.uid)
+                    lcId = f'{LOCATION_PREFIX}{note.uid}'
+                    self.novel.locations[lcId] = WorldElement()
+                    self.novel.locations[lcId].title = note.text
+                    self.novel.tree.append(LC_ROOT, lcId)
             elif note.isItem:
                 if self._exportItems:
-                    item = WorldElement()
-                    item.title = note.text
-                    self.items[note.uid] = item
-                    self.srtItems.append(note.uid)
+                    itId = f'{ITEM_PREFIX}{note.uid}'
+                    self.novel.items[itId] = WorldElement()
+                    self.novel.items[itId].title = note.text
+                    self.novel.tree.append(IT_ROOT, itId)
 
         #--- Sort notes by position.
         srtNotes = sorted(uidByPos.items())
         for srtNote in srtNotes:
-            if srtNote[1] in self.sections:
-                self.chapters[chId].srtSections.append(srtNote[1])
+            scId = f'{SECTION_PREFIX}{srtNote[1]}'
+            if scId in self.novel.sections:
+                self.novel.tree.append(chId, scId)
 
         #--- Assign characters/locations/items/tags/notes to the sections.
-        for scId in self.sections:
-            self.sections[scId].characters = []
-            self.sections[scId].locations = []
-            self.sections[scId].items = []
-            self.sections[scId].tags = []
-            self.sections[scId].sectionNotes = ''
-            for uid in scapNotes[scId].connections:
-                if uid in self.characters:
-                    if scId in scapNotes[uid].pointTo:
-                        self.sections[scId].characters.insert(0, uid)
+        for scId in self.novel.sections:
+            scCharacters = []
+            scLocations = []
+            scItems = []
+            scTags = []
+            sectionNotes = ''
+            for uid in scapNotes[scId[2:]].connections:
+                crId = f'{CHARACTER_PREFIX}{uid}'
+                lcId = f'{LOCATION_PREFIX}{uid}'
+                itId = f'{ITEM_PREFIX}{uid}'
+                if crId in self.novel.characters:
+                    if scId[2:] in scapNotes[uid].pointTo:
+                        scCharacters.insert(0, crId)
                     else:
-                        self.sections[scId].characters.append(uid)
-                elif uid in self.locations:
-                    self.sections[scId].locations.append(uid)
-                elif uid in self.items:
-                    self.sections[scId].items.append(uid)
+                        scCharacters.append(crId)
+                elif lcId in self.novel.locations:
+                    scLocations.append(lcId)
+                elif itId in self.novel.items:
+                    scItems.append(itId)
                 elif scapNotes[uid].isTag:
-                    self.sections[scId].tags.append(scapNotes[uid].text)
+                    scTags.append(scapNotes[uid].text)
                 elif scapNotes[uid].isNote:
-                    self.sections[scId].sectionNotes = f'{self.sections[scId].sectionNotes}{scapNotes[uid].text}'
+                    sectionNotes = f'{sectionNotes}{scapNotes[uid].text}'
+            self.novel.sections[scId].characters = scCharacters
+            self.novel.sections[scId].locations = scLocations
+            self.novel.sections[scId].items = scItems
+            self.novel.sections[scId].tags = scTags
+            self.novel.sections[scId].notes = sectionNotes
 
         #--- Assign tags/notes to the characters.
-        for crId in self.characters:
-            self.characters[crId].tags = []
-            self.characters[crId].notes = ''
-            for uid in scapNotes[crId].connections:
+        for crId in self.novel.characters:
+            characterTags = []
+            characterNotes = ''
+            for uid in scapNotes[crId[2:]].connections:
                 if scapNotes[uid].isTag:
-                    self.characters[crId].tags.append(scapNotes[uid].text)
+                    characterTags.append(scapNotes[uid].text)
                 elif scapNotes[uid].isNote:
-                    self.characters[crId].notes = f'{self.characters[crId].notes}{scapNotes[uid].text}'
+                    characterNotes = f'{characterNotes}{scapNotes[uid].text}'
+            self.novel.characters[crId].tags = characterTags
+            self.novel.characters[crId].notes = characterNotes
 
         #--- Assign tags to the locations.
-        for lcId in self.locations:
-            self.locations[lcId].tags = []
-            for uid in scapNotes[lcId].connections:
+        for lcId in self.novel.locations:
+            locationTags = []
+            for uid in scapNotes[lcId[2:]].connections:
                 if scapNotes[uid].isTag:
-                    self.locations[lcId].tags.append(scapNotes[uid].text)
+                    locationTags.append(scapNotes[uid].text)
+            self.novel.locations[lcId].tags = locationTags
 
         #--- Assign tags to the items.
-        for itId in self.items:
-            self.items[itId].tags = []
-            for uid in scapNotes[itId].connections:
+        for itId in self.novel.items:
+            itemTags = []
+            for uid in scapNotes[itId[2:]].connections:
                 if scapNotes[uid].isTag:
-                    self.items[itId].tags.append(scapNotes[uid].text)
+                    itemTags.append(scapNotes[uid].text)
+            self.novel.items[itId].tags = itemTags
+
+        self.novel.check_locale()
+
         return 'Scapple data converted to novel structure.'

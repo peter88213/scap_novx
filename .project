@@ -3,7 +3,6 @@
 	<name>novelyst_scapple</name>
 	<comment></comment>
 	<projects>
-		<project>kalliope</project>
 		<project>novxlib</project>
 	</projects>
 	<buildSpec>
