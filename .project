@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>novelyst_scapple</name>
+	<name>scap2novx</name>
 	<comment></comment>
 	<projects>
 		<project>novxlib</project>
