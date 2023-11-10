@@ -9,7 +9,7 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import sys
 import os
-sys.path.insert(0, f'{os.getcwd()}/../../novxlib/src')
+sys.path.insert(0, f'{os.getcwd()}/../../novxlib-Alpha/src')
 import inliner
 
 SRC = '../src/'
