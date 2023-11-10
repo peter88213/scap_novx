@@ -70,7 +70,7 @@
   <SCENES>
     <SCENE>
       <ID>1</ID>
-      <Title><![CDATA[scene 1]]></Title>
+      <Title><![CDATA[section 1]]></Title>
       <BelongsToChID>1</BelongsToChID>
       <SceneContent />
       <WordCount>0</WordCount>
@@ -93,7 +93,7 @@
     </SCENE>
     <SCENE>
       <ID>7</ID>
-      <Title><![CDATA[scene 2]]></Title>
+      <Title><![CDATA[section 2]]></Title>
       <BelongsToChID>1</BelongsToChID>
       <SceneContent />
       <WordCount>0</WordCount>
@@ -115,7 +115,7 @@
     </SCENE>
     <SCENE>
       <ID>11</ID>
-      <Title><![CDATA[Notes scene]]></Title>
+      <Title><![CDATA[Notes section]]></Title>
       <BelongsToChID>1</BelongsToChID>
       <SceneContent />
       <WordCount>0</WordCount>

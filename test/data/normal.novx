@@ -4,13 +4,13 @@
 <novx version="1.0" xml:lang="de-DE">
   <PROJECT />
   <CHAPTERS>
-    <CHAPTER id="ch1" type="0" level="2">
+    <CHAPTER id="ch1">
       <Title>Chapter 1</Title>
       <SECTION id="sc11" type="1">
         <Title>Notes section</Title>
         <Locations ids="lc6" />
       </SECTION>
-      <SECTION id="sc1" type="0">
+      <SECTION id="sc1">
         <Title>section 1</Title>
         <Notes><p>Note 1</p></Notes>
         <Tags>Tag 3;Tag 4</Tags>
@@ -18,7 +18,7 @@
         <Locations ids="lc6" />
         <Items ids="it9 it10" />
       </SECTION>
-      <SECTION id="sc7" type="0">
+      <SECTION id="sc7">
         <Title>section 2</Title>
         <Tags>Tag 1</Tags>
         <Characters ids="cr5 cr3 cr4" />

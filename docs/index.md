@@ -1,4 +1,4 @@
-A Python script for creating new [novelyst](https://peter88213.github.io/novelyst/) projects from scapple diagrams.
+A Python script for creating new novelyst projects from scapple diagrams 
 
 ![Screenshot: Example](Screenshots/screen01.png)
 
@@ -22,9 +22,9 @@ A Python script for creating new [novelyst](https://peter88213.github.io/novelys
 
 ## Download and install
 
-[Download the latest release (version 0.1.0)](https://raw.githubusercontent.com/peter88213/scap2novx/main/dist/scap2novx_v0.1.0.zip)
+[Download the latest release (version 0.1.1)](https://raw.githubusercontent.com/peter88213/scap2novx/main/dist/scap2novx_v0.1.1.zip)
 
-- Unzip the downloaded zipfile "scap2novx_v0.1.0.zip" into a new folder.
+- Unzip the downloaded zipfile "scap2novx_v0.1.1.zip" into a new folder.
 - Move into this new folder and launch **setup.pyw**. This installs the script for the local user.
 - Create a shortcut on the desktop when asked.
 - Open "README.md" for usage instructions.
