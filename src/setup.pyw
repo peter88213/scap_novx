@@ -92,14 +92,12 @@ def install(novelystPath):
     os.makedirs(cnfDir, exist_ok=True)
 
     # Delete the old version, but retain configuration, if any.
+    rmtree(f'{installDir}/icons', ignore_errors=True)
     with os.scandir(installDir) as files:
         for file in files:
             if not 'config' in file.name:
-                try:
-                    os.remove(file)
-                    output(f'Removing "{file.name}"')
-                except:
-                    pass
+                os.remove(file)
+                output(f'Removing "{file.name}"')
 
     # Install the new version.
     copyfile(APP, f'{installDir}/{APP}')
@@ -112,14 +110,6 @@ def install(novelystPath):
     # Make the script executable under Linux.
     st = os.stat(f'{installDir}/{APP}')
     os.chmod(f'{installDir}/{APP}', st.st_mode | stat.S_IEXEC)
-
-    # Delete the old version, but retain configuration, if any.
-    rmtree(f'{installDir}/icons', ignore_errors=True)
-    with os.scandir(installDir) as files:
-        for file in files:
-            if not 'config' in file.name:
-                os.remove(file)
-                output(f'Removing "{file.name}"')
 
     # Display a success message.
     mapping = {'Appname': APPNAME, 'Apppath': f'{installDir}/{APP}'}
