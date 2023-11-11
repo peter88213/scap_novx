@@ -11,6 +11,7 @@ import sys
 import stat
 from shutil import copyfile
 from shutil import copytree
+from shutil import rmtree
 from pathlib import Path
 from string import Template
 try:
@@ -112,15 +113,13 @@ def install(novelystPath):
     st = os.stat(f'{installDir}/{APP}')
     os.chmod(f'{installDir}/{APP}', st.st_mode | stat.S_IEXEC)
 
-    # Install a configuration file, if needed.
-    try:
-        if not os.path.isfile(f'{cnfDir}{INI_FILE}'):
-            copyfile(f'{SAMPLE_PATH}{INI_FILE}', f'{cnfDir}{INI_FILE}')
-            output(f'Copying "{INI_FILE}"')
-        else:
-            output(f'Keeping "{INI_FILE}"')
-    except:
-        pass
+    # Delete the old version, but retain configuration, if any.
+    rmtree(f'{installDir}/icons', ignore_errors=True)
+    with os.scandir(installDir) as files:
+        for file in files:
+            if not 'config' in file.name:
+                os.remove(file)
+                output(f'Removing "{file.name}"')
 
     # Display a success message.
     mapping = {'Appname': APPNAME, 'Apppath': f'{installDir}/{APP}'}
