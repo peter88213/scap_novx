@@ -90,12 +90,10 @@ class ScapFile(NovxFile):
                     scId = f'{SECTION_PREFIX}{note.uid}'
                     self.novel.sections[scId] = Section(scPacing=0)
                     self.novel.sections[scId].title = note.text
-                    if note.isNotesSection:
-                        self.novel.sections[scId].scType = 1
-                    else:
-                        self.novel.sections[scId].scType = 0
+                    self.novel.sections[scId].scType = 0
                     self.novel.sections[scId].status = 1
                     # Status = Outline
+                    self.novel.sections[scId].sectionContent = '<p></p>'
             elif note.isMajorChara:
                 if self._exportCharacters:
                     crId = f'{CHARACTER_PREFIX}{note.uid}'

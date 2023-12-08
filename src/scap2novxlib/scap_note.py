@@ -15,7 +15,6 @@ class ScapNote:
     Public instance variables:
         text -- str: note text.
         isSection -- bool: True, if the note represents a novelyst section.
-        isNotesSection -- bool: True, if the note represents a novelyst "Notes" section.
         isTag -- bool: True, if the note represents a novelyst tag.
         isNote -- bool: True, if the note represents a novelyst note.
         textColor -- str: text color; RGB components in a single string.
@@ -35,7 +34,6 @@ class ScapNote:
     def __init__(self):
         self.text = None
         self.isSection = None
-        self.isNotesSection = None
         self.isTag = None
         self.isNote = None
         self.isMajorChara = None
@@ -78,7 +76,6 @@ class ScapNote:
             return True
 
         self.isSection = False
-        self.isNotesSection = False
         self.isTag = False
         self.isNote = False
         self.isMajorChara = False
@@ -105,8 +102,6 @@ class ScapNote:
             borderStyle = ''
         if 'Shadow' in xmlNote.attrib:
             self.isSection = True
-            if borderStyle == 'Cloud':
-                self.isNotesSection = True
         elif borderStyle == 'Square':
             self.isTag = True
         elif borderStyle == 'Cloud':
