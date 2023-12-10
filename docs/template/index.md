@@ -1,4 +1,4 @@
-A Python script for creating new novelyst projects from scapple diagrams 
+A Python script for creating new noveltree projects from scapple diagrams 
 
 ![Screenshot: Example](Screenshots/screen01.png)
 
@@ -10,7 +10,7 @@ A Python script for creating new novelyst projects from scapple diagrams
 - Notes with a square border are converted to tags.
 - Notes with colored text are converted to characters, locations, or items.
 - Connections between sections and characters/locations/items are considered.
-- If a novelyst project already exists, Character/Location/Item XML files are generated instead.
+- If a noveltree project already exists, Character/Location/Item XML files are generated instead.
 - The *scap2novx* release includes a sample Scapple file with note styles to import.
 
  

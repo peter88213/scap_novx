@@ -16,7 +16,9 @@
     <CHARACTER id="cr5" major="1">
       <Title>Major Character 2</Title>
       <FullName>Major Character 2</FullName>
-      <Notes><p>Note 2</p></Notes>
+      <Notes>
+        <p>Note 2</p>
+      </Notes>
       <Tags>Tag 3</Tags>
     </CHARACTER>
   </CHARACTERS>

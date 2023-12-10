@@ -14,9 +14,9 @@ class ScapNote:
     
     Public instance variables:
         text -- str: note text.
-        isSection -- bool: True, if the note represents a novelyst section.
-        isTag -- bool: True, if the note represents a novelyst tag.
-        isNote -- bool: True, if the note represents a novelyst note.
+        isSection -- bool: True, if the note represents a noveltree section.
+        isTag -- bool: True, if the note represents a noveltree tag.
+        isNote -- bool: True, if the note represents a noveltree note.
         textColor -- str: text color; RGB components in a single string.
         connections -- list of connected note IDs.
         pointTo -- list of note IDs pointed to.
@@ -88,7 +88,7 @@ class ScapNote:
         self.position = float(positionStr[1]) * self.Y_FACTOR + float(positionStr[0])
 
         # Set UID.
-        # Because Scapple UIDs begin with zero, they are all incremented by 1 for novelyst use.
+        # Because Scapple UIDs begin with zero, they are all incremented by 1 for noveltree use.
         scappId = xmlNote.attrib['ID']
         self.uid = str(int(scappId) + 1)
         appearance = xmlNote.find('Appearance')

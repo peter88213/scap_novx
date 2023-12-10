@@ -19,7 +19,7 @@ TEST_DATA_PATH = TEST_PATH + '/data/'
 TEST_EXEC_PATH = TEST_PATH + '/'
 
 # To be placed in TEST_DATA_PATH:
-NORMAL_YW7 = TEST_DATA_PATH + 'normal.novx'
+NORMAL_NOVX = TEST_DATA_PATH + 'normal.novx'
 NORMAL_SCAP = TEST_DATA_PATH + 'normal.scap'
 NORMAL_CHARACTERS_XML = TEST_DATA_PATH + 'normal_data_Characters.xml'
 NORMAL_LOCATIONS_XML = TEST_DATA_PATH + 'normal_data_Locations.xml'
@@ -95,11 +95,11 @@ class NormalOperation(unittest.TestCase):
         copyfile(NORMAL_SCAP, TEST_SCAP)
         os.chdir(TEST_EXEC_PATH)
         scap2novx_.run(TEST_SCAP, silentMode=True)
-        self.assertEqual(read_file(TEST_NOVX), read_file(NORMAL_YW7))
+        self.assertEqual(read_file(TEST_NOVX), read_file(NORMAL_NOVX))
 
     def test_scap_to_data(self):
         copyfile(NORMAL_SCAP, TEST_SCAP)
-        copyfile(NORMAL_YW7, TEST_NOVX)
+        copyfile(NORMAL_NOVX, TEST_NOVX)
         os.chdir(TEST_EXEC_PATH)
         scap2novx_.run(TEST_SCAP, silentMode=True)
         self.assertEqual(read_file(TEST_CHARACTERS_XML), read_file(NORMAL_CHARACTERS_XML))

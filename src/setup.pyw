@@ -70,12 +70,12 @@ def open_folder(installDir):
                 pass
 
 
-def install(novelystPath):
+def install(noveltreePath):
     """Install the script."""
 
-    # Create a general Pnovelyst installation directory, if necessary.
-    os.makedirs(novelystPath, exist_ok=True)
-    installDir = f'{novelystPath}{APPNAME}'
+    # Create a general Pnoveltree installation directory, if necessary.
+    os.makedirs(noveltreePath, exist_ok=True)
+    installDir = f'{noveltreePath}{APPNAME}'
     cnfDir = f'{installDir}{INI_PATH}'
     if os.path.isfile(f'{installDir}/{APP}'):
         simpleUpdate = True
@@ -84,7 +84,7 @@ def install(novelystPath):
     try:
         # Move an existing installation to the new place, if necessary.
         oldHome = os.getenv('APPDATA').replace('\\', '/')
-        oldInstDir = f'{oldHome}/pnovelyst/{APPNAME}'
+        oldInstDir = f'{oldHome}/pnoveltree/{APPNAME}'
         os.replace(oldInstDir, installDir)
         output(f'Moving "{oldInstDir}" to "{installDir}"')
     except:
@@ -136,14 +136,14 @@ if __name__ == '__main__':
 
     # Run the installation.
     homePath = str(Path.home()).replace('\\', '/')
-    novelystPath = f'{homePath}/.novelyst/'
+    noveltreePath = f'{homePath}/.noveltree/'
     try:
-        install(novelystPath)
+        install(noveltreePath)
     except Exception as ex:
         output(str(ex))
 
     # Show options: open installation folders or quit.
-    root.openButton = Button(text="Open installation folder", command=lambda: open_folder(f'{homePath}/.novelyst/{APPNAME}'))
+    root.openButton = Button(text="Open installation folder", command=lambda: open_folder(f'{homePath}/.noveltree/{APPNAME}'))
     root.openButton.config(height=1, width=30)
     root.openButton.pack(padx=5, pady=5)
     root.quitButton = Button(text="Quit", command=quit)

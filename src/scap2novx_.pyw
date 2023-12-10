@@ -1,4 +1,4 @@
-"""Scapple to novelyst converter 
+"""Scapple to noveltree converter 
 
 Version @release
 Requires Python 3.6+
@@ -38,7 +38,7 @@ def run(sourcePath, silentMode=True, installDir='.'):
     if silentMode:
         ui = Ui('')
     else:
-        ui = UiTk('Scapple to novelyst converter @release')
+        ui = UiTk('Scapple to noveltree converter @release')
 
     #--- Try to get persistent configuration data
     sourceDir = os.path.dirname(sourcePath)
@@ -60,7 +60,7 @@ def run(sourcePath, silentMode=True, installDir='.'):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Scapple to novelyst converter',
+        description='Scapple to noveltree converter',
         epilog='')
     parser.add_argument('sourcePath',
                         metavar='Sourcefile',
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     try:
         homeDir = str(Path.home()).replace('\\', '/')
-        installDir = f'{homeDir}/.novelyst/{APPNAME}/config'
+        installDir = f'{homeDir}/.noveltree/{APPNAME}/config'
     except:
         installDir = '.'
     run(args.sourcePath, args.silent, installDir)

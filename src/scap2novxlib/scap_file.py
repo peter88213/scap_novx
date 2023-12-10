@@ -89,7 +89,7 @@ class ScapFile(NovxFile):
                 if self._exportSections:
                     scId = f'{SECTION_PREFIX}{note.uid}'
                     self.novel.sections[scId] = Section(scPacing=0)
-                    self.novel.sections[scId].title = note.text
+                    self.novel.sections[scId].title = note.text.strip()
                     self.novel.sections[scId].scType = 0
                     self.novel.sections[scId].status = 1
                     # Status = Outline
@@ -98,29 +98,29 @@ class ScapFile(NovxFile):
                 if self._exportCharacters:
                     crId = f'{CHARACTER_PREFIX}{note.uid}'
                     self.novel.characters[crId] = Character()
-                    self.novel.characters[crId].title = note.text
-                    self.novel.characters[crId].fullName = note.text
+                    self.novel.characters[crId].title = note.text.strip()
+                    self.novel.characters[crId].fullName = note.text.strip()
                     self.novel.characters[crId].isMajor = True
                     self.novel.tree.append(CR_ROOT, crId)
             elif note.isMinorChara:
                 if self._exportCharacters:
                     crId = f'{CHARACTER_PREFIX}{note.uid}'
                     self.novel.characters[crId] = Character()
-                    self.novel.characters[crId].title = note.text
-                    self.novel.characters[crId].fullName = note.text
+                    self.novel.characters[crId].title = note.text.strip()
+                    self.novel.characters[crId].fullName = note.text.strip()
                     self.novel.characters[crId].isMajor = False
                     self.novel.tree.append(CR_ROOT, crId)
             elif note.isLocation:
                 if self._exportLocations:
                     lcId = f'{LOCATION_PREFIX}{note.uid}'
                     self.novel.locations[lcId] = WorldElement()
-                    self.novel.locations[lcId].title = note.text
+                    self.novel.locations[lcId].title = note.text.strip()
                     self.novel.tree.append(LC_ROOT, lcId)
             elif note.isItem:
                 if self._exportItems:
                     itId = f'{ITEM_PREFIX}{note.uid}'
                     self.novel.items[itId] = WorldElement()
-                    self.novel.items[itId].title = note.text
+                    self.novel.items[itId].title = note.text.strip()
                     self.novel.tree.append(IT_ROOT, itId)
 
         #--- Sort notes by position.

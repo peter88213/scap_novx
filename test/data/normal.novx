@@ -6,17 +6,25 @@
   <CHAPTERS>
     <CHAPTER id="ch1">
       <Title>Chapter 1</Title>
-      <SECTION id="sc11" type="1">
-        <Title>Notes section</Title>
+      <SECTION id="sc11">
+        <Title>section 3</Title>
         <Locations ids="lc6" />
+        <Content>
+          <p />
+        </Content>
       </SECTION>
       <SECTION id="sc1">
         <Title>section 1</Title>
-        <Notes><p>Note 1</p></Notes>
+        <Notes>
+          <p>Note 1</p>
+        </Notes>
         <Tags>Tag 3;Tag 4</Tags>
         <Characters ids="cr2 cr3 cr5" />
         <Locations ids="lc6" />
         <Items ids="it9 it10" />
+        <Content>
+          <p />
+        </Content>
       </SECTION>
       <SECTION id="sc7">
         <Title>section 2</Title>
@@ -24,6 +32,9 @@
         <Characters ids="cr5 cr3 cr4" />
         <Locations ids="lc8" />
         <Items ids="it10" />
+        <Content>
+          <p />
+        </Content>
       </SECTION>
     </CHAPTER>
   </CHAPTERS>
@@ -44,7 +55,9 @@
     <CHARACTER id="cr5" major="1">
       <Title>Major Character 2</Title>
       <FullName>Major Character 2</FullName>
-      <Notes><p>Note 2</p></Notes>
+      <Notes>
+        <p>Note 2</p>
+      </Notes>
       <Tags>Tag 3</Tags>
     </CHARACTER>
   </CHARACTERS>
@@ -67,4 +80,5 @@
     </ITEM>
   </ITEMS>
   <ARCS />
+  <PROJECTNOTES />
 </novx>
