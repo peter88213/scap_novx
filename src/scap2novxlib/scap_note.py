@@ -9,9 +9,6 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 class ScapNote:
     """Scapple note representation.
     
-    Public methods:
-        parse_xml -- parse a single Scapple note.
-    
     Public instance variables:
         text -- str: note text.
         isSection -- bool: True, if the note represents a noveltree section.

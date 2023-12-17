@@ -15,11 +15,7 @@ from novxlib.converter.converter import Converter
 
 
 class ScapConverter:
-    """A converter class for Scapple diagram import.
-
-    Public methods:
-        run(sourcePath, **kwargs) -- Create source and target objects and run conversion.
-    """
+    """A converter class for Scapple diagram import."""
 
     def run(self, sourcePath, **kwargs):
         """Create source and target objects and run conversion.
