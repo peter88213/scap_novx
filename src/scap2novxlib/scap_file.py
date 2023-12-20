@@ -4,16 +4,22 @@ Copyright (c) 2024 Peter Triesberger
 For further information see https://github.com/peter88213/noveltree_scapple
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-import os
-import xml.etree.ElementTree as ET
-from novxlib.novx_globals import *
-from novxlib.model.id_generator import create_id
-from novxlib.novx.novx_file import NovxFile
 from novxlib.model.chapter import Chapter
-from novxlib.model.section import Section
 from novxlib.model.character import Character
+from novxlib.model.section import Section
 from novxlib.model.world_element import WorldElement
+from novxlib.novx.novx_file import NovxFile
+from novxlib.novx_globals import CHAPTER_PREFIX
+from novxlib.novx_globals import CHARACTER_PREFIX
+from novxlib.novx_globals import CH_ROOT
+from novxlib.novx_globals import CR_ROOT
+from novxlib.novx_globals import ITEM_PREFIX
+from novxlib.novx_globals import IT_ROOT
+from novxlib.novx_globals import LC_ROOT
+from novxlib.novx_globals import LOCATION_PREFIX
+from novxlib.novx_globals import SECTION_PREFIX
 from scap2novxlib.scap_note import ScapNote
+import xml.etree.ElementTree as ET
 
 
 class ScapFile(NovxFile):
