@@ -25,7 +25,7 @@ class ScapConverter:
         self.newFile = None
 
         if not os.path.isfile(sourcePath):
-            self.ui.set_info_how(f'!File "{os.path.normpath(sourcePath)}" not found.')
+            self.ui.set_status(f'!File "{os.path.normpath(sourcePath)}" not found.')
             return
         fileName, fileExtension = os.path.splitext(sourcePath)
         if fileExtension == ScapFile.EXTENSION:
@@ -39,6 +39,6 @@ class ScapConverter:
             target.novel = source.novel
             target.write()
         else:
-            self.ui.set_info_how(f'!File type of "{os.path.normpath(sourcePath)}" not supported.')
-        self.ui.set_info_how(f'{target.DESCRIPTION} successfully created.')
+            self.ui.set_status(f'!File type of "{os.path.normpath(sourcePath)}" not supported.')
+        self.ui.set_status(f'{target.DESCRIPTION} successfully created.')
 
