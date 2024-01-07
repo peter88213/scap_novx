@@ -1,9 +1,9 @@
-"""Install the scap2novx script. 
+"""Install the scap_novx script. 
 
 Version @release
 
 Copyright (c) 2024 Peter Triesberger
-For further information see https://github.com/peter88213/scap2novx
+For further information see https://github.com/peter88213/scap_novx
 Published under the MIT License (https://opensource.org/licenses/mit-license.php)
 """
 import os
@@ -20,9 +20,9 @@ except ModuleNotFoundError:
     print('The tkinter module is missing. Please install the tk support package for your python3 version.')
     sys.exit(1)
 
-APPNAME = 'scap2novx'
+APPNAME = 'scap_novx'
 VERSION = ' @release'
-APP = f'{APPNAME}.pyw'
+APP = f'{APPNAME}.py'
 INI_FILE = f'{APPNAME}.ini'
 INI_PATH = '/config/'
 SAMPLE_PATH = 'sample/'
@@ -36,7 +36,7 @@ SHORTCUT_MESSAGE = '''
 Now you might want to create a shortcut on your desktop.  
 
 On Windows, open the installation folder, hold down the Alt key on your keyboard, 
-and then drag and drop $Appname.pyw to your desktop.
+and then drag and drop $Appname.py to your desktop.
 
 On Linux, create a launcher on your desktop. With xfce for instance, the launcher's command may look like this:
 python3 '$Apppath' %F

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="scap2novx" basedir=".">
-	<property name="version" value="0.1.2" />
-	<property name="test-app" value="scap2novx" />
+<project name="scap_novx" basedir=".">
+	<property name="version" value="0.2.0" />
+	<property name="test-app" value="scap_novx" />
 	
 	<property name="source-path" location="../src" />
 	<property name="test-path" location="../test" />
@@ -12,7 +12,7 @@
 	<property name="release" value="${application}_v${version}" />
 
 	<target name="build" description="inline all library modules">
-		<delete file="${test-path}/${test-app}.pyw" />
+		<delete file="${test-path}/${test-app}.py" />
 		<exec executable="python" failonerror="true">
 		    <arg value="build_${test-app}.py"/>
 		</exec>
@@ -33,8 +33,8 @@
 		<mkdir dir="${dist-path}" />
 		<mkdir dir="${build-path}/${release}" />
 		
-		<copy file="${test-path}/${test-app}.pyw" tofile="${build-path}/${release}/${application}.pyw" />
-		<replace encoding="utf-8" file="${build-path}/${release}/${application}.pyw" token="@release" value="${version}" />
+		<copy file="${test-path}/${test-app}.py" tofile="${build-path}/${release}/${application}.py" />
+		<replace encoding="utf-8" file="${build-path}/${release}/${application}.py" token="@release" value="${version}" />
 		
 		<copy file="${source-path}/setup.pyw" todir="${build-path}/${release}" />		
 		<replace encoding="utf-8" file="${build-path}/${release}/setup.pyw" token="@release" value="${version}" />
@@ -59,7 +59,7 @@
 	</target>
 
 	<target name="clean" description="clean up">		
-		<delete file="${test-path}/${test-app}.pyw" />
+		<delete file="${test-path}/${test-app}.py" />
 		<delete file="${test-path}/test_${test-app}.py" />		
 	</target>
 

@@ -1,8 +1,8 @@
-[Project homepage](https://peter88213.github.io/scap2novx) > Instructions for use
+[Project homepage](https://peter88213.github.io/scap_novx) > Instructions for use
 
 ---
 
-The scap2novx Python script creates a noveltree project from a Scapple outline.
+The scap_novx Python script creates a noveltree project from a Scapple outline.
 
 ## Instructions for use
 
@@ -17,7 +17,7 @@ Alternatively, you can
 - launch the program on the command line passing the scapple file as an argument, or
 - launch the program via a batch file.
 
-usage: `scap2novx.pyw [--silent] Sourcefile`
+usage: `scap_novx.py [--silent] Sourcefile`
 
 #### positional arguments:
 
@@ -56,11 +56,11 @@ XML files are generated instead. They can be imported into any noveltree project
 
 ### Import styles (optional)
 
-The scap2novx distribution comes with a sample Scapple project *styles.scap* including all required styles. You can either use this diagram as a template, or import the styles into your own Scapple diagram. 
+The scap_novx distribution comes with a sample Scapple project *styles.scap* including all required styles. You can either use this diagram as a template, or import the styles into your own Scapple diagram. 
 
 ![Screenshot: Import styles dialog](Screenshots/import_styles.png)
 
-In the file picker dialog, select `<unzipped scap2novx release folder>\sample\styles.scap`. Then you can apply the styles via context menu.
+In the file picker dialog, select `<unzipped scap_novx release folder>\sample\styles.scap`. Then you can apply the styles via context menu.
 
 ![Screenshot: Apply style menu](Screenshots/apply_styles.png)
 
@@ -105,18 +105,18 @@ You can override the default settings by providing a configuration file. Be alwa
 
 ### Global configuration
 
-An optional global configuration file can be placed in the configuration directory in your user profile. It is applied to any project. Its entries override scap2novx's built-in constants. This is the path:
-`c:\Users\<user name>\.pywriter\scap2novx\config\scap2novx.ini`
+An optional global configuration file can be placed in the configuration directory in your user profile. It is applied to any project. Its entries override scap_novx's built-in constants. This is the path:
+`c:\Users\<user name>\.noveltree\scap_novx\scap_novx.ini`
   
-The setup script installs a sample configuration file containing scap2novx's default values. You can modify or delete it. 
+The setup script installs a sample configuration file containing scap_novx's default values. You can modify or delete it. 
 
 ### Local project configuration
 
-An optional project configuration file named `scap2novx.ini` can be placed in your project directory, i.e. the folder containing your noveltree and Timeline project files. It is only applied to this project. Its entries override scap2novx's built-in constants as well as the global configuration, if any.
+An optional project configuration filscap_novx.ini2novx.ini` can be placed in your project directory, i.e. the folder containing your noveltree and Timeline project files. It is only applied to this project. Its entries override scap_novx's built-in constants as well as the global configuration, if any.
 
 ### How to provide/modify a configuration file
 
-The scap2novx distribution comes with a sample configuration file located in the `sample` subfolder. It contains scap2novx's default settings and options. This file is also automatically copied to the global configuration folder during installation. You best make a copy and edit it.
+The scap_novx distribution comes with a sample configuration file located in the `sample` subfolder. It contains scap_novx's default settings and options. This file is also automatically copied to the global configuration folder during installation. You best make a copy and edit it.
 
 - The SETTINGS section mainly refers to colors, i.e. The text colors that mark the characters/locations/items in Scapple. If you change them, the program might behave differently than described in the description of the conversion rules below. 
 - The OPTIONS section comprises options for regular program execution. 
@@ -165,7 +165,7 @@ export_items = Yes
 
 ## Installation path
 
-The setup script installs *scap2novx.pyw* in the user profile. This is the installation path on Windows: 
+The setup script installs *scap_novx.py* in the user profile. This is the installation path on Windows: 
 
-`c:\Users\<user name>\.noveltree\scap2novx`
+`c:\Users\<user name>\.noveltree\scap_novx`
     

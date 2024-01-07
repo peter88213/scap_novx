@@ -1,7 +1,7 @@
 """Provide a class for Scapple file representation.
 
 Copyright (c) 2024 Peter Triesberger
-For further information see https://github.com/peter88213/noveltree_scapple
+For further information see https://github.com/peter88213/scap_novx
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 from novxlib.model.chapter import Chapter
@@ -18,7 +18,7 @@ from novxlib.novx_globals import IT_ROOT
 from novxlib.novx_globals import LC_ROOT
 from novxlib.novx_globals import LOCATION_PREFIX
 from novxlib.novx_globals import SECTION_PREFIX
-from scap2novxlib.scap_note import ScapNote
+from scapnovxlib.scap_note import ScapNote
 import xml.etree.ElementTree as ET
 
 

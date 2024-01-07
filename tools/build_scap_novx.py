@@ -1,10 +1,10 @@
-"""Build a Python script for the scap2novx distribution.
+"""Build a Python script for the scap_novx distribution.
         
 In order to distribute a single script without dependencies, 
 this script "inlines" all modules imported from the novxlib package.
 
 Copyright (c) 2024 Peter Triesberger
-For further information see https://github.com/peter88213/scap2novx
+For further information see https://github.com/peter88213/scap_novx
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import sys
@@ -14,12 +14,12 @@ import inliner
 
 SRC = '../src/'
 BUILD = '../test/'
-SOURCE_FILE = f'{SRC}scap2novx_.pyw'
-TARGET_FILE = f'{BUILD}scap2novx.pyw'
+SOURCE_FILE = f'{SRC}scap_novx_.py'
+TARGET_FILE = f'{BUILD}scap_novx.py'
 
 
 def main():
-    inliner.run(SOURCE_FILE, TARGET_FILE, 'scap2novxlib', '../src/')
+    inliner.run(SOURCE_FILE, TARGET_FILE, 'scapnovxlib', '../src/')
     inliner.run(TARGET_FILE, TARGET_FILE, 'novxlib', '../../novxlib-Alpha/src/')
     print('Done.')
 

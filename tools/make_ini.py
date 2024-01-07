@@ -1,17 +1,17 @@
-"""Helper file for scap2novx test.
+"""Helper file for scap_novx test.
 
 Create config file.
 
 Copyright (c) 2024 Peter Triesberger
-For further information see https://github.com/peter88213/scap2novx
+For further information see https://github.com/peter88213/scap_novx
 Published under the MIT License (https://opensource.org/licenses/mit-license.php)
 """
 import sys
 import os
 from pywriter.config.configuration import Configuration
-from scap2novx_ import SETTINGS
-from scap2novx_ import OPTIONS
-from scap2novx_ import APPNAME
+from scap_novx_ import SETTINGS
+from scap_novx_ import OPTIONS
+from scap_novx_ import APPNAME
 
 
 def run(iniFile):

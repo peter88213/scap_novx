@@ -9,9 +9,6 @@
       <SECTION id="sc11">
         <Title>section 3</Title>
         <Locations ids="lc6" />
-        <Content>
-          <p />
-        </Content>
       </SECTION>
       <SECTION id="sc1">
         <Title>section 1</Title>
@@ -22,9 +19,6 @@
         <Characters ids="cr2 cr3 cr5" />
         <Locations ids="lc6" />
         <Items ids="it9 it10" />
-        <Content>
-          <p />
-        </Content>
       </SECTION>
       <SECTION id="sc7">
         <Title>section 2</Title>
@@ -32,9 +26,6 @@
         <Characters ids="cr5 cr3 cr4" />
         <Locations ids="lc8" />
         <Items ids="it10" />
-        <Content>
-          <p />
-        </Content>
       </SECTION>
     </CHAPTER>
   </CHAPTERS>
