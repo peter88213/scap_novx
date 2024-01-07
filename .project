@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>scap2novx</name>
+	<name>scap_novx</name>
 	<comment></comment>
 	<projects>
 		<project>novxlib-Alpha</project>
