@@ -10,7 +10,6 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
 import sys
-import argparse
 from pathlib import Path
 from novxlib.ui.ui import Ui
 from novxlib.ui.ui_tk import UiTk
