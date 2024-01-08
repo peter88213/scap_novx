@@ -5,8 +5,8 @@
 ## Changelog
 
 
-### v0.1.0
+### v1.0.0
 
 - Release under the GPLv3 license.
 
-Based on novxlib v0.6alpha
+Based on novxlib v1.0.0
