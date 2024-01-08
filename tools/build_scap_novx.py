@@ -9,7 +9,7 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import sys
 import os
-sys.path.insert(0, f'{os.getcwd()}/../../novxlib-Alpha/src')
+sys.path.insert(0, f'{os.getcwd()}/../../novxlib/src')
 import inliner
 
 SRC = '../src/'
@@ -20,7 +20,7 @@ TARGET_FILE = f'{BUILD}scap_novx.py'
 
 def main():
     inliner.run(SOURCE_FILE, TARGET_FILE, 'scapnovxlib', '../src/')
-    inliner.run(TARGET_FILE, TARGET_FILE, 'novxlib', '../../novxlib-Alpha/src/')
+    inliner.run(TARGET_FILE, TARGET_FILE, 'novxlib', '../../novxlib/src/')
     print('Done.')
 
 

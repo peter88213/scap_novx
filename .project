@@ -3,7 +3,7 @@
 	<name>scap_novx</name>
 	<comment></comment>
 	<projects>
-		<project>novxlib-Alpha</project>
+		<project>novxlib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
