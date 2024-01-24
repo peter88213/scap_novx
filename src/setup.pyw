@@ -9,7 +9,7 @@ Published under the MIT License (https://opensource.org/licenses/mit-license.php
 import os
 import sys
 import stat
-from shutil import copyfile
+from shutil import copy2
 from shutil import copytree
 from shutil import rmtree
 from pathlib import Path
@@ -100,7 +100,7 @@ def install(noveltreePath):
                 output(f'Removing "{file.name}"')
 
     # Install the new version.
-    copyfile(APP, f'{installDir}/{APP}')
+    copy2(APP, f'{installDir}/{APP}')
     output(f'Copying "{APP}"')
 
     # Install the icon files.
