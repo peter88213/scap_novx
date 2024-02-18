@@ -1,3 +1,10 @@
+[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/novx_xtg/main/dist/novx_xtg_v1.0.0.zip)
+[![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
+[![News](docs/img/news-button.png)](https://github.com/peter88213/noveltree/discussions/1)
+[![Online help](docs/img/help-button.png)](docs/usage.md)
+
+# ![S](icons/sLogo32.png) scap_novx
+
 A Python script for creating new [noveltree](https://github.com/peter88213/noveltree/) projects from Scapple diagrams 
 
 ![Screenshot: Example](docs/Screenshots/screen01.png)
