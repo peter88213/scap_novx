@@ -1,4 +1,4 @@
-[Project homepage](https://peter88213.github.io/scap_novx) > Instructions for use
+[Project homepage](https://github.com/peter88213/scap_novx) > Instructions for use
 
 ---
 
