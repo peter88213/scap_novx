@@ -1,6 +1,6 @@
-A Python script for creating new [noveltree](https://peter88213.github.io/noveltree/) projects from Scapple diagrams 
+A Python script for creating new [noveltree](https://github.com/peter88213/noveltree/) projects from Scapple diagrams 
 
-![Screenshot: Example](Screenshots/screen01.png)
+![Screenshot: Example](docs/Screenshots/screen01.png)
 
 ## Features
 
@@ -35,11 +35,11 @@ Please make sure that your Python3 installation has the *tkinter* module. On Ubu
 
 ------------------------------------------------------------------
 
-[Changelog](changelog)
+[Changelog](docs/changelog.md)
 
 ## Usage
 
-See the [instructions for use](usage)
+See the [instructions for use](docs/usage.md)
 
 ## Credits
 
