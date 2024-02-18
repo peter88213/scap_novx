@@ -124,7 +124,7 @@ The scap_novx distribution comes with a sample configuration file located in the
 
 This is the configuration explained: 
 
-```
+```ini
 [SETTINGS]
 
 location_color = 0.0 0.0 1.0
