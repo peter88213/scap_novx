@@ -75,14 +75,10 @@ def open_folder(installDir):
 
 def install(novelibrePath):
     """Install the script."""
-    #--- Relocate the v1.x installation directory.
-    try:
-        messagebox.showinfo(
-        'Moving the novelibre installation directory',
-        relocate.main()
-        )
-    except:
-        pass
+    #--- Relocate the v1.x installation directory, if necessary.
+    message = relocate.main()
+    if message:
+        messagebox.showinfo('Moving the novelibre installation directory', message)
 
     # Create a general novelibre installation directory, if necessary.
     os.makedirs(novelibrePath, exist_ok=True)

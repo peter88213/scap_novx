@@ -40,13 +40,9 @@ def main():
 
 
 if __name__ == '__main__':
-    try:
-        messagebox.showinfo(
-        'Moving the novelibre installation directory',
-        main()
-        )
-    except Exception as ex:
-        messagebox.showerror(
-            'Cannot move the novelibre installation directory',
-            str(ex)
-            )
+    message = main()
+    if message:
+        messagebox.showinfo('Moving the novelibre installation directory', message)
+    else:
+        messagebox.showerror('Moving the novelibre installation directory',
+                             'There is nothing to move.')
