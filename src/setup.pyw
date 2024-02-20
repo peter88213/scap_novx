@@ -20,6 +20,9 @@ except ModuleNotFoundError:
     print('The tkinter module is missing. Please install the tk support package for your python3 version.')
     sys.exit(1)
 
+from tkinter import messagebox
+import relocate
+
 APPNAME = 'scap_novx'
 VERSION = ' @release'
 APP = f'{APPNAME}.py'
@@ -72,8 +75,16 @@ def open_folder(installDir):
 
 def install(noveltreePath):
     """Install the script."""
+    #--- Relocate the v1.x installation directory.
+    try:
+        messagebox.showinfo(
+        'Moving the noveltree installation directory',
+        relocate.main()
+        )
+    except:
+        pass
 
-    # Create a general Pnoveltree installation directory, if necessary.
+    # Create a general noveltree installation directory, if necessary.
     os.makedirs(noveltreePath, exist_ok=True)
     installDir = f'{noveltreePath}{APPNAME}'
     cnfDir = f'{installDir}{INI_PATH}'
@@ -81,14 +92,6 @@ def install(noveltreePath):
         simpleUpdate = True
     else:
         simpleUpdate = False
-    try:
-        # Move an existing installation to the new place, if necessary.
-        oldHome = os.getenv('APPDATA').replace('\\', '/')
-        oldInstDir = f'{oldHome}/pnoveltree/{APPNAME}'
-        os.replace(oldInstDir, installDir)
-        output(f'Moving "{oldInstDir}" to "{installDir}"')
-    except:
-        pass
     os.makedirs(cnfDir, exist_ok=True)
 
     # Delete the old version, but retain configuration, if any.
@@ -136,14 +139,14 @@ if __name__ == '__main__':
 
     # Run the installation.
     homePath = str(Path.home()).replace('\\', '/')
-    noveltreePath = f'{homePath}/.noveltree/'
+    noveltreePath = f'{homePath}/.novx/'
     try:
         install(noveltreePath)
     except Exception as ex:
         output(str(ex))
 
     # Show options: open installation folders or quit.
-    root.openButton = Button(text="Open installation folder", command=lambda: open_folder(f'{homePath}/.noveltree/{APPNAME}'))
+    root.openButton = Button(text="Open installation folder", command=lambda: open_folder(f'{homePath}/.novx/{APPNAME}'))
     root.openButton.config(height=1, width=30)
     root.openButton.pack(padx=5, pady=5)
     root.quitButton = Button(text="Quit", command=quit)

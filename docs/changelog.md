@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### v2.0.0
+
+Preparations for renaming the "noveltree" application:
+- Change the installation directory in the setup script.
+
+Based on novxlib v1.1.0
+
 ### v1.0.0
 
 - Release under the GPLv3 license.

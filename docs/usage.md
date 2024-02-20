@@ -106,7 +106,7 @@ You can override the default settings by providing a configuration file. Be alwa
 ### Global configuration
 
 An optional global configuration file can be placed in the configuration directory in your user profile. It is applied to any project. Its entries override scap_novx's built-in constants. This is the path:
-`c:\Users\<user name>\.noveltree\scap_novx\scap_novx.ini`
+`c:\Users\<user name>\.novx\scap_novx\scap_novx.ini`
   
 The setup script installs a sample configuration file containing scap_novx's default values. You can modify or delete it. 
 
@@ -167,5 +167,5 @@ export_items = Yes
 
 The setup script installs *scap_novx.py* in the user profile. This is the installation path on Windows: 
 
-`c:\Users\<user name>\.noveltree\scap_novx`
+`c:\Users\<user name>\.novx\scap_novx`
     

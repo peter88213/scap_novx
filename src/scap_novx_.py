@@ -71,7 +71,7 @@ if __name__ == '__main__':
         sys.exit(1)
     try:
         homeDir = str(Path.home()).replace('\\', '/')
-        installDir = f'{homeDir}/.noveltree/{APPNAME}/config'
+        installDir = f'{homeDir}/.novx/{APPNAME}/config'
     except:
         installDir = '.'
     main(sourcePath, silentMode, installDir)
