@@ -2,7 +2,7 @@
 
 ---
 
-The scap_novx Python script creates a noveltree project from a Scapple outline.
+The scap_novx Python script creates a novelibre project from a Scapple outline.
 
 ## Instructions for use
 
@@ -31,11 +31,11 @@ The path of the Scapple outline file.
 
 ## Mode of operation
 
-*Scappex* generates a new noveltree project file with the same file name as the Scapple source file, 
+*Scappex* generates a new novelibre project file with the same file name as the Scapple source file, 
 but with the extension `.novx`. It is placed in the same directory as the source file. 
 
-However, **if the noveltree project already exists, it would not be overwritten**. Character/Location/Item 
-XML files are generated instead. They can be imported into any noveltree project.
+However, **if the novelibre project already exists, it would not be overwritten**. Character/Location/Item 
+XML files are generated instead. They can be imported into any novelibre project.
 
 ## Conversion rules
 
@@ -112,7 +112,7 @@ The setup script installs a sample configuration file containing scap_novx's def
 
 ### Local project configuration
 
-An optional project configuration filscap_novx.ini2novx.ini` can be placed in your project directory, i.e. the folder containing your noveltree and Timeline project files. It is only applied to this project. Its entries override scap_novx's built-in constants as well as the global configuration, if any.
+An optional project configuration filscap_novx.ini2novx.ini` can be placed in your project directory, i.e. the folder containing your novelibre and Timeline project files. It is only applied to this project. Its entries override scap_novx's built-in constants as well as the global configuration, if any.
 
 ### How to provide/modify a configuration file
 

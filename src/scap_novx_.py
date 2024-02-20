@@ -1,4 +1,4 @@
-"""Scapple to noveltree converter 
+"""Scapple to novelibre converter 
 
 usage: scap_novx.py [--silent] Sourcefile
 
@@ -40,7 +40,7 @@ def main(sourcePath, silentMode=True, installDir='.'):
     if silentMode:
         ui = Ui('')
     else:
-        ui = UiTk('Scapple to noveltree converter @release')
+        ui = UiTk('Scapple to novelibre converter @release')
 
     #--- Try to get persistent configuration data
     sourceDir = os.path.dirname(sourcePath)

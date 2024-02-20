@@ -1,11 +1,11 @@
 [![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v0.99.0.zip)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
-[![News](docs/img/news-button.png)](https://github.com/peter88213/noveltree/discussions/1)
+[![News](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions/1)
 [![Online help](docs/img/help-button.png)](docs/usage.md)
 
 # ![S](icons/sLogo32.png) scap_novx
 
-A Python script for creating new [noveltree](https://github.com/peter88213/noveltree/) projects from Scapple diagrams 
+A Python script for creating new [novelibre](https://github.com/peter88213/novelibre/) projects from Scapple diagrams 
 
 ![Screenshot: Example](docs/Screenshots/screen01.png)
 
@@ -17,7 +17,7 @@ A Python script for creating new [noveltree](https://github.com/peter88213/novel
 - Notes with a square border are converted to tags.
 - Notes with colored text are converted to characters, locations, or items.
 - Connections between sections and characters/locations/items are considered.
-- If a noveltree project already exists, Character/Location/Item XML files are generated instead.
+- If a novelibre project already exists, Character/Location/Item XML files are generated instead.
 - The *scap_novx* release includes a sample Scapple file with note styles to import.
 
  

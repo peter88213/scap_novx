@@ -73,20 +73,20 @@ def open_folder(installDir):
                 pass
 
 
-def install(noveltreePath):
+def install(novelibrePath):
     """Install the script."""
     #--- Relocate the v1.x installation directory.
     try:
         messagebox.showinfo(
-        'Moving the noveltree installation directory',
+        'Moving the novelibre installation directory',
         relocate.main()
         )
     except:
         pass
 
-    # Create a general noveltree installation directory, if necessary.
-    os.makedirs(noveltreePath, exist_ok=True)
-    installDir = f'{noveltreePath}{APPNAME}'
+    # Create a general novelibre installation directory, if necessary.
+    os.makedirs(novelibrePath, exist_ok=True)
+    installDir = f'{novelibrePath}{APPNAME}'
     cnfDir = f'{installDir}{INI_PATH}'
     if os.path.isfile(f'{installDir}/{APP}'):
         simpleUpdate = True
@@ -139,9 +139,9 @@ if __name__ == '__main__':
 
     # Run the installation.
     homePath = str(Path.home()).replace('\\', '/')
-    noveltreePath = f'{homePath}/.novx/'
+    novelibrePath = f'{homePath}/.novx/'
     try:
-        install(noveltreePath)
+        install(novelibrePath)
     except Exception as ex:
         output(str(ex))
 
