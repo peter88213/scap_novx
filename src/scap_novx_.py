@@ -22,14 +22,17 @@ GREEN = '0.0 0.5 0.0'
 BLUE = '0.0 0.0 1.0'
 RED = '1.0 0.0 0.0'
 PURPLE = '0.5 0.0 0.5'
+SAND = '1.0 0.9 0.6'
 SETTINGS = dict(
     location_color=BLUE,
     item_color=GREEN,
     major_chara_color=RED,
     minor_chara_color=PURPLE,
+    arc_color=SAND,
     )
 OPTIONS = dict(
     export_sections=True,
+    export_arcs=True,
     export_characters=True,
     export_locations=True,
     export_items=True,

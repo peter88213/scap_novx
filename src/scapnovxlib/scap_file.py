@@ -9,9 +9,12 @@ from novxlib.model.character import Character
 from novxlib.model.section import Section
 from novxlib.model.world_element import WorldElement
 from novxlib.novx.novx_file import NovxFile
+from novxlib.novx_globals import ARC_PREFIX
+from novxlib.novx_globals import ARC_POINT_PREFIX
 from novxlib.novx_globals import CHAPTER_PREFIX
 from novxlib.novx_globals import CHARACTER_PREFIX
 from novxlib.novx_globals import CH_ROOT
+from novxlib.novx_globals import AC_ROOT
 from novxlib.novx_globals import CR_ROOT
 from novxlib.novx_globals import ITEM_PREFIX
 from novxlib.novx_globals import IT_ROOT
@@ -55,6 +58,7 @@ class ScapFile(NovxFile):
         Extends the superclass constructor.
         """
         ScapNote.locationColor = kwargs['location_color']
+        ScapNote.arcColor = kwargs['arc_color']
         ScapNote.itemColor = kwargs['item_color']
         ScapNote.majorCharaColor = kwargs['major_chara_color']
         ScapNote.minorCharaColor = kwargs['minor_chara_color']
@@ -100,6 +104,25 @@ class ScapFile(NovxFile):
                     self.novel.sections[scId].status = 1
                     # Status = Outline
                     self.novel.sections[scId].sectionContent = '<p></p>'
+            elif note.isArc:
+                if self._exportArcs:
+                    acId = f'{ARC_PREFIX}{note.uid}'
+                    self.novel.arcs[acId] = Character()
+                    arcTitle = note.text.strip().split(':', maxsplit=1)
+                    if len(arcTitle) > 1:
+                        self.novel.arcs[acId].shortName = arcTitle[0].strip()
+                        self.novel.arcs[acId].title = arcTitle[1].strip()
+                    else:
+                        self.novel.arcs[acId].shortName = arcTitle[0][0]
+                        self.novel.arcs[acId].title = arcTitle[0]
+                    self.novel.tree.append(AC_ROOT, acId)
+            elif note.isPoint:
+                if self._exportArcs:
+                    tpId = f'{ARC_POINT_PREFIX}{note.uid}'
+                    self.novel.arcs[tpId] = Character()
+                    self.novel.arcs[tpId].title = note.text.strip()
+                    self.novel.tree.append(acId, tpId)
+                    # TODO: Create sorted lists of connected points
             elif note.isMajorChara:
                 if self._exportCharacters:
                     crId = f'{CHARACTER_PREFIX}{note.uid}'

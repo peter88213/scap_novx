@@ -1,53 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ScappleDocument Version="1.2" ID="75945489-BE47-4953-B550-A75A7F6A8603">
+<ScappleDocument ID="75945489-BE47-4953-B550-A75A7F6A8603" Version="1.2">
    <Notes/>
    <NoteStyles>
-      <Style AffectTextColor="Yes" AffectNoteBody="Yes" AffectFade="No" AffectSize="No" AffectSticky="Yes" AffectAlignment="No" Name="Item" AffectFontStyle="No" ID="27DAD4E9-6419-4704-8465-D368EFCD76C1">
-         <BorderThickness>1</BorderThickness>
-         <BorderStyle>Rounded</BorderStyle>
-         <BorderColor>0.0 0.500008 0.0</BorderColor>
-         <FillColor>0.839216 0.917647 0.792157</FillColor>
-         <TextColor>0.0 0.500008 0.0</TextColor>
-         <Size>171.6,-1.7</Size>
-         <Sticky>Yes</Sticky>
-         <FontSize>12.0</FontSize>
-      </Style>
-      <Style AffectTextColor="Yes" AffectNoteBody="Yes" AffectFade="No" AffectSize="No" AffectSticky="Yes" AffectAlignment="No" Name="Location" AffectFontStyle="No" ID="C5449001-4357-4EAA-B6DF-3D1DABCD2C2A">
-         <BorderThickness>1</BorderThickness>
-         <BorderStyle>Rounded</BorderStyle>
-         <BorderColor>0.0 0.0 1.0</BorderColor>
-         <FillColor>0.788235 0.858824 0.988235</FillColor>
-         <TextColor>0.0 0.0 1.0</TextColor>
-         <Size>171.6,-1.7</Size>
-         <Sticky>Yes</Sticky>
-         <FontSize>12.0</FontSize>
-      </Style>
-      <Style AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No" AffectSize="No" AffectSticky="Yes" AffectAlignment="No" Name="Section" AffectFontStyle="No" ID="915AC8C0-A028-405C-B518-5A5F4631BF53">
-         <BorderThickness>1</BorderThickness>
-         <BorderStyle>Rounded</BorderStyle>
-         <Size>1417.2,-26.1</Size>
-         <Sticky>Yes</Sticky>
-         <Shadow>Yes</Shadow>
-         <FontSize>12.0</FontSize>
-      </Style>
-      <Style AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No" AffectSize="No" AffectSticky="Yes" AffectAlignment="No" Name="Note" AffectFontStyle="No" ID="014A31AD-34CA-4753-89ED-964CB534ECA6">
-         <BorderThickness>1</BorderThickness>
-         <BorderStyle>Cloud</BorderStyle>
-         <Size>256.0,-1.3</Size>
-         <Sticky>Yes</Sticky>
-         <FontSize>12.0</FontSize>
-      </Style>
-      <Style AffectTextColor="Yes" AffectNoteBody="Yes" AffectFade="No" AffectSize="No" AffectSticky="Yes" AffectAlignment="No" Name="MinorCharacter" AffectFontStyle="No" ID="45F5155C-524B-44AC-B0E3-AE26A1FE95B4">
-         <BorderThickness>1</BorderThickness>
-         <BorderStyle>Rounded</BorderStyle>
-         <BorderColor>0.500008 0.0 0.500008</BorderColor>
-         <FillColor>0.92549 0.721569 1.0</FillColor>
-         <TextColor>0.500008 0.0 0.500008</TextColor>
-         <Size>171.6,-1.7</Size>
-         <Sticky>Yes</Sticky>
-         <FontSize>12.0</FontSize>
-      </Style>
-      <Style AffectTextColor="Yes" AffectNoteBody="Yes" AffectFade="No" AffectSize="No" AffectSticky="Yes" AffectAlignment="No" Name="MajorCharacter" AffectFontStyle="No" ID="F688F8DB-0230-4B22-8A41-2C4CE7CB4AE5">
+      <Style ID="F688F8DB-0230-4B22-8A41-2C4CE7CB4AE5" AffectTextColor="Yes" AffectFade="No" Name="MajorCharacter" AffectAlignment="No" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="No">
          <BorderThickness>1</BorderThickness>
          <BorderStyle>Rounded</BorderStyle>
          <BorderColor>1.0 0.0 0.0</BorderColor>
@@ -57,7 +12,69 @@
          <Sticky>Yes</Sticky>
          <FontSize>12.0</FontSize>
       </Style>
-      <Style AffectTextColor="Yes" AffectNoteBody="Yes" AffectFade="No" AffectSize="No" AffectSticky="Yes" AffectAlignment="No" Name="Tag" AffectFontStyle="No" ID="86A8B969-3AFF-4533-99E6-4A0D0AE2D4E8">
+      <Style ID="C5449001-4357-4EAA-B6DF-3D1DABCD2C2A" AffectTextColor="Yes" AffectFade="No" Name="Location" AffectAlignment="No" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.0 0.0 1.0</BorderColor>
+         <FillColor>0.788235 0.858824 0.988235</FillColor>
+         <TextColor>0.0 0.0 1.0</TextColor>
+         <Size>171.6,-1.7</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style ID="88498483-B343-4E92-80E0-1167653EF130" AffectTextColor="Yes" AffectFade="No" Name="Turning point" AffectAlignment="Yes" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="Yes">
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.627451 0.164706 0.05098</BorderColor>
+         <FillColor>0.996078 0.854902 0.627451</FillColor>
+         <TextColor>0.627451 0.164706 0.05098</TextColor>
+         <Size>74.6,21.1</Size>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style ID="6B07E9D6-9DD6-4031-A3FC-E7CC41F17DE4" AffectTextColor="Yes" AffectFade="No" Name="Arc" AffectAlignment="Yes" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="Yes">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.627451 0.164706 0.05098</BorderColor>
+         <FillColor>0.996078 0.854902 0.627451</FillColor>
+         <TextColor>0.627451 0.164706 0.05098</TextColor>
+         <Size>23.8,21.1</Size>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style ID="014A31AD-34CA-4753-89ED-964CB534ECA6" AffectTextColor="No" AffectFade="No" Name="Note" AffectAlignment="No" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Cloud</BorderStyle>
+         <Size>256.0,-1.3</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style ID="915AC8C0-A028-405C-B518-5A5F4631BF53" AffectTextColor="No" AffectFade="No" Name="Section" AffectAlignment="No" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <Size>1417.2,-26.1</Size>
+         <Sticky>Yes</Sticky>
+         <Shadow>Yes</Shadow>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style ID="27DAD4E9-6419-4704-8465-D368EFCD76C1" AffectTextColor="Yes" AffectFade="No" Name="Item" AffectAlignment="No" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.0 0.500008 0.0</BorderColor>
+         <FillColor>0.839216 0.917647 0.792157</FillColor>
+         <TextColor>0.0 0.500008 0.0</TextColor>
+         <Size>171.6,-1.7</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style ID="45F5155C-524B-44AC-B0E3-AE26A1FE95B4" AffectTextColor="Yes" AffectFade="No" Name="MinorCharacter" AffectAlignment="No" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.500008 0.0 0.500008</BorderColor>
+         <FillColor>0.92549 0.721569 1.0</FillColor>
+         <TextColor>0.500008 0.0 0.500008</TextColor>
+         <Size>171.6,-1.7</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style ID="86A8B969-3AFF-4533-99E6-4A0D0AE2D4E8" AffectTextColor="Yes" AffectFade="No" Name="Tag" AffectAlignment="No" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="No">
          <BorderThickness>1</BorderThickness>
          <BorderStyle>Square</BorderStyle>
          <BorderColor>0.300008 0.300008 0.0</BorderColor>
@@ -75,5 +92,5 @@
       <NoteXPadding>4.00</NoteXPadding>
       <LeftToRight>Yes</LeftToRight>
    </UISettings>
-   <PrintSettings LeftMargin="12.000000" Collates="Yes" ScaleFactor="1.000000" PaperType="iso-a4" HorizontallyCentered="Yes" PaperSize="-1.000000,-1.000000" PagesAcross="1" Orientation="Portrait" BottomMargin="12.000000" TopMargin="12.000000" VerticalPagination="Auto" PagesDown="1" RightMargin="12.000000" VerticallyCentered="Yes" HorizontalPagination="Clip"/>
+   <PrintSettings VerticalPagination="Auto" Orientation="Portrait" LeftMargin="12.000000" HorizontallyCentered="Yes" BottomMargin="12.000000" PaperType="iso-a4" PaperSize="-1.000000,-1.000000" PagesAcross="1" RightMargin="12.000000" Collates="Yes" PagesDown="1" HorizontalPagination="Clip" TopMargin="12.000000" VerticallyCentered="Yes" ScaleFactor="1.000000"/>
 </ScappleDocument>

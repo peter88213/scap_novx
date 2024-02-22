@@ -137,7 +137,7 @@ item_color = 0.0 0.5 0.0
 
 major_chara_color = 1.0 0.0 0.0
 
-# RGB text color that marks the major racters in Scapple.
+# RGB text color that marks the major characters in Scapple.
 
 minor_chara_color = 0.5 0.0 0.5
 
