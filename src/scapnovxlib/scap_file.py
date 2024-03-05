@@ -33,9 +33,6 @@ class ScapFile(NovxFile):
     DESCRIPTION = 'Scapple diagram'
     SUFFIX = ''
 
-    # Events assigned to the "narrative arc" (case insensitive) become
-    # regular sections, the others become Notes sections.
-
     def __init__(self, filePath, **kwargs):
         """Initialize instance variables and ScapNote class variables.
 
