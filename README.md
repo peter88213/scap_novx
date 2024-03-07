@@ -1,7 +1,7 @@
-[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v2.1.0.zip)
+[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v2.1.1.zip)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions/1)
-[![Online help](docs/img/help-button.png)](docs/usage.md)
+[![User guide](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/scap_novx/)
 
 # ![S](icons/sLogo32.png) scap_novx
 
@@ -29,9 +29,9 @@ A Python script for creating new [novelibre](https://github.com/peter88213/novel
 
 ## Download and install
 
-[Download the latest release (version 2.1.0)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v2.1.0.zip)
+[Download the latest release (version 2.1.1)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v2.1.1.zip)
 
-- Unzip the downloaded zipfile "scap_novx_v2.1.0.zip" into a new folder.
+- Unzip the downloaded zipfile "scap_novx_v2.1.1.zip" into a new folder.
 - Move into this new folder and launch **setup.pyw**. This installs the script for the local user.
 - Create a shortcut on the desktop when asked.
 - Open "README.md" for usage instructions.

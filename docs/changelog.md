@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### v2.1.1
+
+Library update.
+Now writing *.novx* version 1.1 files. 
+
+Based on novxlib v1.5.0
+
 ### v2.1.0
 
 Update for "novelibre".
