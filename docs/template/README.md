@@ -48,11 +48,6 @@ Please make sure that your Python3 installation has the *tkinter* module. On Ubu
 
 See the [instructions for use](docs/usage.md)
 
-## Credits
-
-- Frederik Lundh published the [xml pretty print algorithm](http://effbot.org/zone/element-lib.htm#prettyprint).
-
-
 ## License
 
 This is Open Source software, and scap_novx is licensed under GPLv3. See the

@@ -4,6 +4,11 @@
 
 ## Changelog
 
+### v2.1.2
+
+- Fix a bug where single spaces between emphasized text in section content are lost when writing novx files.
+
+Based on novxlib v3.5.0
 
 ### v2.1.1
 
