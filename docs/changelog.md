@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### v2.1.3
+
+- Indent the novx files up to the content paragraph level, but not inline elements within paragraphs.
+
+Based on novxlib v3.5.2
+
 ### v2.1.2
 
 - Fix a bug where single spaces between emphasized text in section content are lost when writing novx files.

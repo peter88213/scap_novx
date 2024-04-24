@@ -1,2 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CHARACTERS><CHARACTER id="cr2" major="1"><Title>Major Character 1</Title><FullName>Major Character 1</FullName></CHARACTER><CHARACTER id="cr3"><Title>Minor Character 1</Title><FullName>Minor Character 1</FullName></CHARACTER><CHARACTER id="cr4"><Title>Minor Character 2</Title><Tags>Tag 2</Tags><FullName>Minor Character 2</FullName></CHARACTER><CHARACTER id="cr5" major="1"><Title>Major Character 2</Title><Notes><p>Note 2</p></Notes><Tags>Tag 3</Tags><FullName>Major Character 2</FullName></CHARACTER></CHARACTERS>
+<CHARACTERS>
+    <CHARACTER id="cr2" major="1">
+      <Title>Major Character 1</Title>
+      <FullName>Major Character 1</FullName>
+    </CHARACTER>
+    <CHARACTER id="cr3">
+      <Title>Minor Character 1</Title>
+      <FullName>Minor Character 1</FullName>
+    </CHARACTER>
+    <CHARACTER id="cr4">
+      <Title>Minor Character 2</Title>
+      <Tags>Tag 2</Tags>
+      <FullName>Minor Character 2</FullName>
+    </CHARACTER>
+    <CHARACTER id="cr5" major="1">
+      <Title>Major Character 2</Title>
+      <Notes>
+        <p>Note 2</p>
+      </Notes>
+      <Tags>Tag 3</Tags>
+      <FullName>Major Character 2</FullName>
+    </CHARACTER>
+  </CHARACTERS>
+  

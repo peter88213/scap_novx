@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ITEMS><ITEM id="it9"><Title>Item 1</Title></ITEM><ITEM id="it10"><Title>Item 2</Title><Tags>Tag 1</Tags></ITEM></ITEMS>
+<ITEMS>
+    <ITEM id="it9">
+      <Title>Item 1</Title>
+    </ITEM>
+    <ITEM id="it10">
+      <Title>Item 2</Title>
+      <Tags>Tag 1</Tags>
+    </ITEM>
+  </ITEMS>
+  

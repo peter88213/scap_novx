@@ -1,4 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE novx SYSTEM "novx_1_3.dtd">
 <?xml-stylesheet href="novx.css" type="text/css"?>
-<novx version="1.3" xml:lang="de-DE"><PROJECT /><CHAPTERS><CHAPTER id="ch1"><Title>Chapter 1</Title><SECTION id="sc11"><Title>section 3</Title><Locations ids="lc6" /></SECTION><SECTION id="sc1"><Title>section 1</Title><Notes><p>Note 1</p></Notes><Tags>Tag 3;Tag 4</Tags><Characters ids="cr2 cr3 cr5" /><Locations ids="lc6" /><Items ids="it9 it10" /></SECTION><SECTION id="sc7"><Title>section 2</Title><Tags>Tag 1</Tags><Characters ids="cr5 cr3 cr4" /><Locations ids="lc8" /><Items ids="it10" /></SECTION></CHAPTER></CHAPTERS><CHARACTERS><CHARACTER id="cr2" major="1"><Title>Major Character 1</Title><FullName>Major Character 1</FullName></CHARACTER><CHARACTER id="cr3"><Title>Minor Character 1</Title><FullName>Minor Character 1</FullName></CHARACTER><CHARACTER id="cr4"><Title>Minor Character 2</Title><Tags>Tag 2</Tags><FullName>Minor Character 2</FullName></CHARACTER><CHARACTER id="cr5" major="1"><Title>Major Character 2</Title><Notes><p>Note 2</p></Notes><Tags>Tag 3</Tags><FullName>Major Character 2</FullName></CHARACTER></CHARACTERS><LOCATIONS><LOCATION id="lc6"><Title>Location 1</Title></LOCATION><LOCATION id="lc8"><Title>Location 2</Title><Tags>Tag 2</Tags></LOCATION></LOCATIONS><ITEMS><ITEM id="it9"><Title>Item 1</Title></ITEM><ITEM id="it10"><Title>Item 2</Title><Tags>Tag 1</Tags></ITEM></ITEMS><ARCS /><PROJECTNOTES /></novx>
+<novx version="1.3" xml:lang="de-DE">
+  <PROJECT />
+  <CHAPTERS>
+    <CHAPTER id="ch1">
+      <Title>Chapter 1</Title>
+      <SECTION id="sc11">
+        <Title>section 3</Title>
+        <Locations ids="lc6" />
+      </SECTION>
+      <SECTION id="sc1">
+        <Title>section 1</Title>
+        <Notes>
+          <p>Note 1</p>
+        </Notes>
+        <Tags>Tag 3;Tag 4</Tags>
+        <Characters ids="cr2 cr3 cr5" />
+        <Locations ids="lc6" />
+        <Items ids="it9 it10" />
+      </SECTION>
+      <SECTION id="sc7">
+        <Title>section 2</Title>
+        <Tags>Tag 1</Tags>
+        <Characters ids="cr5 cr3 cr4" />
+        <Locations ids="lc8" />
+        <Items ids="it10" />
+      </SECTION>
+    </CHAPTER>
+  </CHAPTERS>
+  <CHARACTERS>
+    <CHARACTER id="cr2" major="1">
+      <Title>Major Character 1</Title>
+      <FullName>Major Character 1</FullName>
+    </CHARACTER>
+    <CHARACTER id="cr3">
+      <Title>Minor Character 1</Title>
+      <FullName>Minor Character 1</FullName>
+    </CHARACTER>
+    <CHARACTER id="cr4">
+      <Title>Minor Character 2</Title>
+      <Tags>Tag 2</Tags>
+      <FullName>Minor Character 2</FullName>
+    </CHARACTER>
+    <CHARACTER id="cr5" major="1">
+      <Title>Major Character 2</Title>
+      <Notes>
+        <p>Note 2</p>
+      </Notes>
+      <Tags>Tag 3</Tags>
+      <FullName>Major Character 2</FullName>
+    </CHARACTER>
+  </CHARACTERS>
+  <LOCATIONS>
+    <LOCATION id="lc6">
+      <Title>Location 1</Title>
+    </LOCATION>
+    <LOCATION id="lc8">
+      <Title>Location 2</Title>
+      <Tags>Tag 2</Tags>
+    </LOCATION>
+  </LOCATIONS>
+  <ITEMS>
+    <ITEM id="it9">
+      <Title>Item 1</Title>
+    </ITEM>
+    <ITEM id="it10">
+      <Title>Item 2</Title>
+      <Tags>Tag 1</Tags>
+    </ITEM>
+  </ITEMS>
+  <ARCS />
+  <PROJECTNOTES />
+</novx>
