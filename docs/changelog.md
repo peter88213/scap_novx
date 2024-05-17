@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### v2.2.0
+
+- Library update. Now writing *.novx* version 1.4 files.
+
+Based on novxlib v4.0.0
+
 ### v2.1.3
 
 - Indent the novx files up to the content paragraph level, but not inline elements within paragraphs.

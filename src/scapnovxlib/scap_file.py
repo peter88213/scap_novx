@@ -91,7 +91,7 @@ class ScapFile(NovxFile):
             if note.isSection:
                 if self._exportSections:
                     scId = f'{SECTION_PREFIX}{note.uid}'
-                    self.novel.sections[scId] = Section(scPacing=0)
+                    self.novel.sections[scId] = Section(scene=0)
                     self.novel.sections[scId].title = note.text.strip()
                     self.novel.sections[scId].scType = 0
                     self.novel.sections[scId].status = 1
