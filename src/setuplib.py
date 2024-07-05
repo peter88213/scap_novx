@@ -118,11 +118,14 @@ def install(novxPath, zipped):
 
     # Delete the old version, but retain configuration, if any.
     rmtree(f'{installDir}/icons', ignore_errors=True)
+    rmtree(f'{installDir}/sample', ignore_errors=True)
     with os.scandir(installDir) as files:
         for file in files:
-            if not 'config' in file.name:
-                os.remove(file)
-                output(f'Removing "{file.name}"')
+            if 'config' in file.name:
+                continue
+
+            os.remove(file)
+            output(f'Removing "{file.name}"')
 
     # Install the new version.
     output(f'Copying "{APP}" ...')
@@ -135,6 +138,10 @@ def install(novxPath, zipped):
     # Make the script executable under Linux.
     st = os.stat(f'{installDir}/{APP}')
     os.chmod(f'{installDir}/{APP}', st.st_mode | stat.S_IEXEC)
+
+    # Provide the sample files.
+    output('Copying sample files ...')
+    copy_tree('sample', installDir)
 
     # Display a success message.
     mapping = {'Appname': APPNAME, 'Apppath': f'{installDir}/{APP}'}
