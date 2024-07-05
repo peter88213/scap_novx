@@ -125,12 +125,12 @@ def install(novxPath, zipped):
                 output(f'Removing "{file.name}"')
 
     # Install the new version.
+    output(f'Copying "{APP}" ...')
     copy_file(APP, installDir)
-    output(f'Copying "{APP}"')
 
     # Install the icon files.
+    output('Copying icons ...')
     copy_tree('icons', installDir)
-    output(f'Copying "icons"')
 
     # Make the script executable under Linux.
     st = os.stat(f'{installDir}/{APP}')
