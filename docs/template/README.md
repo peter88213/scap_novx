@@ -29,12 +29,20 @@ A Python script for creating new [novelibre](https://github.com/peter88213/novel
 
 ## Download and install
 
-[Download the latest release (version 0.99.0)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v0.99.0.pyzw)
+### Default: Executable Python zip archive
 
-- Unzip the downloaded zipfile "scap_novx_v0.99.0.pyzw" into a new folder.
-- Move into this new folder and launch **setup.pyw**. This installs the script for the local user.
-- Create a shortcut on the desktop when asked.
-- Open "README.md" for usage instructions.
+Download the latest release [scap_novx_v0.99.0.pyzw](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v0.99.0.pyzw)
+
+- Launch *scap_novx_v0.99.0.pyzw* by double-clicking (Windows/Linux desktop),
+- or execute `python scap_novx_v0.99.0.pyzw` (Windows), resp. `python3 scap_novx_v0.99.0.pyzw` (Linux) on the command line.
+
+### Alternative: Zip file
+
+The package is also available in zip format: [scap_novx_v0.99.0.zip](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v0.99.0.zip)
+
+- Extract the *scap_novx_v0.99.0* folder from the downloaded zipfile "scap_novx_v0.99.0.zip".
+- Move into this new folder and launch *setup.pyw* by double-clicking (Windows/Linux desktop), 
+- or execute `python setup.pyw` (Windows), resp. `python3 setup.pyw` (Linux) on the command line.
 
 ### Note for Linux users
 
@@ -46,7 +54,7 @@ Please make sure that your Python3 installation has the *tkinter* module. On Ubu
 
 ## Usage
 
-See the [instructions for use](docs/usage.md)
+See the [online manual](https://peter88213.github.io/nvhelp-en/scap_novx/)
 
 ## License
 
