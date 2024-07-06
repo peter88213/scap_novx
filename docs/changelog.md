@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### v2.2.2
+
+- Library update.
+
+Based on novxlib v4.3.0
+
 ### v2.2.1
 
 - Library update. Now writing *.novx* version 1.4 files.
