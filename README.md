@@ -36,6 +36,18 @@ Download the latest release [scap_novx_v2.2.2.pyzw](https://github.com/peter8821
 - Launch *scap_novx_v2.2.2.pyzw* by double-clicking (Windows/Linux desktop),
 - or execute `python scap_novx_v2.2.2.pyzw` (Windows), resp. `python3 scap_novx_v2.2.2.pyzw` (Linux) on the command line.
 
+#### Important
+
+Many web browsers recognize the download as an executable file and offer to open it immediately. 
+This starts the installation.
+
+However, depending on the security settings, the browser may 
+initially  refuse  to download the executable file. 
+In this case, your confirmation or an additional action is required. 
+If this is not possible, you have the option of downloading 
+the zip file. 
+
+
 ### Alternative: Zip file
 
 The package is also available in zip format: [scap_novx_v2.2.2.zip](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v2.2.2.zip)
