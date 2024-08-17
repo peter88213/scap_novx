@@ -5,12 +5,18 @@
 ## Changelog
 
 
+### Version 2.2.4
+
+- Refactor for future Python versions.
+
+Based on novxlib version 4.5.9
+
 ### Version 2.2.3
 
 - Refactor for future Python versions.
 - Update changelog for semantic versioning.
 
-Based on novxlib version 4.9.2
+Based on novxlib version 4.5.8
 
 ### Version 2.2.2
 
