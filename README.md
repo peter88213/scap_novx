@@ -1,4 +1,4 @@
-[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v2.2.4.pyzw)
+[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v2.2.5.pyzw)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions/1)
 [![User guide](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/scap_novx/)
@@ -31,10 +31,10 @@ A Python script for creating new [novelibre](https://github.com/peter88213/novel
 
 ### Default: Executable Python zip archive
 
-Download the latest release [scap_novx_v2.2.4.pyzw](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v2.2.4.pyzw)
+Download the latest release [scap_novx_v2.2.5.pyzw](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v2.2.5.pyzw)
 
-- Launch *scap_novx_v2.2.4.pyzw* by double-clicking (Windows/Linux desktop),
-- or execute `python scap_novx_v2.2.4.pyzw` (Windows), resp. `python3 scap_novx_v2.2.4.pyzw` (Linux) on the command line.
+- Launch *scap_novx_v2.2.5.pyzw* by double-clicking (Windows/Linux desktop),
+- or execute `python scap_novx_v2.2.5.pyzw` (Windows), resp. `python3 scap_novx_v2.2.5.pyzw` (Linux) on the command line.
 
 #### Important
 
@@ -50,9 +50,9 @@ the zip file.
 
 ### Alternative: Zip file
 
-The package is also available in zip format: [scap_novx_v2.2.4.zip](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v2.2.4.zip)
+The package is also available in zip format: [scap_novx_v2.2.5.zip](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v2.2.5.zip)
 
-- Extract the *scap_novx_v2.2.4* folder from the downloaded zipfile "scap_novx_v2.2.4.zip".
+- Extract the *scap_novx_v2.2.5* folder from the downloaded zipfile "scap_novx_v2.2.5.zip".
 - Move into this new folder and launch *setup.pyw* by double-clicking (Windows/Linux desktop), 
 - or execute `python setup.pyw` (Windows), resp. `python3 setup.pyw` (Linux) on the command line.
 

@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 2.2.5
+
+Library update:
+- Stripping illegal xml characters during post-processing.
+- Refactor for future Python versions
+
+Based on novxlib 4.6.3
+
 ### Version 2.2.4
 
 - Refactor for future Python versions.
