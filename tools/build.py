@@ -10,7 +10,6 @@ For further information see https://github.com/peter88213/scap_novx
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
-from shutil import copytree
 import sys
 
 sys.path.insert(0, f'{os.getcwd()}/../../novelibre/tools')
@@ -35,11 +34,6 @@ class ApplicationBuilder(PackageBuilder):
     def add_extras(self):
         self.add_icons()
         self.add_sample()
-
-    def add_sample(self):
-        print('\nAdding sample files ...')
-        SAMPLE_DIR = '../sample'
-        copytree(SAMPLE_DIR, f'{self.buildDir}/sample')
 
 
 def main():
