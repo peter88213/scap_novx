@@ -1,37 +1,52 @@
-"""Build a Python script for the scap_novx distribution.
+"""Build the scap_novx application package.
         
 In order to distribute a single script without dependencies, 
 this script "inlines" all modules imported from the novxlib package.
 
-Copyright (c) 2024 Peter Triesberger
+The novxlib project (see see https://github.com/peter88213/novxlib)
+must be located on the same directory level as the novelibre project. 
+
 For further information see https://github.com/peter88213/scap_novx
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-import sys
 import os
-sys.path.insert(0, f'{os.getcwd()}/../../novxlib/src')
-import inliner
+from shutil import copytree
+import sys
 
-SOURCE_DIR = '../src/'
-TEST_DIR = '../test/'
-SOURCE_FILE = f'{SOURCE_DIR}scap_novx_.py'
-TEST_FILE = f'{TEST_DIR}scap_novx.py'
-NVLIB = 'nvlib'
-NV_PATH = '../../novelibre/src/'
-NOVXLIB = 'novxlib'
-NOVX_PATH = '../../novxlib/src/'
+sys.path.insert(0, f'{os.getcwd()}/../../novelibre/tools')
+from package_builder import PackageBuilder
+
+VERSION = '2.2.4'
 
 
-def inline_modules():
-    inliner.run(SOURCE_FILE, TEST_FILE, 'scapnovxlib', '../src/')
-    inliner.run(TEST_FILE, TEST_FILE, NOVXLIB, NOVX_PATH)
-    print('Done.')
+class ApplicationBuilder(PackageBuilder):
+
+    PRJ_NAME = 'scap_novx'
+    LOCAL_LIB = 'scapnovxlib'
+
+    def __init__(self, version):
+        super().__init__(version)
+        self.distFiles.append(
+            (f'{self.sourceDir}relocate.py', self.buildDir)
+            )
+        self.sourceFile = f'{self.sourceDir}{self.PRJ_NAME}_.py'
+        self.iconDir = '../icons'
+
+    def add_extras(self):
+        self.add_icons()
+        self.add_sample()
+
+    def add_sample(self):
+        print('\nAdding sample files ...')
+        SAMPLE_DIR = '../sample'
+        copytree(SAMPLE_DIR, f'{self.buildDir}/sample')
 
 
 def main():
-    os.makedirs(TEST_DIR, exist_ok=True)
-    inline_modules()
+    ab = ApplicationBuilder(VERSION)
+    ab.run()
 
 
 if __name__ == '__main__':
     main()
+
