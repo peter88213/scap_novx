@@ -158,8 +158,8 @@ def main(zipped=True):
     os.chdir(scriptDir)
 
     # Open a tk window.
-    root.geometry("800x600")
-    root.title(f'Install {APPNAME}{VERSION}')
+    root.title('Setup')
+    output(f'*** Installing {APPNAME}{VERSION} ***\n')
     header = Label(root, text='')
     header.pack(padx=5, pady=5)
 
