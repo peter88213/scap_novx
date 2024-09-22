@@ -7,7 +7,12 @@ assignees: ''
 
 ---
 
-**Application/script**
+When you want to report a bug:
+- Please make sure you have installed the latest version. If not, the issue might already be fixed.
+- Please consult the novelibre manual to make sure that the observed behavior is actually incorrect. 
+- Please fill out the form below completely so that the error can be understood and reproduced. 
+
+**Application**
 - Version [e.g. v0.1.0]
 
 **Describe the bug**
