@@ -4,20 +4,20 @@ Copyright (c) 2024 Peter Triesberger
 For further information see https://github.com/peter88213/scap_novx
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-from novxlib.model.chapter import Chapter
-from novxlib.model.character import Character
-from novxlib.model.section import Section
-from novxlib.model.world_element import WorldElement
-from novxlib.novx.novx_file import NovxFile
-from novxlib.novx_globals import CHAPTER_PREFIX
-from novxlib.novx_globals import CHARACTER_PREFIX
-from novxlib.novx_globals import CH_ROOT
-from novxlib.novx_globals import CR_ROOT
-from novxlib.novx_globals import ITEM_PREFIX
-from novxlib.novx_globals import IT_ROOT
-from novxlib.novx_globals import LC_ROOT
-from novxlib.novx_globals import LOCATION_PREFIX
-from novxlib.novx_globals import SECTION_PREFIX
+from nvlib.model.data.chapter import Chapter
+from nvlib.model.data.character import Character
+from nvlib.model.data.section import Section
+from nvlib.model.data.world_element import WorldElement
+from nvlib.model.novx.novx_file import NovxFile
+from nvlib.novx_globals import CHAPTER_PREFIX
+from nvlib.novx_globals import CHARACTER_PREFIX
+from nvlib.novx_globals import CH_ROOT
+from nvlib.novx_globals import CR_ROOT
+from nvlib.novx_globals import ITEM_PREFIX
+from nvlib.novx_globals import IT_ROOT
+from nvlib.novx_globals import LC_ROOT
+from nvlib.novx_globals import LOCATION_PREFIX
+from nvlib.novx_globals import SECTION_PREFIX
 from scapnovxlib.scap_note import ScapNote
 import xml.etree.ElementTree as ET
 
