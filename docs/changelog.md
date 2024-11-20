@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 5.0.0
+
+Library update:
+- Refactor the code for better maintainability.
+
+Based on novelibre 5.0.0
+
 ### Version 2.2.5
 
 Library update:
