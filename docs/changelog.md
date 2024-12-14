@@ -5,12 +5,12 @@
 ## Changelog
 
 
-### Version 5.0.0
+### Version 5.0.1
 
 Library update:
 - Refactor the code for better maintainability.
 
-Based on novelibre 5.0.0
+Based on novelibre 5.0.28
 
 ### Version 2.2.5
 
