@@ -1,6 +1,6 @@
 """Regression test for the scap_novx project.
 
-Copyright (c) 2024 Peter Triesberger
+Copyright (c) 2025 Peter Triesberger
 For further information see https://github.com/peter88213/scap_novx
 Published under the MIT License (https://opensource.org/licenses/mit-license.php)
 """
