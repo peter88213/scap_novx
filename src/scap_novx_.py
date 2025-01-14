@@ -12,7 +12,7 @@ import os
 from pathlib import Path
 import sys
 
-from mvclib.user_interface.ui_tk import UiTk
+from nvlib.gui.user_interface.ui_tk import UiTk
 from mvclib.view.ui import Ui
 from nvlib.configuration.configuration import Configuration
 from scapnovxlib.scap_converter import ScapConverter

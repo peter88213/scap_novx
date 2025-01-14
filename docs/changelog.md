@@ -5,6 +5,12 @@
 ## Changelog
 
 
+### Version 5.0.2
+
+- Fix import.
+
+Based on novelibre 5.9.1
+
 ### Version 5.0.1
 
 Library update:
