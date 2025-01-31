@@ -12,9 +12,9 @@ import os
 from pathlib import Path
 import sys
 
-from nvlib.gui.user_interface.ui_tk import UiTk
-from mvclib.view.ui import Ui
 from nvlib.configuration.configuration import Configuration
+from nvlib.gui.user_interface.ui import Ui
+from nvlib.gui.user_interface.ui_tk import UiTk
 from scapnovxlib.scap_converter import ScapConverter
 
 SUFFIX = ''
