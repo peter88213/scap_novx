@@ -1,16 +1,17 @@
-"""Install the scap_novx script. 
+"""scap_novx installer library module. 
 
 Version @release
 
-Copyright (c) 2024 Peter Triesberger
+Copyright (c) 2025 Peter Triesberger
 For further information see https://github.com/peter88213/scap_novx
 Published under the MIT License (https://opensource.org/licenses/mit-license.php)
 """
+from shutil import copytree
+from shutil import copy2
+import zipfile
 import os
 import sys
 import stat
-from shutil import copy2
-from shutil import copytree
 from shutil import rmtree
 from pathlib import Path
 from string import Template
@@ -49,6 +50,24 @@ root = Tk()
 processInfo = Label(root, text='')
 message = []
 
+pyz = os.path.dirname(__file__)
+
+
+def extract_file(sourceFile, targetDir):
+    with zipfile.ZipFile(pyz) as z:
+        z.extract(sourceFile, targetDir)
+
+
+def extract_tree(sourceDir, targetDir):
+    with zipfile.ZipFile(pyz) as z:
+        for file in z.namelist():
+            if file.startswith(f'{sourceDir}/'):
+                z.extract(file, targetDir)
+
+
+def cp_tree(sourceDir, targetDir):
+    copytree(sourceDir, f'{targetDir}/{sourceDir}', dirs_exist_ok=True)
+
 
 def output(text):
     message.append(text)
@@ -73,16 +92,23 @@ def open_folder(installDir):
                 pass
 
 
-def install(novelibrePath):
+def install(novxPath, zipped):
     """Install the script."""
+    if zipped:
+        copy_file = extract_file
+        copy_tree = extract_tree
+    else:
+        copy_file = copy2
+        copy_tree = cp_tree
+
     #--- Relocate the v1.x installation directory, if necessary.
     message = relocate.main()
     if message:
         messagebox.showinfo('Moving the novelibre installation directory', message)
 
     # Create a general novelibre installation directory, if necessary.
-    os.makedirs(novelibrePath, exist_ok=True)
-    installDir = f'{novelibrePath}{APPNAME}'
+    os.makedirs(novxPath, exist_ok=True)
+    installDir = f'{novxPath}{APPNAME}'
     cnfDir = f'{installDir}{INI_PATH}'
     if os.path.isfile(f'{installDir}/{APP}'):
         simpleUpdate = True
@@ -92,23 +118,30 @@ def install(novelibrePath):
 
     # Delete the old version, but retain configuration, if any.
     rmtree(f'{installDir}/icons', ignore_errors=True)
+    rmtree(f'{installDir}/sample', ignore_errors=True)
     with os.scandir(installDir) as files:
         for file in files:
-            if not 'config' in file.name:
-                os.remove(file)
-                output(f'Removing "{file.name}"')
+            if 'config' in file.name:
+                continue
+
+            os.remove(file)
+            output(f'Removing "{file.name}"')
 
     # Install the new version.
-    copy2(APP, f'{installDir}/{APP}')
-    output(f'Copying "{APP}"')
+    output(f'Copying "{APP}" ...')
+    copy_file(APP, installDir)
 
     # Install the icon files.
-    copytree('icons', f'{installDir}/icons', dirs_exist_ok=True)
-    output(f'Copying "icons"')
+    output('Copying icons ...')
+    copy_tree('icons', installDir)
 
     # Make the script executable under Linux.
     st = os.stat(f'{installDir}/{APP}')
     os.chmod(f'{installDir}/{APP}', st.st_mode | stat.S_IEXEC)
+
+    # Provide the sample files.
+    output('Copying sample files ...')
+    copy_tree('sample', installDir)
 
     # Display a success message.
     mapping = {'Appname': APPNAME, 'Apppath': f'{installDir}/{APP}'}
@@ -119,14 +152,14 @@ def install(novelibrePath):
         output(Template(SHORTCUT_MESSAGE).safe_substitute(mapping))
 
 
-if __name__ == '__main__':
+def main(zipped=True):
     scriptPath = os.path.abspath(sys.argv[0])
     scriptDir = os.path.dirname(scriptPath)
     os.chdir(scriptDir)
 
     # Open a tk window.
-    root.geometry("800x600")
-    root.title(f'Install {APPNAME}{VERSION}')
+    root.title('Setup')
+    output(f'*** Installing {APPNAME}{VERSION} ***\n')
     header = Label(root, text='')
     header.pack(padx=5, pady=5)
 
@@ -135,9 +168,9 @@ if __name__ == '__main__':
 
     # Run the installation.
     homePath = str(Path.home()).replace('\\', '/')
-    novelibrePath = f'{homePath}/.novx/'
+    novxPath = f'{homePath}/.novx/'
     try:
-        install(novelibrePath)
+        install(novxPath, zipped)
     except Exception as ex:
         output(str(ex))
 

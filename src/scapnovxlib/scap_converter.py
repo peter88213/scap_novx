@@ -1,15 +1,15 @@
 """Provide a Scapple converter class for Scapple diagram import. 
 
-Copyright (c) 2024 Peter Triesberger
+Copyright (c) 2025 Peter Triesberger
 For further information see https://github.com/peter88213/scap_novx
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
 
-from novxlib.model.novel import Novel
-from novxlib.model.nv_tree import NvTree
-from novxlib.novx.data_writer import DataWriter
-from novxlib.novx.novx_file import NovxFile
+from nvlib.model.data.novel import Novel
+from nvlib.model.data.nv_tree import NvTree
+from nvlib.model.novx.data_writer import DataWriter
+from nvlib.model.novx.novx_file import NovxFile
 from scapnovxlib.scap_file import ScapFile
 
 

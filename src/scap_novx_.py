@@ -4,16 +4,17 @@ usage: scap_novx.py [--silent] Sourcefile
 
 Version @release
 Requires Python 3.6+
-Copyright (c) 2024 Peter Triesberger
+Copyright (c) 2025 Peter Triesberger
 For further information see https://github.com/peter88213/scap_novx
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
-import sys
 from pathlib import Path
-from novxlib.ui.ui import Ui
-from novxlib.ui.ui_tk import UiTk
-from novxlib.config.configuration import Configuration
+import sys
+
+from nvlib.configuration.configuration import Configuration
+from nvlib.user_interface.ui import Ui
+from nvlib.user_interface.ui_tk import UiTk
 from scapnovxlib.scap_converter import ScapConverter
 
 SUFFIX = ''

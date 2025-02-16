@@ -1,26 +1,26 @@
 """Provide a class for Scapple file representation.
 
-Copyright (c) 2024 Peter Triesberger
+Copyright (c) 2025 Peter Triesberger
 For further information see https://github.com/peter88213/scap_novx
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-from novxlib.model.chapter import Chapter
-from novxlib.model.character import Character
-from novxlib.model.section import Section
-from novxlib.model.world_element import WorldElement
-from novxlib.novx.novx_file import NovxFile
-from novxlib.novx_globals import ARC_PREFIX
-from novxlib.novx_globals import ARC_POINT_PREFIX
-from novxlib.novx_globals import CHAPTER_PREFIX
-from novxlib.novx_globals import CHARACTER_PREFIX
-from novxlib.novx_globals import CH_ROOT
-from novxlib.novx_globals import AC_ROOT
-from novxlib.novx_globals import CR_ROOT
-from novxlib.novx_globals import ITEM_PREFIX
-from novxlib.novx_globals import IT_ROOT
-from novxlib.novx_globals import LC_ROOT
-from novxlib.novx_globals import LOCATION_PREFIX
-from novxlib.novx_globals import SECTION_PREFIX
+from nvlib.model.data.chapter import Chapter
+from nvlib.model.data.character import Character
+from nvlib.model.data.section import Section
+from nvlib.model.data.world_element import WorldElement
+from nvlib.model.novx.novx_file import NovxFile
+from nvlib.novx_globals import CHAPTER_PREFIX
+from nvlib.novx_globals import CHARACTER_PREFIX
+from nvlib.novx_globals import CH_ROOT
+from nvlib.novx_globals import CR_ROOT
+from nvlib.novx_globals import ITEM_PREFIX
+from nvlib.novx_globals import IT_ROOT
+from nvlib.novx_globals import LC_ROOT
+from nvlib.novx_globals import LOCATION_PREFIX
+from nvlib.novx_globals import PLOT_LINE_PREFIX
+from nvlib.novx_globals import PLOT_POINT_PREFIX
+from nvlib.novx_globals import PL_ROOT
+from nvlib.novx_globals import SECTION_PREFIX
 from scapnovxlib.scap_note import ScapNote
 import xml.etree.ElementTree as ET
 
@@ -35,9 +35,6 @@ class ScapFile(NovxFile):
     EXTENSION = '.scap'
     DESCRIPTION = 'Scapple diagram'
     SUFFIX = ''
-
-    # Events assigned to the "narrative arc" (case insensitive) become
-    # regular sections, the others become Notes sections.
 
     def __init__(self, filePath, **kwargs):
         """Initialize instance variables and ScapNote class variables.
@@ -98,7 +95,7 @@ class ScapFile(NovxFile):
             if note.isSection:
                 if self._exportSections:
                     scId = f'{SECTION_PREFIX}{note.uid}'
-                    self.novel.sections[scId] = Section(scPacing=0)
+                    self.novel.sections[scId] = Section(scene=0)
                     self.novel.sections[scId].title = note.text.strip()
                     self.novel.sections[scId].scType = 0
                     self.novel.sections[scId].status = 1
@@ -106,7 +103,7 @@ class ScapFile(NovxFile):
                     self.novel.sections[scId].sectionContent = '<p></p>'
             elif note.isArc:
                 if self._exportArcs:
-                    acId = f'{ARC_PREFIX}{note.uid}'
+                    acId = f'{PLOT_LINE_PREFIX}{note.uid}'
                     self.novel.arcs[acId] = Character()
                     arcTitle = note.text.strip().split(':', maxsplit=1)
                     if len(arcTitle) > 1:
@@ -115,10 +112,10 @@ class ScapFile(NovxFile):
                     else:
                         self.novel.arcs[acId].shortName = arcTitle[0][0]
                         self.novel.arcs[acId].title = arcTitle[0]
-                    self.novel.tree.append(AC_ROOT, acId)
+                    self.novel.tree.append(PL_ROOT, acId)
             elif note.isPoint:
                 if self._exportArcs:
-                    tpId = f'{ARC_POINT_PREFIX}{note.uid}'
+                    tpId = f'{PLOT_POINT_PREFIX}{note.uid}'
                     self.novel.arcs[tpId] = Character()
                     self.novel.arcs[tpId].title = note.text.strip()
                     self.novel.tree.append(acId, tpId)

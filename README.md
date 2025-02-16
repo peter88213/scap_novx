@@ -1,7 +1,7 @@
-[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v2.0.0.zip)
+[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v5.0.2.pyzw)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
-[![News](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions/1)
-[![Online help](docs/img/help-button.png)](docs/usage.md)
+[![News/Feedback](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions)
+[![User guide](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/scap_novx/)
 
 # ![S](icons/sLogo32.png) scap_novx
 
@@ -29,12 +29,32 @@ A Python script for creating new [novelibre](https://github.com/peter88213/novel
 
 ## Download and install
 
-[Download the latest release (version 2.0.0)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v2.0.0.zip)
+### Default: Executable Python zip archive
 
-- Unzip the downloaded zipfile "scap_novx_v2.0.0.zip" into a new folder.
-- Move into this new folder and launch **setup.pyw**. This installs the script for the local user.
-- Create a shortcut on the desktop when asked.
-- Open "README.md" for usage instructions.
+Download the latest release [scap_novx_v5.0.2.pyzw](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v5.0.2.pyzw)
+
+- Launch *scap_novx_v5.0.2.pyzw* by double-clicking (Windows/Linux desktop),
+- or execute `python scap_novx_v5.0.2.pyzw` (Windows), resp. `python3 scap_novx_v5.0.2.pyzw` (Linux) on the command line.
+
+#### Important
+
+Many web browsers recognize the download as an executable file and offer to open it immediately. 
+This starts the installation.
+
+However, depending on your security settings, your browser may 
+initially  refuse  to download the executable file. 
+In this case, your confirmation or an additional action is required. 
+If this is not possible, you have the option of downloading 
+the zip file. 
+
+
+### Alternative: Zip file
+
+The package is also available in zip format: [scap_novx_v5.0.2.zip](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v5.0.2.zip)
+
+- Extract the *scap_novx_v5.0.2* folder from the downloaded zipfile "scap_novx_v5.0.2.zip".
+- Move into this new folder and launch *setup.pyw* by double-clicking (Windows/Linux desktop), 
+- or execute `python setup.pyw` (Windows), resp. `python3 setup.pyw` (Linux) on the command line.
 
 ### Note for Linux users
 
@@ -46,12 +66,7 @@ Please make sure that your Python3 installation has the *tkinter* module. On Ubu
 
 ## Usage
 
-See the [instructions for use](docs/usage.md)
-
-## Credits
-
-- Frederik Lundh published the [xml pretty print algorithm](http://effbot.org/zone/element-lib.htm#prettyprint).
-
+See the [online manual](https://peter88213.github.io/nvhelp-en/scap_novx/)
 
 ## License
 

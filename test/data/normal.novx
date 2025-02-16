@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE novx SYSTEM "novx_1_0.dtd">
+<!DOCTYPE novx SYSTEM "novx_1_5.dtd">
 <?xml-stylesheet href="novx.css" type="text/css"?>
-<novx version="1.0" xml:lang="de-DE">
+<novx version="1.5" xml:lang="de-DE">
   <PROJECT />
   <CHAPTERS>
     <CHAPTER id="ch1">
@@ -40,16 +40,16 @@
     </CHARACTER>
     <CHARACTER id="cr4">
       <Title>Minor Character 2</Title>
-      <FullName>Minor Character 2</FullName>
       <Tags>Tag 2</Tags>
+      <FullName>Minor Character 2</FullName>
     </CHARACTER>
     <CHARACTER id="cr5" major="1">
       <Title>Major Character 2</Title>
-      <FullName>Major Character 2</FullName>
       <Notes>
         <p>Note 2</p>
       </Notes>
       <Tags>Tag 3</Tags>
+      <FullName>Major Character 2</FullName>
     </CHARACTER>
   </CHARACTERS>
   <LOCATIONS>
