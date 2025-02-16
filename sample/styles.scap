@@ -22,7 +22,7 @@
          <Sticky>Yes</Sticky>
          <FontSize>12.0</FontSize>
       </Style>
-      <Style ID="88498483-B343-4E92-80E0-1167653EF130" AffectTextColor="Yes" AffectFade="No" Name="Turning point" AffectAlignment="Yes" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="Yes">
+      <Style ID="88498483-B343-4E92-80E0-1167653EF130" AffectTextColor="Yes" AffectFade="No" Name="Plot point" AffectAlignment="Yes" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="Yes">
          <BorderStyle>Rounded</BorderStyle>
          <BorderColor>0.627451 0.164706 0.05098</BorderColor>
          <FillColor>0.996078 0.854902 0.627451</FillColor>
@@ -30,7 +30,7 @@
          <Size>74.6,21.1</Size>
          <FontSize>12.0</FontSize>
       </Style>
-      <Style ID="6B07E9D6-9DD6-4031-A3FC-E7CC41F17DE4" AffectTextColor="Yes" AffectFade="No" Name="Arc" AffectAlignment="Yes" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="Yes">
+      <Style ID="6B07E9D6-9DD6-4031-A3FC-E7CC41F17DE4" AffectTextColor="Yes" AffectFade="No" Name="Plot line" AffectAlignment="Yes" AffectSticky="Yes" AffectSize="No" AffectNoteBody="Yes" AffectFontStyle="Yes">
          <BorderThickness>1</BorderThickness>
          <BorderStyle>Rounded</BorderStyle>
          <BorderColor>0.627451 0.164706 0.05098</BorderColor>

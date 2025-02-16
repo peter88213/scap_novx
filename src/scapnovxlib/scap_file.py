@@ -55,7 +55,7 @@ class ScapFile(NovxFile):
         Extends the superclass constructor.
         """
         ScapNote.locationColor = kwargs['location_color']
-        ScapNote.arcColor = kwargs['arc_color']
+        ScapNote.plotLineColor = kwargs['plot_line_color']
         ScapNote.itemColor = kwargs['item_color']
         ScapNote.majorCharaColor = kwargs['major_chara_color']
         ScapNote.minorCharaColor = kwargs['minor_chara_color']
@@ -101,24 +101,24 @@ class ScapFile(NovxFile):
                     self.novel.sections[scId].status = 1
                     # Status = Outline
                     self.novel.sections[scId].sectionContent = '<p></p>'
-            elif note.isArc:
-                if self._exportArcs:
-                    acId = f'{PLOT_LINE_PREFIX}{note.uid}'
-                    self.novel.arcs[acId] = Character()
-                    arcTitle = note.text.strip().split(':', maxsplit=1)
-                    if len(arcTitle) > 1:
-                        self.novel.arcs[acId].shortName = arcTitle[0].strip()
-                        self.novel.arcs[acId].title = arcTitle[1].strip()
+            elif note.isPlotLine:
+                if self._exportPlotLines:
+                    plId = f'{PLOT_LINE_PREFIX}{note.uid}'
+                    self.novel.plotLines[plId] = Character()
+                    plotLineTitle = note.text.strip().split(':', maxsplit=1)
+                    if len(plotLineTitle) > 1:
+                        self.novel.plotLines[plId].shortName = plotLineTitle[0].strip()
+                        self.novel.plotLines[plId].title = plotLineTitle[1].strip()
                     else:
-                        self.novel.arcs[acId].shortName = arcTitle[0][0]
-                        self.novel.arcs[acId].title = arcTitle[0]
-                    self.novel.tree.append(PL_ROOT, acId)
-            elif note.isPoint:
-                if self._exportArcs:
-                    tpId = f'{PLOT_POINT_PREFIX}{note.uid}'
-                    self.novel.arcs[tpId] = Character()
-                    self.novel.arcs[tpId].title = note.text.strip()
-                    self.novel.tree.append(acId, tpId)
+                        self.novel.plotLines[plId].shortName = plotLineTitle[0][0]
+                        self.novel.plotLines[plId].title = plotLineTitle[0]
+                    self.novel.tree.append(PL_ROOT, plId)
+            elif note.isPlotPoint:
+                if self._exportPlotLines:
+                    ppId = f'{PLOT_POINT_PREFIX}{note.uid}'
+                    self.novel.plotPoints[ppId] = Character()
+                    self.novel.plotPoints[ppId].title = note.text.strip()
+                    self.novel.tree.append(plId, ppId)
                     # TODO: Create sorted lists of connected points
             elif note.isMajorChara:
                 if self._exportCharacters:

@@ -29,11 +29,11 @@ SETTINGS = dict(
     item_color=GREEN,
     major_chara_color=RED,
     minor_chara_color=PURPLE,
-    arc_color=SAND,
+    plot_line_color=SAND,
     )
 OPTIONS = dict(
     export_sections=True,
-    export_arcs=True,
+    export_plot_lines=True,
     export_characters=True,
     export_locations=True,
     export_items=True,

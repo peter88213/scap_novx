@@ -23,7 +23,7 @@ class ScapNote:
     Y_FACTOR = 100000
     # Sortable position = y * Y_FACTOR + x
     # This works if x and y are not greater than 9999.9
-    arcColor = None
+    plotLineColor = None
     locationColor = None
     itemColor = None
     majorCharaColor = None
@@ -32,8 +32,8 @@ class ScapNote:
     def __init__(self):
         self.text = None
         self.isSection = None
-        self.isArc = None
-        self.isPoint = None
+        self.isPlotLine = None
+        self.isPlotPoint = None
         self.isTag = None
         self.isNote = None
         self.isMajorChara = None
@@ -73,8 +73,8 @@ class ScapNote:
             return True
 
         self.isSection = False
-        self.isArc = False
-        self.isPoint = False
+        self.isPlotLine = False
+        self.isPlotPoint = False
         self.isTag = False
         self.isNote = False
         self.isMajorChara = False
@@ -105,11 +105,11 @@ class ScapNote:
             self.isTag = True
         elif borderStyle == 'Cloud':
             self.isNote = True
-        elif color_matches(self.textColor, self.arcColor):
+        elif color_matches(self.textColor, self.plotLineColor):
             if border is None:
-                self.isPoint = True
+                self.isPlotPoint = True
             else:
-                self.isArc = True
+                self.isPlotLine = True
         elif color_matches(self.textColor, self.majorCharaColor):
             self.isMajorChara = True
         elif color_matches(self.textColor, self.minorCharaColor):
