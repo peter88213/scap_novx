@@ -21,6 +21,8 @@ TEST_EXEC_PATH = TEST_PATH + '/'
 # To be placed in TEST_DATA_PATH:
 NORMAL_NOVX = TEST_DATA_PATH + 'normal.novx'
 NORMAL_SCAP = TEST_DATA_PATH + 'normal.scap'
+PLOTLINES_NOVX = TEST_DATA_PATH + 'plotlines.novx'
+PLOTLINES_SCAP = TEST_DATA_PATH + 'plotlines.scap'
 NORMAL_CHARACTERS_XML = TEST_DATA_PATH + 'normal_data_Characters.xml'
 NORMAL_LOCATIONS_XML = TEST_DATA_PATH + 'normal_data_Locations.xml'
 NORMAL_ITEMS_XML = TEST_DATA_PATH + 'normal_data_Items.xml'
@@ -91,11 +93,17 @@ class NormalOperation(unittest.TestCase):
 
         remove_all_testfiles()
 
-    def test_scap_to_new_yw(self):
+    def test_scap_to_normal(self):
         copyfile(NORMAL_SCAP, TEST_SCAP)
         os.chdir(TEST_EXEC_PATH)
         scap_novx_.main(TEST_SCAP, silentMode=True)
         self.assertEqual(read_file(TEST_NOVX), read_file(NORMAL_NOVX))
+
+    def test_scap_to_plotlines(self):
+        copyfile(PLOTLINES_SCAP, TEST_SCAP)
+        os.chdir(TEST_EXEC_PATH)
+        scap_novx_.main(TEST_SCAP, silentMode=True)
+        self.assertEqual(read_file(TEST_NOVX), read_file(PLOTLINES_NOVX))
 
     def test_scap_to_data(self):
         copyfile(NORMAL_SCAP, TEST_SCAP)

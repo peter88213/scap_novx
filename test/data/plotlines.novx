@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE novx SYSTEM "novx_1_5.dtd">
+<?xml-stylesheet href="novx.css" type="text/css"?>
+<novx version="1.5" xml:lang="de-DE">
+  <PROJECT />
+  <CHAPTERS>
+    <CHAPTER id="ch1">
+      <Title>Chapter 1</Title>
+      <SECTION id="sc9">
+        <Title>Walking into the living room</Title>
+      </SECTION>
+      <SECTION id="sc11">
+        <Title>She’s gone, took all his money</Title>
+      </SECTION>
+      <SECTION id="sc10">
+        <Title>Showdown</Title>
+      </SECTION>
+    </CHAPTER>
+  </CHAPTERS>
+  <CHARACTERS />
+  <LOCATIONS />
+  <ITEMS />
+  <ARCS>
+    <ARC id="ac1">
+      <Title>Protagonist’s character arc</Title>
+      <ShortName>A</ShortName>
+      <Sections ids="sc11" />
+      <POINT id="ap2">
+        <Title>catalyst</Title>
+        <Section id="sc11" />
+      </POINT>
+      <POINT id="ap3">
+        <Title>First challenge</Title>
+      </POINT>
+      <POINT id="ap4">
+        <Title>Second challenge</Title>
+      </POINT>
+      <POINT id="ap5">
+        <Title>Climax</Title>
+      </POINT>
+    </ARC>
+    <ARC id="ac6">
+      <Title>Chekhov’s Gun</Title>
+      <ShortName>B</ShortName>
+      <Sections ids="sc9 sc10" />
+      <POINT id="ap7">
+        <Title>Gun is seen hanging on the wall</Title>
+        <Section id="sc9" />
+      </POINT>
+      <POINT id="ap8">
+        <Title>Gun is fired</Title>
+        <Section id="sc10" />
+      </POINT>
+    </ARC>
+  </ARCS>
+  <PROJECTNOTES />
+</novx>

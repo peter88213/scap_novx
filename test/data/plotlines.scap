@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ScappleDocument ID="75945489-BE47-4953-B550-A75A7F6A8603" Version="1.2">
+   <Notes>
+      <Note ID="0" Position="109.4,59.4" FontSize="12" Width="151.172">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <TextColor>0.627451 0.164706 0.05098</TextColor>
+            <Fill>0.996078 0.854902 0.627451</Fill>
+            <Border Style="Rounded" Weight="1">0.627451 0.164706 0.05098</Border>
+         </Appearance>
+         <String>A:Protagonist’s character arc</String>
+         <ConnectedNoteIDs>1</ConnectedNoteIDs>
+      </Note>
+      <Note ID="1" Position="79.7,125.0" FontSize="12" Width="45.7031">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <TextColor>0.627451 0.164706 0.05098</TextColor>
+            <Fill>0.996078 0.854902 0.627451</Fill>
+            <Border Style="Rounded" Weight="0">0.627451 0.164706 0.05098</Border>
+         </Appearance>
+         <String>catalyst</String>
+         <ConnectedNoteIDs>0, 2, 10</ConnectedNoteIDs>
+      </Note>
+      <Note ID="2" Position="174.2,218.8" FontSize="12" Width="79.2969">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <TextColor>0.627451 0.164706 0.05098</TextColor>
+            <Fill>0.996078 0.854902 0.627451</Fill>
+            <Border Style="Rounded" Weight="0">0.627451 0.164706 0.05098</Border>
+         </Appearance>
+         <String>First challenge</String>
+         <ConnectedNoteIDs>1, 3</ConnectedNoteIDs>
+      </Note>
+      <Note ID="3" Position="224.9,435.9" FontSize="12" Width="94.1406">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <TextColor>0.627451 0.164706 0.05098</TextColor>
+            <Fill>0.996078 0.854902 0.627451</Fill>
+            <Border Style="Rounded" Weight="0">0.627451 0.164706 0.05098</Border>
+         </Appearance>
+         <String>Second challenge</String>
+         <ConnectedNoteIDs>2, 4</ConnectedNoteIDs>
+      </Note>
+      <Note ID="4" Position="85.9,179.7" FontSize="12" Width="41.7969">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <TextColor>0.627451 0.164706 0.05098</TextColor>
+            <Fill>0.996078 0.854902 0.627451</Fill>
+            <Border Style="Rounded" Weight="0">0.627451 0.164706 0.05098</Border>
+         </Appearance>
+         <String>Climax</String>
+         <ConnectedNoteIDs>3</ConnectedNoteIDs>
+      </Note>
+      <Note ID="5" Position="36.7,312.5" FontSize="12" Width="91.0156">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <TextColor>0.627451 0.164706 0.05098</TextColor>
+            <Fill>0.996078 0.854902 0.627451</Fill>
+            <Border Style="Rounded" Weight="1">0.627451 0.164706 0.05098</Border>
+         </Appearance>
+         <String>B:Chekhov’s Gun</String>
+         <ConnectedNoteIDs>6</ConnectedNoteIDs>
+      </Note>
+      <Note ID="6" Position="510.9,191.4" FontSize="12" Width="156.25">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <TextColor>0.627451 0.164706 0.05098</TextColor>
+            <Fill>0.996078 0.854902 0.627451</Fill>
+            <Border Style="Rounded" Weight="0">0.627451 0.164706 0.05098</Border>
+         </Appearance>
+         <String>Gun is seen hanging on the wall</String>
+         <ConnectedNoteIDs>5, 7-8</ConnectedNoteIDs>
+      </Note>
+      <Note ID="7" Position="424.2,52.3" FontSize="12" Width="63.6719">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <TextColor>0.627451 0.164706 0.05098</TextColor>
+            <Fill>0.996078 0.854902 0.627451</Fill>
+            <Border Style="Rounded" Weight="0">0.627451 0.164706 0.05098</Border>
+         </Appearance>
+         <String>Gun is fired</String>
+         <ConnectedNoteIDs>6, 9</ConnectedNoteIDs>
+      </Note>
+      <Note ID="8" Position="243.7,18.0" Shadow="Yes" FontSize="12" Width="150.391">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="1"/>
+         </Appearance>
+         <String>Walking into the living room</String>
+         <ConnectedNoteIDs>6</ConnectedNoteIDs>
+      </Note>
+      <Note ID="9" Position="295.3,354.0" Shadow="Yes" FontSize="12" Width="60.5469">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="1"/>
+         </Appearance>
+         <String>Showdown</String>
+         <ConnectedNoteIDs>7</ConnectedNoteIDs>
+      </Note>
+      <Note ID="10" Position="250.8,110.9" Shadow="Yes" FontSize="12" Width="156.25">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="1"/>
+         </Appearance>
+         <String>She’s gone, took all his money</String>
+         <ConnectedNoteIDs>1</ConnectedNoteIDs>
+      </Note>
+   </Notes>
+   <AutoFit>0-5, 7-9</AutoFit>
+   <NoteStyles>
+      <Style AffectNoteBody="Yes" AffectTextColor="Yes" AffectFontStyle="No" ID="45F5155C-524B-44AC-B0E3-AE26A1FE95B4" AffectSticky="Yes" Name="MinorCharacter" AffectAlignment="No" AffectFade="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.500008 0.0 0.500008</BorderColor>
+         <FillColor>0.92549 0.721569 1.0</FillColor>
+         <TextColor>0.500008 0.0 0.500008</TextColor>
+         <Size>171.6,-1.7</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectNoteBody="Yes" AffectTextColor="No" AffectFontStyle="No" ID="014A31AD-34CA-4753-89ED-964CB534ECA6" AffectSticky="Yes" Name="Note" AffectAlignment="No" AffectFade="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Cloud</BorderStyle>
+         <Size>256.0,-1.3</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectNoteBody="Yes" AffectTextColor="Yes" AffectFontStyle="Yes" ID="6B07E9D6-9DD6-4031-A3FC-E7CC41F17DE4" AffectSticky="Yes" Name="Plot line" AffectAlignment="Yes" AffectFade="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.627451 0.164706 0.05098</BorderColor>
+         <FillColor>0.996078 0.854902 0.627451</FillColor>
+         <TextColor>0.627451 0.164706 0.05098</TextColor>
+         <Size>23.8,21.1</Size>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectNoteBody="Yes" AffectTextColor="Yes" AffectFontStyle="No" ID="86A8B969-3AFF-4533-99E6-4A0D0AE2D4E8" AffectSticky="Yes" Name="Tag" AffectAlignment="No" AffectFade="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Square</BorderStyle>
+         <BorderColor>0.300008 0.300008 0.0</BorderColor>
+         <FillColor>1.0 0.988235 0.827451</FillColor>
+         <TextColor>0.300008 0.300008 0.0</TextColor>
+         <Size>51.3,-1.7</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectNoteBody="Yes" AffectTextColor="Yes" AffectFontStyle="No" ID="27DAD4E9-6419-4704-8465-D368EFCD76C1" AffectSticky="Yes" Name="Item" AffectAlignment="No" AffectFade="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.0 0.500008 0.0</BorderColor>
+         <FillColor>0.839216 0.917647 0.792157</FillColor>
+         <TextColor>0.0 0.500008 0.0</TextColor>
+         <Size>171.6,-1.7</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectNoteBody="Yes" AffectTextColor="Yes" AffectFontStyle="Yes" ID="88498483-B343-4E92-80E0-1167653EF130" AffectSticky="Yes" Name="Plot point" AffectAlignment="Yes" AffectFade="No" AffectSize="No">
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.627451 0.164706 0.05098</BorderColor>
+         <FillColor>0.996078 0.854902 0.627451</FillColor>
+         <TextColor>0.627451 0.164706 0.05098</TextColor>
+         <Size>74.6,21.1</Size>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectNoteBody="Yes" AffectTextColor="Yes" AffectFontStyle="No" ID="C5449001-4357-4EAA-B6DF-3D1DABCD2C2A" AffectSticky="Yes" Name="Location" AffectAlignment="No" AffectFade="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.0 0.0 1.0</BorderColor>
+         <FillColor>0.788235 0.858824 0.988235</FillColor>
+         <TextColor>0.0 0.0 1.0</TextColor>
+         <Size>171.6,-1.7</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectNoteBody="Yes" AffectTextColor="Yes" AffectFontStyle="No" ID="F688F8DB-0230-4B22-8A41-2C4CE7CB4AE5" AffectSticky="Yes" Name="MajorCharacter" AffectAlignment="No" AffectFade="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>1.0 0.0 0.0</BorderColor>
+         <FillColor>0.996078 0.811765 0.819608</FillColor>
+         <TextColor>1.0 0.0 0.0</TextColor>
+         <Size>171.6,-1.7</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectNoteBody="Yes" AffectTextColor="No" AffectFontStyle="No" ID="915AC8C0-A028-405C-B518-5A5F4631BF53" AffectSticky="Yes" Name="Section" AffectAlignment="No" AffectFade="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <Size>1417.2,-26.1</Size>
+         <Sticky>Yes</Sticky>
+         <Shadow>Yes</Shadow>
+         <FontSize>12.0</FontSize>
+      </Style>
+   </NoteStyles>
+   <UISettings>
+      <BackgroundColor>1.0 0.988006 0.945006</BackgroundColor>
+      <DefaultFont>Calibri</DefaultFont>
+      <DefaultTextColor>0.0 0.0 0.0</DefaultTextColor>
+      <NoteXPadding>4.00</NoteXPadding>
+      <LeftToRight>Yes</LeftToRight>
+   </UISettings>
+   <PrintSettings TopMargin="12.000000" Orientation="Portrait" VerticalPagination="Auto" VerticallyCentered="Yes" PagesDown="1" Collates="Yes" LeftMargin="12.000000" PaperType="iso-a4" ScaleFactor="1.000000" BottomMargin="12.000000" RightMargin="12.000000" PagesAcross="1" HorizontalPagination="Clip" PaperSize="-1.000000,-1.000000" HorizontallyCentered="Yes"/>
+</ScappleDocument>
