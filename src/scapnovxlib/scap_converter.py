@@ -7,9 +7,9 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 import os
 
 from nvlib.model.data.novel import Novel
-from nvlib.model.data.nv_tree import NvTree
 from nvlib.model.novx.data_writer import DataWriter
 from nvlib.model.novx.novx_file import NovxFile
+from scapnovxlib.sc_nv_tree import ScNvTree
 from scapnovxlib.scap_file import ScapFile
 
 
@@ -34,7 +34,7 @@ class ScapConverter:
             else:
                 target = DataWriter(f'{fileName}{DataWriter.SUFFIX}{DataWriter.EXTENSION}', **kwargs)
             source = ScapFile(sourcePath, **kwargs)
-            source.novel = Novel(tree=NvTree())
+            source.novel = Novel(tree=ScNvTree())
             source.read()
             target.novel = source.novel
             target.write()

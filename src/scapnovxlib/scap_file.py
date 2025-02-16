@@ -185,7 +185,7 @@ class ScapFile(NovxFile):
             if scId in self.novel.sections:
                 self.novel.tree.append(chId, scId)
 
-        #--- Assign characters/locations/items/tags/notes to the sections.
+        #--- Assign characters/locations/items/tags/notes/plot lines/points to the sections.
         for scId in self.novel.sections:
             scCharacters = []
             scLocations = []
@@ -209,6 +209,7 @@ class ScapFile(NovxFile):
                 if crId in self.novel.characters:
                     if scId[2:] in scapNotes[uid].pointTo:
                         scCharacters.insert(0, crId)
+                        # setting the viewpoint
                     else:
                         scCharacters.append(crId)
                     continue
@@ -236,6 +237,18 @@ class ScapFile(NovxFile):
             self.novel.sections[scId].tags = scTags
             self.novel.sections[scId].notes = sectionNotes
             self.novel.sections[scId].plotLines = scPlotLines
+            for ppId in scPlotPoints:
+                plId = self.novel.tree.parent(ppId)
+                self.novel.sections[scId].scPlotPoints[ppId] = plId
+                self.novel.plotPoints[ppId].sectionAssoc = scId
+                if not plId in scPlotLines:
+                    scPlotLines.append(plId)
+            for plId in scPlotLines:
+                plSections = self.novel.plotLines[plId].sections
+                if plSections is None:
+                    plSections = []
+                plSections.append(scId)
+                self.novel.plotLines[plId].sections = plSections
 
         #--- Assign tags/notes to the characters.
         for crId in self.novel.characters:
