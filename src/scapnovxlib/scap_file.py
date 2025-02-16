@@ -6,6 +6,8 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 from nvlib.model.data.chapter import Chapter
 from nvlib.model.data.character import Character
+from nvlib.model.data.plot_line import PlotLine
+from nvlib.model.data.plot_point import PlotPoint
 from nvlib.model.data.section import Section
 from nvlib.model.data.world_element import WorldElement
 from nvlib.model.novx.novx_file import NovxFile
@@ -64,6 +66,7 @@ class ScapFile(NovxFile):
         self._exportCharacters = kwargs['export_characters']
         self._exportLocations = kwargs['export_locations']
         self._exportItems = kwargs['export_items']
+        self._exportPlotLines = kwargs['export_plot_lines']
 
     def read(self):
         """Parse the Scapple xml file, fetching the Novel attributes.
@@ -110,7 +113,7 @@ class ScapFile(NovxFile):
                     continue
 
                 plId = f'{PLOT_LINE_PREFIX}{note.uid}'
-                self.novel.plotLines[plId] = Character()
+                self.novel.plotLines[plId] = PlotLine()
                 plotLineTitle = note.text.strip().split(':', maxsplit=1)
                 if len(plotLineTitle) > 1:
                     self.novel.plotLines[plId].shortName = plotLineTitle[0].strip()
@@ -126,7 +129,7 @@ class ScapFile(NovxFile):
                     continue
 
                 ppId = f'{PLOT_POINT_PREFIX}{note.uid}'
-                self.novel.plotPoints[ppId] = Character()
+                self.novel.plotPoints[ppId] = PlotPoint()
                 self.novel.plotPoints[ppId].title = note.text.strip()
                 self.novel.tree.append(plId, ppId)
                 # TODO: Create sorted lists of connected points

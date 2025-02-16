@@ -91,14 +91,16 @@ class ScapNote:
         scappId = xmlNote.attrib['ID']
         self.uid = str(int(scappId) + 1)
         appearance = xmlNote.find('Appearance')
+
         color = appearance.find('TextColor')
         if color is not None:
             self.textColor = color.text
+
         border = appearance.find('Border')
         if border is not None:
-            borderStyle = border.attrib['Style']
-        else:
-            borderStyle = ''
+            borderStyle = border.attrib.get('Style', '')
+            borderWeight = border.attrib.get('Weight', '0')
+
         if 'Shadow' in xmlNote.attrib:
             self.isSection = True
         elif borderStyle == 'Square':
@@ -106,7 +108,7 @@ class ScapNote:
         elif borderStyle == 'Cloud':
             self.isNote = True
         elif color_matches(self.textColor, self.plotLineColor):
-            if border is None:
+            if borderWeight == '0':
                 self.isPlotPoint = True
             else:
                 self.isPlotLine = True
