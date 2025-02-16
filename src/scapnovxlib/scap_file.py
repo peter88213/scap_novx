@@ -132,7 +132,6 @@ class ScapFile(NovxFile):
                 self.novel.plotPoints[ppId] = PlotPoint()
                 self.novel.plotPoints[ppId].title = note.text.strip()
                 self.novel.tree.append(plId, ppId)
-                # TODO: Create sorted lists of connected points
                 continue
 
             if note.isMajorChara:
@@ -236,6 +235,7 @@ class ScapFile(NovxFile):
             self.novel.sections[scId].items = scItems
             self.novel.sections[scId].tags = scTags
             self.novel.sections[scId].notes = sectionNotes
+            self.novel.sections[scId].plotLines = scPlotLines
 
         #--- Assign tags/notes to the characters.
         for crId in self.novel.characters:
