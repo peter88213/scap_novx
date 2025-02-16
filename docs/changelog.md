@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### Version 5.1.0
+
+- Converting arcs and turning points (#1)
+
+Based on novelibre 5.12.2
+
 
 ### Version 5.0.2
 
