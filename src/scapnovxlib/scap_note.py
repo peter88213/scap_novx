@@ -14,7 +14,7 @@ class ScapNote:
         isSection -- bool: True, if the note represents a novelibre section.
         isTag -- bool: True, if the note represents a novelibre tag.
         isNote -- bool: True, if the note represents a novelibre note.
-        textColor -- str: text color; RGB components in a single string.
+        self.textColor -- str: text color; RGB components in a single string.
         connections -- list of connected note IDs.
         pointTo -- list of note IDs pointed to.
         position -- float: combined x/y position.
@@ -40,6 +40,7 @@ class ScapNote:
         self.isMinorChara = None
         self.isLocation = None
         self.isItem = None
+        self.isDescription = None
         self.textColor = None
         self.connections = None
         self.pointTo = None
@@ -81,6 +82,7 @@ class ScapNote:
         self.isMinorChara = False
         self.isLocation = False
         self.isItem = False
+        self.isDescription = False
         self.textColor = ''
         self.text = xmlNote.find('String').text
         positionStr = xmlNote.attrib['Position'].split(',')
@@ -100,6 +102,9 @@ class ScapNote:
         if border is not None:
             borderStyle = border.attrib.get('Style', '')
             borderWeight = border.attrib.get('Weight', '0')
+        else:
+            borderStyle = ''
+            borderWeight = '0'
 
         if 'Shadow' in xmlNote.attrib:
             self.isSection = True
@@ -120,6 +125,8 @@ class ScapNote:
             self.isLocation = True
         elif color_matches(self.textColor, self.itemColor):
             self.isItem = True
+        elif borderWeight == '0':
+            self.isDescription = True
 
         #--- Create a list of connected notes.
         self.connections = []

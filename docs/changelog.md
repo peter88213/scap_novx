@@ -4,6 +4,14 @@
 
 ## Changelog
 
+
+### Version 5.2.0
+
+- Converting connected plain notes as description (#2).
+
+Based on novelibre 5.16.0
+
+
 ### Version 5.1.1
 
 - Refactored for novelibre API 5.16 (#1)

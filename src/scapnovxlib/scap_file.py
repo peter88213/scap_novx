@@ -32,7 +32,7 @@ class ScapFile(NovxFile):
 
     Represents a scap file containing an outline according to the conventions.
     - Sections are shadowed.
-    - Characters/locations/items are textColor-coded.
+    - Characters/locations/items are color-coded.
     """
     EXTENSION = '.scap'
     DESCRIPTION = 'Scapple diagram'
@@ -88,6 +88,7 @@ class ScapFile(NovxFile):
         #--- Parse Scapple notes.
         scapNotes = {}
         uidByPos = {}
+        descriptions = {}
         for xmlNote in root.iter('Note'):
             note = ScapNote()
             note.parse_xml(xmlNote)
@@ -178,6 +179,9 @@ class ScapFile(NovxFile):
                 self.novel.tree.append(IT_ROOT, itId)
                 continue
 
+            if note.isDescription:
+                descriptions[note.uid] = note.text.strip()
+
         #--- Sort notes by position.
         srtNotes = sorted(uidByPos.items())
         for srtNote in srtNotes:
@@ -185,7 +189,7 @@ class ScapFile(NovxFile):
             if scId in self.novel.sections:
                 self.novel.tree.append(chId, scId)
 
-        #--- Assign characters/locations/items/tags/notes/plot lines/points to the sections.
+        #--- Assign characters/locations/items/tags/notes/plot lines/points to the sections; set description.
         for scId in self.novel.sections:
             scCharacters = []
             scLocations = []
@@ -249,8 +253,11 @@ class ScapFile(NovxFile):
                     plSections = []
                 plSections.append(scId)
                 self.novel.plotLines[plId].sections = plSections
+            for uid in scapNotes[scId[2:]].connections:
+                if scapNotes[uid].isDescription:
+                    self.novel.sections[scId].desc = descriptions.get(uid, None)
 
-        #--- Assign tags/notes to the characters.
+        #--- Assign tags/notes to the characters; set description.
         for crId in self.novel.characters:
             characterTags = []
             characterNotes = ''
@@ -259,25 +266,44 @@ class ScapFile(NovxFile):
                     characterTags.append(scapNotes[uid].text)
                 elif scapNotes[uid].isNote:
                     characterNotes = f'{characterNotes}{scapNotes[uid].text}'
+                elif scapNotes[uid].isDescription:
+                    self.novel.characters[crId].desc = descriptions.get(uid, None)
             self.novel.characters[crId].tags = characterTags
             self.novel.characters[crId].notes = characterNotes
 
-        #--- Assign tags to the locations.
+        #--- Assign tags to the locations; set description.
         for lcId in self.novel.locations:
             locationTags = []
             for uid in scapNotes[lcId[2:]].connections:
                 if scapNotes[uid].isTag:
                     locationTags.append(scapNotes[uid].text)
+                elif scapNotes[uid].isDescription:
+                    self.novel.locations[lcId].desc = descriptions.get(uid, None)
             self.novel.locations[lcId].tags = locationTags
 
-        #--- Assign tags to the items.
+        #--- Assign tags to the items; set description.
         for itId in self.novel.items:
             itemTags = []
             for uid in scapNotes[itId[2:]].connections:
                 if scapNotes[uid].isTag:
                     itemTags.append(scapNotes[uid].text)
+                elif scapNotes[uid].isDescription:
+                    self.novel.items[itId].desc = descriptions.get(uid, None)
             self.novel.items[itId].tags = itemTags
+
+        #--- Set plot line description.
+        for plId in self.novel.plotLines:
+            for uid in scapNotes[plId[2:]].connections:
+                if scapNotes[uid].isDescription:
+                    self.novel.plotLines[plId].desc = descriptions.get(uid, None)
+
+        #--- Set plot point description.
+        for ppId in self.novel.plotPoints:
+            for uid in scapNotes[ppId[2:]].connections:
+                if scapNotes[uid].isDescription:
+                    self.novel.plotPoints[ppId].desc = descriptions.get(uid, None)
 
         self.novel.check_locale()
 
         return 'Scapple data converted to novel structure.'
+
