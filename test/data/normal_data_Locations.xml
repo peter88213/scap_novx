@@ -5,6 +5,9 @@
     </LOCATION>
     <LOCATION id="lc8">
       <Title>Location 2</Title>
+      <Desc>
+        <p>Description of Location 2</p>
+      </Desc>
       <Tags>Tag 2</Tags>
     </LOCATION>
   </LOCATIONS>

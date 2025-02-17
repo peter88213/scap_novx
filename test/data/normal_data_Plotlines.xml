@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ARCS>
+    <ARC id="ac20">
+      <Title>Plot line</Title>
+      <ShortName>A</ShortName>
+      <Sections ids="sc1" />
+      <POINT id="ap21">
+        <Title>Plot point 1</Title>
+      </POINT>
+      <POINT id="ap22">
+        <Title>Plot point 2</Title>
+        <Section id="sc1" />
+      </POINT>
+      <POINT id="ap23">
+        <Title>Plot point3</Title>
+        <Desc>
+          <p>Description of Plot point 3</p>
+        </Desc>
+      </POINT>
+    </ARC>
+  </ARCS>
+  

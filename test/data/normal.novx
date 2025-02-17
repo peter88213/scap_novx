@@ -12,6 +12,9 @@
       </SECTION>
       <SECTION id="sc1">
         <Title>section 1</Title>
+        <Desc>
+          <p>Description of section 1</p>
+        </Desc>
         <Notes>
           <p>Note 1</p>
         </Notes>
@@ -32,6 +35,9 @@
   <CHARACTERS>
     <CHARACTER id="cr2" major="1">
       <Title>Major Character 1</Title>
+      <Desc>
+        <p>Description of Major Character 1</p>
+      </Desc>
       <FullName>Major Character 1</FullName>
     </CHARACTER>
     <CHARACTER id="cr3">
@@ -58,6 +64,9 @@
     </LOCATION>
     <LOCATION id="lc8">
       <Title>Location 2</Title>
+      <Desc>
+        <p>Description of Location 2</p>
+      </Desc>
       <Tags>Tag 2</Tags>
     </LOCATION>
   </LOCATIONS>
@@ -70,6 +79,25 @@
       <Tags>Tag 1</Tags>
     </ITEM>
   </ITEMS>
-  <ARCS />
+  <ARCS>
+    <ARC id="ac20">
+      <Title>Plot line</Title>
+      <ShortName>A</ShortName>
+      <Sections ids="sc1" />
+      <POINT id="ap21">
+        <Title>Plot point 1</Title>
+      </POINT>
+      <POINT id="ap22">
+        <Title>Plot point 2</Title>
+        <Section id="sc1" />
+      </POINT>
+      <POINT id="ap23">
+        <Title>Plot point3</Title>
+        <Desc>
+          <p>Description of Plot point 3</p>
+        </Desc>
+      </POINT>
+    </ARC>
+  </ARCS>
   <PROJECTNOTES />
 </novx>

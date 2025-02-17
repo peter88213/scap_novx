@@ -26,6 +26,7 @@ PLOTLINES_SCAP = TEST_DATA_PATH + 'plotlines.scap'
 NORMAL_CHARACTERS_XML = TEST_DATA_PATH + 'normal_data_Characters.xml'
 NORMAL_LOCATIONS_XML = TEST_DATA_PATH + 'normal_data_Locations.xml'
 NORMAL_ITEMS_XML = TEST_DATA_PATH + 'normal_data_Items.xml'
+NORMAL_PLOTLINES_XML = TEST_DATA_PATH + 'normal_data_Plotlines.xml'
 INI_FILE = 'scap_novx.ini'
 
 # Test data
@@ -34,6 +35,7 @@ TEST_SCAP = TEST_EXEC_PATH + 'yw7 Sample Project.scap'
 TEST_CHARACTERS_XML = TEST_EXEC_PATH + 'yw7 Sample Project_data_Characters.xml'
 TEST_LOCATIONS_XML = TEST_EXEC_PATH + 'yw7 Sample Project_data_Locations.xml'
 TEST_ITEMS_XML = TEST_EXEC_PATH + 'yw7 Sample Project_data_Items.xml'
+TEST_PLOTLINES_XML = TEST_EXEC_PATH + 'yw7 Sample Project_data_Plotlines.xml'
 
 
 def read_file(inputFile):
@@ -79,6 +81,11 @@ def remove_all_testfiles():
     except:
         pass
 
+    try:
+        os.remove(TEST_PLOTLINES_XML)
+    except:
+        pass
+
 
 class NormalOperation(unittest.TestCase):
     """Test case: Normal operation."""
@@ -113,6 +120,7 @@ class NormalOperation(unittest.TestCase):
         self.assertEqual(read_file(TEST_CHARACTERS_XML), read_file(NORMAL_CHARACTERS_XML))
         self.assertEqual(read_file(TEST_LOCATIONS_XML), read_file(NORMAL_LOCATIONS_XML))
         self.assertEqual(read_file(TEST_ITEMS_XML), read_file(NORMAL_ITEMS_XML))
+        self.assertEqual(read_file(TEST_PLOTLINES_XML), read_file(NORMAL_PLOTLINES_XML))
 
     def tearDown(self):
         remove_all_testfiles()
