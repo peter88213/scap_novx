@@ -88,7 +88,6 @@ class ScapFile(NovxFile):
         #--- Parse Scapple notes.
         scapNotes = {}
         uidByPos = {}
-        descriptions = {}
         for xmlNote in root.iter('Note'):
             note = ScapNote()
             note.parse_xml(xmlNote)
@@ -179,9 +178,6 @@ class ScapFile(NovxFile):
                 self.novel.tree.append(IT_ROOT, itId)
                 continue
 
-            if note.isDescription:
-                descriptions[note.uid] = note.text.strip()
-
         #--- Sort notes by position.
         srtNotes = sorted(uidByPos.items())
         for srtNote in srtNotes:
@@ -255,7 +251,7 @@ class ScapFile(NovxFile):
                 self.novel.plotLines[plId].sections = plSections
             for uid in scapNotes[scId[2:]].connections:
                 if scapNotes[uid].isDescription:
-                    self.novel.sections[scId].desc = descriptions.get(uid, None)
+                    self.novel.sections[scId].desc = scapNotes[uid].text.strip()
 
         #--- Assign tags/notes to the characters; set description.
         for crId in self.novel.characters:
@@ -267,7 +263,7 @@ class ScapFile(NovxFile):
                 elif scapNotes[uid].isNote:
                     characterNotes = f'{characterNotes}{scapNotes[uid].text}'
                 elif scapNotes[uid].isDescription:
-                    self.novel.characters[crId].desc = descriptions.get(uid, None)
+                    self.novel.characters[crId].desc = scapNotes[uid].text.strip()
             self.novel.characters[crId].tags = characterTags
             self.novel.characters[crId].notes = characterNotes
 
@@ -278,7 +274,7 @@ class ScapFile(NovxFile):
                 if scapNotes[uid].isTag:
                     locationTags.append(scapNotes[uid].text)
                 elif scapNotes[uid].isDescription:
-                    self.novel.locations[lcId].desc = descriptions.get(uid, None)
+                    self.novel.locations[lcId].desc = scapNotes[uid].text.strip()
             self.novel.locations[lcId].tags = locationTags
 
         #--- Assign tags to the items; set description.
@@ -288,20 +284,20 @@ class ScapFile(NovxFile):
                 if scapNotes[uid].isTag:
                     itemTags.append(scapNotes[uid].text)
                 elif scapNotes[uid].isDescription:
-                    self.novel.items[itId].desc = descriptions.get(uid, None)
+                    self.novel.items[itId].desc = scapNotes[uid].text.strip()
             self.novel.items[itId].tags = itemTags
 
         #--- Set plot line description.
         for plId in self.novel.plotLines:
             for uid in scapNotes[plId[2:]].connections:
                 if scapNotes[uid].isDescription:
-                    self.novel.plotLines[plId].desc = descriptions.get(uid, None)
+                    self.novel.plotLines[plId].desc = scapNotes[uid].text.strip()
 
         #--- Set plot point description.
         for ppId in self.novel.plotPoints:
             for uid in scapNotes[ppId[2:]].connections:
                 if scapNotes[uid].isDescription:
-                    self.novel.plotPoints[ppId].desc = descriptions.get(uid, None)
+                    self.novel.plotPoints[ppId].desc = scapNotes[uid].text.strip()
 
         self.novel.check_locale()
 
