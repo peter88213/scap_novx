@@ -1,282 +1,285 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ScappleDocument Version="1.2" ID="75945489-BE47-4953-B550-A75A7F6A8603">
    <Notes>
-      <Note Width="51.9531" FontSize="12" Position="329.8,107.5" Shadow="Yes" ID="0">
+      <Note FontSize="12" Width="51.9531" Shadow="Yes" Position="400.9,170.0" ID="0">
          <Appearance>
             <Alignment>Left</Alignment>
-            <Border Style="Rounded" Weight="1"/>
+            <Border Weight="1" Style="Rounded"/>
          </Appearance>
          <String>section 1</String>
          <ConnectedNoteIDs>1-2, 4-5, 8-10, 12, 15-17, 21</ConnectedNoteIDs>
          <PointsToNoteIDs>15</PointsToNoteIDs>
       </Note>
-      <Note Width="100.391" FontSize="12" Position="160.2,199.6" ID="1">
+      <Note FontSize="12" Width="100.391" Position="231.3,262.1" ID="1">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>1.0 0.0 0.0</TextColor>
             <Fill>1.0 0.809995 0.820005</Fill>
-            <Border Style="Rounded" Weight="1">1.0 0.0 0.0</Border>
+            <Border Weight="1" Style="Rounded">1.0 0.0 0.0</Border>
          </Appearance>
          <String>Major Character 1</String>
          <ConnectedNoteIDs>0, 23</ConnectedNoteIDs>
          <PointsToNoteIDs>0</PointsToNoteIDs>
       </Note>
-      <Note Width="100.391" FontSize="12" Position="535.1,263.7" ID="2">
+      <Note FontSize="12" Width="100.391" Position="606.2,326.2" ID="2">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.500008 0.0 0.500008</TextColor>
             <Fill>0.930007 0.719997 1.0</Fill>
-            <Border Style="Rounded" Weight="1">0.500008 0.0 0.500008</Border>
+            <Border Weight="1" Style="Rounded">0.500008 0.0 0.500008</Border>
          </Appearance>
          <String>Minor Character 1</String>
          <ConnectedNoteIDs>0, 6</ConnectedNoteIDs>
       </Note>
-      <Note Width="100.391" FontSize="12" Position="654.8,148.8" ID="3">
+      <Note FontSize="12" Width="100.391" Position="725.9,211.3" ID="3">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.500008 0.0 0.500008</TextColor>
             <Fill>0.930007 0.719997 1.0</Fill>
-            <Border Style="Rounded" Weight="1">0.500008 0.0 0.500008</Border>
+            <Border Weight="1" Style="Rounded">0.500008 0.0 0.500008</Border>
          </Appearance>
          <String>Minor Character 2</String>
          <ConnectedNoteIDs>6, 14</ConnectedNoteIDs>
       </Note>
-      <Note Width="100.391" FontSize="12" Position="337.4,252.0" ID="4">
+      <Note FontSize="12" Width="100.391" Position="408.5,314.5" ID="4">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>1.0 0.0 0.0</TextColor>
             <Fill>1.0 0.809995 0.820005</Fill>
-            <Border Style="Rounded" Weight="1">1.0 0.0 0.0</Border>
+            <Border Weight="1" Style="Rounded">1.0 0.0 0.0</Border>
          </Appearance>
          <String>Major Character 2</String>
          <ConnectedNoteIDs>0, 6, 15, 18</ConnectedNoteIDs>
          <PointsToNoteIDs>6</PointsToNoteIDs>
       </Note>
-      <Note Width="58.9844" FontSize="12" Position="125.8,30.9" ID="5">
+      <Note FontSize="12" Width="58.9844" Position="196.9,93.4" ID="5">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.0 0.0 1.0</TextColor>
             <Fill>0.790005 0.859998 1.0</Fill>
-            <Border Style="Rounded" Weight="1">0.0 0.0 1.0</Border>
+            <Border Weight="1" Style="Rounded">0.0 0.0 1.0</Border>
          </Appearance>
          <String>Location 1</String>
          <ConnectedNoteIDs>0, 10</ConnectedNoteIDs>
       </Note>
-      <Note Width="51.9531" FontSize="12" Position="524.3,110.5" Shadow="Yes" ID="6">
+      <Note FontSize="12" Width="51.9531" Shadow="Yes" Position="595.4,173.0" ID="6">
          <Appearance>
             <Alignment>Left</Alignment>
-            <Border Style="Rounded" Weight="1"/>
+            <Border Weight="1" Style="Rounded"/>
          </Appearance>
          <String>section 2</String>
          <ConnectedNoteIDs>2-4, 7, 9, 13</ConnectedNoteIDs>
       </Note>
-      <Note Width="58.9844" FontSize="12" Position="711.7,60.5" ID="7">
+      <Note FontSize="12" Width="58.9844" Position="782.8,123.0" ID="7">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.0 0.0 1.0</TextColor>
             <Fill>0.790005 0.859998 1.0</Fill>
-            <Border Style="Rounded" Weight="1">0.0 0.0 1.0</Border>
+            <Border Weight="1" Style="Rounded">0.0 0.0 1.0</Border>
          </Appearance>
          <String>Location 2</String>
-         <ConnectedNoteIDs>6, 14, 25</ConnectedNoteIDs>
+         <ConnectedNoteIDs>6, 14, 25, 27</ConnectedNoteIDs>
       </Note>
-      <Note Width="39.4531" FontSize="12" Position="419.4,11.3" ID="8">
+      <Note FontSize="12" Width="39.4531" Position="490.5,73.8" ID="8">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.0 0.500008 0.0</TextColor>
             <Fill>0.839994 0.919997 0.8</Fill>
-            <Border Style="Rounded" Weight="1">0.0 0.500008 0.0</Border>
+            <Border Weight="1" Style="Rounded">0.0 0.500008 0.0</Border>
          </Appearance>
          <String>Item 1</String>
          <ConnectedNoteIDs>0</ConnectedNoteIDs>
       </Note>
-      <Note Width="39.4531" FontSize="12" Position="491.5,19.9" ID="9">
+      <Note FontSize="12" Width="39.4531" Position="562.6,82.4" ID="9">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.0 0.500008 0.0</TextColor>
             <Fill>0.839994 0.919997 0.8</Fill>
-            <Border Style="Rounded" Weight="1">0.0 0.500008 0.0</Border>
+            <Border Weight="1" Style="Rounded">0.0 0.500008 0.0</Border>
          </Appearance>
          <String>Item 2</String>
-         <ConnectedNoteIDs>0, 6, 13</ConnectedNoteIDs>
+         <ConnectedNoteIDs>0, 6, 13, 26</ConnectedNoteIDs>
       </Note>
-      <Note Width="55.0781" FontSize="12" Position="234.3,12.1" Shadow="Yes" ID="10">
+      <Note FontSize="12" Width="55.0781" Shadow="Yes" Position="305.4,74.6" ID="10">
          <Appearance>
             <Alignment>Left</Alignment>
-            <Border Style="Rounded" Weight="1"/>
+            <Border Weight="1" Style="Rounded"/>
          </Appearance>
          <String> section 3</String>
          <ConnectedNoteIDs>0, 5</ConnectedNoteIDs>
       </Note>
-      <Note Width="131.641" FontSize="12" Position="621.0,189.4" ID="11">
+      <Note FontSize="12" Width="131.641" Position="692.1,251.9" ID="11">
          <Appearance>
             <Alignment>Left</Alignment>
-            <Border Style="Rounded" Weight="0"/>
+            <Border Weight="0" Style="Rounded"/>
          </Appearance>
          <String>This text is not exported.</String>
       </Note>
-      <Note Width="126.953" FontSize="12" Position="120.3,138.7" ID="12">
+      <Note FontSize="12" Width="126.172" Position="191.4,201.2" ID="12">
          <Appearance>
             <Alignment>Left</Alignment>
-            <Border Style="Rounded" Weight="0"/>
+            <Border Weight="0" Style="Rounded"/>
          </Appearance>
          <String>Description of section 1</String>
          <ConnectedNoteIDs>0</ConnectedNoteIDs>
       </Note>
-      <Note Width="33.9844" FontSize="12" Position="604.0,14.5" ID="13">
+      <Note FontSize="12" Width="33.9844" Position="675.1,77.0" ID="13">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.300008 0.300008 0.0</TextColor>
             <Fill>1.0 1.0 0.829999</Fill>
-            <Border Style="Square" Weight="1">0.300008 0.300008 0.0</Border>
+            <Border Weight="1" Style="Square">0.300008 0.300008 0.0</Border>
          </Appearance>
          <String>Tag 1</String>
          <ConnectedNoteIDs>6, 9</ConnectedNoteIDs>
       </Note>
-      <Note Width="33.9844" FontSize="12" Position="778.0,117.6" ID="14">
+      <Note FontSize="12" Width="33.9844" Position="849.1,180.1" ID="14">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.300008 0.300008 0.0</TextColor>
             <Fill>1.0 1.0 0.829999</Fill>
-            <Border Style="Square" Weight="1">0.300008 0.300008 0.0</Border>
+            <Border Weight="1" Style="Square">0.300008 0.300008 0.0</Border>
          </Appearance>
          <String>Tag 2</String>
          <ConnectedNoteIDs>3, 7</ConnectedNoteIDs>
       </Note>
-      <Note Width="33.9844" FontSize="12" Position="235.9,249.6" ID="15">
+      <Note FontSize="12" Width="33.9844" Position="307.0,312.1" ID="15">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.300008 0.300008 0.0</TextColor>
             <Fill>1.0 1.0 0.829999</Fill>
-            <Border Style="Square" Weight="1">0.300008 0.300008 0.0</Border>
+            <Border Weight="1" Style="Square">0.300008 0.300008 0.0</Border>
          </Appearance>
          <String>Tag 3</String>
          <ConnectedNoteIDs>0, 4</ConnectedNoteIDs>
       </Note>
-      <Note Width="33.9844" FontSize="12" Position="441.5,95.7" ID="16">
+      <Note FontSize="12" Width="33.9844" Position="512.6,158.2" ID="16">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.300008 0.300008 0.0</TextColor>
             <Fill>1.0 1.0 0.829999</Fill>
-            <Border Style="Square" Weight="1">0.300008 0.300008 0.0</Border>
+            <Border Weight="1" Style="Square">0.300008 0.300008 0.0</Border>
          </Appearance>
          <String>Tag 4</String>
          <ConnectedNoteIDs>0</ConnectedNoteIDs>
          <PointsToNoteIDs>0</PointsToNoteIDs>
       </Note>
-      <Note Width="40.2344" FontSize="12" Position="347.7,10.5" ID="17">
+      <Note FontSize="12" Width="40.2344" Position="418.8,73.0" ID="17">
          <Appearance>
             <Alignment>Left</Alignment>
-            <Border Style="Cloud" Weight="1"/>
+            <Border Weight="1" Style="Cloud"/>
          </Appearance>
          <String>Note 1</String>
          <ConnectedNoteIDs>0</ConnectedNoteIDs>
       </Note>
-      <Note Width="40.2344" FontSize="12" Position="409.4,312.1" ID="18">
+      <Note FontSize="12" Width="40.2344" Position="480.5,374.6" ID="18">
          <Appearance>
             <Alignment>Left</Alignment>
-            <Border Style="Cloud" Weight="1"/>
+            <Border Weight="1" Style="Cloud"/>
          </Appearance>
          <String>Note 2</String>
          <ConnectedNoteIDs>4</ConnectedNoteIDs>
       </Note>
-      <Note Width="58.2031" FontSize="12" Position="31.3,5.5" ID="19">
+      <Note FontSize="12" Width="58.2031" Position="102.4,68.0" ID="19">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.627451 0.164706 0.05098</TextColor>
             <Fill>0.996078 0.854902 0.627451</Fill>
-            <Border Style="Rounded" Weight="1">0.627451 0.164706 0.05098</Border>
+            <Border Weight="1" Style="Rounded">0.627451 0.164706 0.05098</Border>
          </Appearance>
          <String>A:Plot line</String>
-         <ConnectedNoteIDs>20</ConnectedNoteIDs>
+         <ConnectedNoteIDs>20, 28</ConnectedNoteIDs>
       </Note>
-      <Note Width="64.4531" FontSize="12" Position="31.3,46.1" ID="20">
+      <Note FontSize="12" Width="64.4531" Position="102.4,108.6" ID="20">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.627451 0.164706 0.05098</TextColor>
             <Fill>0.996078 0.854902 0.627451</Fill>
-            <Border Style="Rounded" Weight="0">0.627451 0.164706 0.05098</Border>
+            <Border Weight="0" Style="Rounded">0.627451 0.164706 0.05098</Border>
          </Appearance>
          <String>Plot point 1</String>
-         <ConnectedNoteIDs>19, 21</ConnectedNoteIDs>
+         <ConnectedNoteIDs>19, 21, 29</ConnectedNoteIDs>
       </Note>
-      <Note Width="64.4531" FontSize="12" Position="33.6,99.2" ID="21">
+      <Note FontSize="12" Width="64.4531" Position="104.7,161.7" ID="21">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.627451 0.164706 0.05098</TextColor>
             <Fill>0.996078 0.854902 0.627451</Fill>
-            <Border Style="Rounded" Weight="0">0.627451 0.164706 0.05098</Border>
+            <Border Weight="0" Style="Rounded">0.627451 0.164706 0.05098</Border>
          </Appearance>
          <String>Plot point 2</String>
          <ConnectedNoteIDs>0, 20, 22</ConnectedNoteIDs>
       </Note>
-      <Note Width="61.3281" FontSize="12" Position="37.5,174.2" ID="22">
+      <Note FontSize="12" Width="61.3281" Position="108.6,236.7" ID="22">
          <Appearance>
             <Alignment>Left</Alignment>
             <TextColor>0.627451 0.164706 0.05098</TextColor>
             <Fill>0.996078 0.854902 0.627451</Fill>
-            <Border Style="Rounded" Weight="0">0.627451 0.164706 0.05098</Border>
+            <Border Weight="0" Style="Rounded">0.627451 0.164706 0.05098</Border>
          </Appearance>
          <String>Plot point3</String>
          <ConnectedNoteIDs>21, 24</ConnectedNoteIDs>
       </Note>
-      <Note Width="156.25" FontSize="12" Position="85.9,297.3" ID="23">
+      <Note FontSize="12" Width="156.25" Position="157.0,359.8" ID="23">
          <Appearance>
             <Alignment>Left</Alignment>
-            <Border Style="Rounded" Weight="0"/>
+            <Border Weight="0" Style="Rounded"/>
          </Appearance>
          <String>Description of Major Character 1</String>
          <ConnectedNoteIDs>1</ConnectedNoteIDs>
       </Note>
-      <Note Width="139.453" FontSize="12" Position="11.7,236.3" ID="24">
+      <Note FontSize="12" Width="138.672" Position="82.8,298.8" ID="24">
          <Appearance>
             <Alignment>Left</Alignment>
-            <Border Style="Rounded" Weight="0"/>
+            <Border Weight="0" Style="Rounded"/>
          </Appearance>
          <String>Description of Plot point 3</String>
          <ConnectedNoteIDs>22</ConnectedNoteIDs>
       </Note>
-      <Note Width="133.984" FontSize="12" Position="683.6,13.7" ID="25">
+      <Note FontSize="12" Width="133.203" Position="754.7,76.2" ID="25">
          <Appearance>
             <Alignment>Left</Alignment>
-            <Border Style="Rounded" Weight="0"/>
+            <Border Weight="0" Style="Rounded"/>
          </Appearance>
          <String>Description of Location 2</String>
          <ConnectedNoteIDs>7</ConnectedNoteIDs>
       </Note>
+      <Note FontSize="12" Width="40.2344" Position="596.9,23.4" ID="26">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="1" Style="Cloud"/>
+         </Appearance>
+         <String>Note 3</String>
+         <ConnectedNoteIDs>9</ConnectedNoteIDs>
+      </Note>
+      <Note FontSize="12" Width="40.2344" Position="890.6,121.9" ID="27">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="1" Style="Cloud"/>
+         </Appearance>
+         <String>Note 4</String>
+         <ConnectedNoteIDs>7</ConnectedNoteIDs>
+      </Note>
+      <Note FontSize="12" Width="40.2344" Position="23.4,67.2" ID="28">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="1" Style="Cloud"/>
+         </Appearance>
+         <String>Note 5</String>
+         <ConnectedNoteIDs>19</ConnectedNoteIDs>
+      </Note>
+      <Note FontSize="12" Width="40.2344" Position="25.8,128.9" ID="29">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="1" Style="Cloud"/>
+         </Appearance>
+         <String>Note 6</String>
+         <ConnectedNoteIDs>20</ConnectedNoteIDs>
+      </Note>
    </Notes>
-   <AutoFit>0-22, 24-25</AutoFit>
+   <AutoFit>0-22, 24-29</AutoFit>
    <NoteStyles>
-      <Style AffectFontStyle="No" Name="MajorCharacter" AffectSticky="Yes" AffectAlignment="No" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectTextColor="Yes" ID="F688F8DB-0230-4B22-8A41-2C4CE7CB4AE5">
-         <BorderThickness>1</BorderThickness>
-         <BorderStyle>Rounded</BorderStyle>
-         <BorderColor>1.0 0.0 0.0</BorderColor>
-         <FillColor>1.0 0.809995 0.820005</FillColor>
-         <TextColor>1.0 0.0 0.0</TextColor>
-         <Size>171.6,-1.7</Size>
-         <Sticky>Yes</Sticky>
-         <FontSize>12.0</FontSize>
-      </Style>
-      <Style AffectFontStyle="No" Name="Item" AffectSticky="Yes" AffectAlignment="No" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectTextColor="Yes" ID="408EA0A2-086C-461D-AA14-299364F4030E">
-         <BorderThickness>1</BorderThickness>
-         <BorderStyle>Rounded</BorderStyle>
-         <BorderColor>0.0 0.500008 0.0</BorderColor>
-         <FillColor>0.839216 0.917647 0.792157</FillColor>
-         <TextColor>0.0 0.500008 0.0</TextColor>
-         <Size>171.6,-1.7</Size>
-         <Sticky>Yes</Sticky>
-         <FontSize>12.0</FontSize>
-      </Style>
-      <Style AffectFontStyle="Yes" Name="Plot line" AffectSticky="Yes" AffectAlignment="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectTextColor="Yes" ID="CBCB040A-E30E-4F1D-B8FE-16FAD9BF765A">
-         <BorderThickness>1</BorderThickness>
-         <BorderStyle>Rounded</BorderStyle>
-         <BorderColor>0.627451 0.164706 0.05098</BorderColor>
-         <FillColor>0.996078 0.854902 0.627451</FillColor>
-         <TextColor>0.627451 0.164706 0.05098</TextColor>
-         <Size>23.8,21.1</Size>
-         <FontSize>12.0</FontSize>
-      </Style>
-      <Style AffectFontStyle="No" Name="Location" AffectSticky="Yes" AffectAlignment="No" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectTextColor="Yes" ID="C5449001-4357-4EAA-B6DF-3D1DABCD2C2A">
+      <Style AffectTextColor="Yes" AffectFontStyle="No" AffectSize="No" Name="Location" ID="C5449001-4357-4EAA-B6DF-3D1DABCD2C2A" AffectAlignment="No" AffectNoteBody="Yes" AffectFade="No" AffectSticky="Yes">
          <BorderThickness>1</BorderThickness>
          <BorderStyle>Rounded</BorderStyle>
          <BorderColor>0.0 0.0 1.0</BorderColor>
@@ -286,7 +289,34 @@
          <Sticky>Yes</Sticky>
          <FontSize>12.0</FontSize>
       </Style>
-      <Style AffectFontStyle="No" Name="MinorCharacter" AffectSticky="Yes" AffectAlignment="No" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectTextColor="Yes" ID="B78F6F80-9875-4FC0-8CD9-C0B76FC18C2C">
+      <Style AffectTextColor="Yes" AffectFontStyle="No" AffectSize="No" Name="MajorCharacter" ID="F688F8DB-0230-4B22-8A41-2C4CE7CB4AE5" AffectAlignment="No" AffectNoteBody="Yes" AffectFade="No" AffectSticky="Yes">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>1.0 0.0 0.0</BorderColor>
+         <FillColor>1.0 0.809995 0.820005</FillColor>
+         <TextColor>1.0 0.0 0.0</TextColor>
+         <Size>171.6,-1.7</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectTextColor="No" AffectFontStyle="No" AffectSize="No" Name="Section" ID="7F396A6A-070B-4AEB-AC01-60589A891EDE" AffectAlignment="No" AffectNoteBody="Yes" AffectFade="No" AffectSticky="Yes">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <Size>1417.2,-26.1</Size>
+         <Sticky>Yes</Sticky>
+         <Shadow>Yes</Shadow>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectTextColor="Yes" AffectFontStyle="Yes" AffectSize="No" Name="Plot line" ID="CBCB040A-E30E-4F1D-B8FE-16FAD9BF765A" AffectAlignment="Yes" AffectNoteBody="Yes" AffectFade="No" AffectSticky="Yes">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Rounded</BorderStyle>
+         <BorderColor>0.627451 0.164706 0.05098</BorderColor>
+         <FillColor>0.996078 0.854902 0.627451</FillColor>
+         <TextColor>0.627451 0.164706 0.05098</TextColor>
+         <Size>23.8,21.1</Size>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectTextColor="Yes" AffectFontStyle="No" AffectSize="No" Name="MinorCharacter" ID="B78F6F80-9875-4FC0-8CD9-C0B76FC18C2C" AffectAlignment="No" AffectNoteBody="Yes" AffectFade="No" AffectSticky="Yes">
          <BorderThickness>1</BorderThickness>
          <BorderStyle>Rounded</BorderStyle>
          <BorderColor>0.500008 0.0 0.500008</BorderColor>
@@ -296,15 +326,24 @@
          <Sticky>Yes</Sticky>
          <FontSize>12.0</FontSize>
       </Style>
-      <Style AffectFontStyle="No" Name="Section" AffectSticky="Yes" AffectAlignment="No" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectTextColor="No" ID="7F396A6A-070B-4AEB-AC01-60589A891EDE">
+      <Style AffectTextColor="Yes" AffectFontStyle="No" AffectSize="No" Name="Item" ID="408EA0A2-086C-461D-AA14-299364F4030E" AffectAlignment="No" AffectNoteBody="Yes" AffectFade="No" AffectSticky="Yes">
          <BorderThickness>1</BorderThickness>
          <BorderStyle>Rounded</BorderStyle>
-         <Size>1417.2,-26.1</Size>
+         <BorderColor>0.0 0.500008 0.0</BorderColor>
+         <FillColor>0.839216 0.917647 0.792157</FillColor>
+         <TextColor>0.0 0.500008 0.0</TextColor>
+         <Size>171.6,-1.7</Size>
          <Sticky>Yes</Sticky>
-         <Shadow>Yes</Shadow>
          <FontSize>12.0</FontSize>
       </Style>
-      <Style AffectFontStyle="No" Name="Tag" AffectSticky="Yes" AffectAlignment="No" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectTextColor="Yes" ID="86A8B969-3AFF-4533-99E6-4A0D0AE2D4E8">
+      <Style AffectTextColor="No" AffectFontStyle="No" AffectSize="No" Name="Note" ID="014A31AD-34CA-4753-89ED-964CB534ECA6" AffectAlignment="No" AffectNoteBody="Yes" AffectFade="No" AffectSticky="Yes">
+         <BorderThickness>1</BorderThickness>
+         <BorderStyle>Cloud</BorderStyle>
+         <Size>256.0,-1.3</Size>
+         <Sticky>Yes</Sticky>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectTextColor="Yes" AffectFontStyle="No" AffectSize="No" Name="Tag" ID="86A8B969-3AFF-4533-99E6-4A0D0AE2D4E8" AffectAlignment="No" AffectNoteBody="Yes" AffectFade="No" AffectSticky="Yes">
          <BorderThickness>1</BorderThickness>
          <BorderStyle>Square</BorderStyle>
          <BorderColor>0.300008 0.300008 0.0</BorderColor>
@@ -314,19 +353,12 @@
          <Sticky>Yes</Sticky>
          <FontSize>12.0</FontSize>
       </Style>
-      <Style AffectFontStyle="Yes" Name="Plot point" AffectSticky="Yes" AffectAlignment="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectTextColor="Yes" ID="3CBAF84B-88D2-4664-8CEF-094908EAC818">
+      <Style AffectTextColor="Yes" AffectFontStyle="Yes" AffectSize="No" Name="Plot point" ID="3CBAF84B-88D2-4664-8CEF-094908EAC818" AffectAlignment="Yes" AffectNoteBody="Yes" AffectFade="No" AffectSticky="Yes">
          <BorderStyle>Rounded</BorderStyle>
          <BorderColor>0.627451 0.164706 0.05098</BorderColor>
          <FillColor>0.996078 0.854902 0.627451</FillColor>
          <TextColor>0.627451 0.164706 0.05098</TextColor>
          <Size>74.6,21.1</Size>
-         <FontSize>12.0</FontSize>
-      </Style>
-      <Style AffectFontStyle="No" Name="Note" AffectSticky="Yes" AffectAlignment="No" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectTextColor="No" ID="014A31AD-34CA-4753-89ED-964CB534ECA6">
-         <BorderThickness>1</BorderThickness>
-         <BorderStyle>Cloud</BorderStyle>
-         <Size>256.0,-1.3</Size>
-         <Sticky>Yes</Sticky>
          <FontSize>12.0</FontSize>
       </Style>
    </NoteStyles>
@@ -337,5 +369,5 @@
       <NoteXPadding>4.00</NoteXPadding>
       <LeftToRight>Yes</LeftToRight>
    </UISettings>
-   <PrintSettings LeftMargin="12.000000" TopMargin="12.000000" VerticallyCentered="Yes" PagesDown="1" Orientation="Portrait" HorizontallyCentered="Yes" PaperSize="-1.000000,-1.000000" RightMargin="12.000000" VerticalPagination="Auto" ScaleFactor="1.000000" Collates="Yes" HorizontalPagination="Clip" PaperType="iso-a4" BottomMargin="12.000000" PagesAcross="1"/>
+   <PrintSettings HorizontallyCentered="Yes" PaperSize="-1.000000,-1.000000" RightMargin="12.000000" VerticalPagination="Auto" PagesDown="1" Orientation="Portrait" LeftMargin="12.000000" PaperType="iso-a4" VerticallyCentered="Yes" Collates="Yes" TopMargin="12.000000" BottomMargin="12.000000" HorizontalPagination="Clip" ScaleFactor="1.000000" PagesAcross="1"/>
 </ScappleDocument>

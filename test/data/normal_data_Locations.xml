@@ -8,6 +8,9 @@
       <Desc>
         <p>Description of Location 2</p>
       </Desc>
+      <Notes>
+        <p>Note 4</p>
+      </Notes>
       <Tags>Tag 2</Tags>
     </LOCATION>
   </LOCATIONS>

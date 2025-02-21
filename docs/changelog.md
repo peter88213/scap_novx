@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 5.3.0
+
+- Processing locaton/item/plot line/plot point notes. 
+- Refactored the code for better maintainability.
+
+Based on novelibre 5.16.0
+
+
 ### Version 5.2.2
 
 - Fixed a bug where the chain of plot points may not be recognized if not visually ordered. 

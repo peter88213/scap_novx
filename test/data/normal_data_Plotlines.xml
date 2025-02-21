@@ -2,10 +2,16 @@
 <ARCS>
     <ARC id="ac20">
       <Title>Plot line</Title>
+      <Notes>
+        <p>Note 5</p>
+      </Notes>
       <ShortName>A</ShortName>
       <Sections ids="sc1" />
       <POINT id="ap21">
         <Title>Plot point 1</Title>
+        <Notes>
+          <p>Note 6</p>
+        </Notes>
       </POINT>
       <POINT id="ap22">
         <Title>Plot point 2</Title>

@@ -5,6 +5,9 @@
     </ITEM>
     <ITEM id="it10">
       <Title>Item 2</Title>
+      <Notes>
+        <p>Note 3</p>
+      </Notes>
       <Tags>Tag 1</Tags>
     </ITEM>
   </ITEMS>

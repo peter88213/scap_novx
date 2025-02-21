@@ -310,16 +310,20 @@ class ScapFile(NovxFile):
         for lcId in self.novel.locations:
             set_description(lcId, self.novel.locations)
             set_tags(lcId, self.novel.locations)
+            set_notes(lcId, self.novel.locations)
 
         for itId in self.novel.items:
             set_description(itId, self.novel.items)
             set_tags(itId, self.novel.items)
+            set_notes(itId, self.novel.items)
 
         for plId in self.novel.plotLines:
             set_description(plId, self.novel.plotLines)
+            set_notes(plId, self.novel.plotLines)
 
         for ppId in self.novel.plotPoints:
             set_description(ppId, self.novel.plotPoints)
+            set_notes(ppId, self.novel.plotPoints)
 
         self.novel.check_locale()
 

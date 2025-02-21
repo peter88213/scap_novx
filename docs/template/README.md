@@ -12,12 +12,11 @@ A Python script for creating new [novelibre](https://github.com/peter88213/novel
 ## Features
 
 - Notes with a shadow are converted to sections in one single chapter.
-- Notes with a "cloud" border and shadow are converted to "Notes" sections.
-- Notes with a "cloud" border without shadow are converted to section and character notes.
+- Notes with a "cloud" border without shadow are converted to element notes.
 - Notes with a square border are converted to tags.
-- Notes with colored text are converted to characters, locations, or items.
-- Connections between sections and characters/locations/items are considered.
-- If a novelibre project already exists, Character/Location/Item XML files are generated instead.
+- Notes with colored text are converted to characters, locations, items, plot lines, or plot points.
+- Connections between sections and characters/locations/items/plot lines/plot points are considered.
+- If a novelibre project already exists, Character/Location/Item/Plot line XML files are generated instead.
 - The *scap_novx* release includes a sample Scapple file with note styles to import.
 
  
