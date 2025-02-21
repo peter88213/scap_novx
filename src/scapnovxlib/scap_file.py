@@ -75,6 +75,123 @@ class ScapFile(NovxFile):
         Return a message beginning with the ERROR constant in case of error.
         Overrides the superclass method.
         """
+
+        def create_novel_element(note):
+            # Create a section, character, etc. from the note.
+
+            if note.isSection:
+                if not self._exportSections:
+                    return
+
+                scId = f'{SECTION_PREFIX}{note.uid}'
+                self.novel.sections[scId] = Section(scene=0)
+                self.novel.sections[scId].title = note.text.strip()
+                self.novel.sections[scId].scType = 0
+                self.novel.sections[scId].status = 1
+                # status = Outline
+                self.novel.sections[scId].sectionContent = '<p></p>'
+                return
+
+            if note.isPlotLine:
+                if not self._exportPlotLines:
+                    return
+
+                plId = f'{PLOT_LINE_PREFIX}{note.uid}'
+                self.novel.plotLines[plId] = PlotLine()
+                plotLineTitle = note.text.strip().split(':', maxsplit=1)
+                if len(plotLineTitle) > 1:
+                    self.novel.plotLines[plId].shortName = plotLineTitle[0].strip()
+                    self.novel.plotLines[plId].title = plotLineTitle[1].strip()
+                else:
+                    self.novel.plotLines[plId].shortName = plotLineTitle[0][0]
+                    self.novel.plotLines[plId].title = plotLineTitle[0]
+                self.novel.tree.append(PL_ROOT, plId)
+                return
+
+            if note.isPlotPoint:
+                if not self._exportPlotLines:
+                    return
+
+                ppId = f'{PLOT_POINT_PREFIX}{note.uid}'
+                self.novel.plotPoints[ppId] = PlotPoint()
+                self.novel.plotPoints[ppId].title = note.text.strip()
+                return
+
+            if note.isMajorChara:
+                if not self._exportCharacters:
+                    return
+
+                crId = f'{CHARACTER_PREFIX}{note.uid}'
+                self.novel.characters[crId] = Character()
+                self.novel.characters[crId].title = note.text.strip()
+                self.novel.characters[crId].fullName = note.text.strip()
+                self.novel.characters[crId].isMajor = True
+                self.novel.tree.append(CR_ROOT, crId)
+                return
+
+            if note.isMinorChara:
+                if not self._exportCharacters:
+                    return
+
+                crId = f'{CHARACTER_PREFIX}{note.uid}'
+                self.novel.characters[crId] = Character()
+                self.novel.characters[crId].title = note.text.strip()
+                self.novel.characters[crId].fullName = note.text.strip()
+                self.novel.characters[crId].isMajor = False
+                self.novel.tree.append(CR_ROOT, crId)
+                return
+
+            if note.isLocation:
+                if not self._exportLocations:
+                    return
+
+                lcId = f'{LOCATION_PREFIX}{note.uid}'
+                self.novel.locations[lcId] = WorldElement()
+                self.novel.locations[lcId].title = note.text.strip()
+                self.novel.tree.append(LC_ROOT, lcId)
+                return
+
+            if note.isItem:
+                if not self._exportItems:
+                    return
+
+                itId = f'{ITEM_PREFIX}{note.uid}'
+                self.novel.items[itId] = WorldElement()
+                self.novel.items[itId].title = note.text.strip()
+                self.novel.tree.append(IT_ROOT, itId)
+
+        def add_relationship(uid):
+            # Add related element specified by uid to the section's corresponding list.
+
+            plId = f'{PLOT_LINE_PREFIX}{uid}'
+            if plId in self.novel.plotLines:
+                scPlotLines.append(plId)
+                return
+
+            ppId = f'{PLOT_POINT_PREFIX}{uid}'
+            if ppId in self.novel.plotPoints:
+                scPlotPoints.append(ppId)
+                return
+
+            crId = f'{CHARACTER_PREFIX}{uid}'
+            if crId in self.novel.characters:
+                if scId[2:] in scapNotes[uid].pointTo:
+                    scCharacters.insert(0, crId)
+                    # setting the viewpoint
+                else:
+                    scCharacters.append(crId)
+                return
+
+            lcId = f'{LOCATION_PREFIX}{uid}'
+            if lcId in self.novel.locations:
+                scLocations.append(lcId)
+                return
+
+            itId = f'{ITEM_PREFIX}{uid}'
+            if itId in self.novel.items:
+                scItems.append(itId)
+                return
+
         self._tree = ET.parse(self.filePath)
         root = self._tree.getroot()
 
@@ -88,95 +205,14 @@ class ScapFile(NovxFile):
         #--- Parse Scapple notes.
         scapNotes = {}
         uidByPos = {}
+
+        #--- Create Novel elements from the notes.
         for xmlNote in root.iter('Note'):
             note = ScapNote()
             note.parse_xml(xmlNote)
             scapNotes[note.uid] = note
             uidByPos[note.position] = note.uid
-
-            # Create Novel elements.
-            if note.isSection:
-                if not self._exportSections:
-                    continue
-
-                scId = f'{SECTION_PREFIX}{note.uid}'
-                self.novel.sections[scId] = Section(scene=0)
-                self.novel.sections[scId].title = note.text.strip()
-                self.novel.sections[scId].scType = 0
-                self.novel.sections[scId].status = 1
-                # Status = Outline
-                self.novel.sections[scId].sectionContent = '<p></p>'
-                continue
-
-            if note.isPlotLine:
-                if not self._exportPlotLines:
-                    continue
-
-                plId = f'{PLOT_LINE_PREFIX}{note.uid}'
-                self.novel.plotLines[plId] = PlotLine()
-                plotLineTitle = note.text.strip().split(':', maxsplit=1)
-                if len(plotLineTitle) > 1:
-                    self.novel.plotLines[plId].shortName = plotLineTitle[0].strip()
-                    self.novel.plotLines[plId].title = plotLineTitle[1].strip()
-                else:
-                    self.novel.plotLines[plId].shortName = plotLineTitle[0][0]
-                    self.novel.plotLines[plId].title = plotLineTitle[0]
-                self.novel.tree.append(PL_ROOT, plId)
-                continue
-
-            if note.isPlotPoint:
-                if not self._exportPlotLines:
-                    continue
-
-                ppId = f'{PLOT_POINT_PREFIX}{note.uid}'
-                self.novel.plotPoints[ppId] = PlotPoint()
-                self.novel.plotPoints[ppId].title = note.text.strip()
-                self.novel.tree.append(plId, ppId)
-                continue
-
-            if note.isMajorChara:
-                if not self._exportCharacters:
-                    continue
-
-                crId = f'{CHARACTER_PREFIX}{note.uid}'
-                self.novel.characters[crId] = Character()
-                self.novel.characters[crId].title = note.text.strip()
-                self.novel.characters[crId].fullName = note.text.strip()
-                self.novel.characters[crId].isMajor = True
-                self.novel.tree.append(CR_ROOT, crId)
-                continue
-
-            if note.isMinorChara:
-                if not self._exportCharacters:
-                    continue
-
-                crId = f'{CHARACTER_PREFIX}{note.uid}'
-                self.novel.characters[crId] = Character()
-                self.novel.characters[crId].title = note.text.strip()
-                self.novel.characters[crId].fullName = note.text.strip()
-                self.novel.characters[crId].isMajor = False
-                self.novel.tree.append(CR_ROOT, crId)
-                continue
-
-            if note.isLocation:
-                if not self._exportLocations:
-                    continue
-
-                lcId = f'{LOCATION_PREFIX}{note.uid}'
-                self.novel.locations[lcId] = WorldElement()
-                self.novel.locations[lcId].title = note.text.strip()
-                self.novel.tree.append(LC_ROOT, lcId)
-                continue
-
-            if note.isItem:
-                if not self._exportItems:
-                    continue
-
-                itId = f'{ITEM_PREFIX}{note.uid}'
-                self.novel.items[itId] = WorldElement()
-                self.novel.items[itId].title = note.text.strip()
-                self.novel.tree.append(IT_ROOT, itId)
-                continue
+            create_novel_element(note)
 
         #--- Sort notes by position.
         srtNotes = sorted(uidByPos.items())
@@ -185,57 +221,47 @@ class ScapFile(NovxFile):
             if scId in self.novel.sections:
                 self.novel.tree.append(chId, scId)
 
-        #--- Assign characters/locations/items/tags/notes/plot lines/points to the sections; set description.
+        #--- Assign plot points to plot lines.
+        plotPoints = []
+        for plId in self.novel.plotLines:
+            for uid in scapNotes[plId[2:]].connections:
+                if not scapNotes[uid].isPlotPoint:
+                    continue
+
+                ppId = f'{PLOT_POINT_PREFIX}{uid}'
+                if ppId in plotPoints:
+                    continue
+
+                self.novel.tree.append(plId, ppId)
+                plotPoints.append(ppId)
+                searchNext = True
+                while searchNext:
+                    searchNext = False
+                    for uid in scapNotes[ppId[2:]].connections:
+                        if not scapNotes[uid].isPlotPoint:
+                            continue
+
+                        ppId = f'{PLOT_POINT_PREFIX}{uid}'
+                        if ppId in plotPoints:
+                            continue
+
+                        self.novel.tree.append(plId, ppId)
+                        plotPoints.append(ppId)
+                        searchNext = True
+                        break
+
+        #--- Assign related elements to the sections.
         for scId in self.novel.sections:
             scCharacters = []
             scLocations = []
             scItems = []
-            scTags = []
             scPlotLines = []
             scPlotPoints = []
-            sectionNotes = ''
             for uid in scapNotes[scId[2:]].connections:
-                plId = f'{PLOT_LINE_PREFIX}{uid}'
-                if plId in self.novel.plotLines:
-                    scPlotLines.append(plId)
-                    continue
-
-                ppId = f'{PLOT_POINT_PREFIX}{uid}'
-                if ppId in self.novel.plotPoints:
-                    scPlotPoints.append(ppId)
-                    continue
-
-                crId = f'{CHARACTER_PREFIX}{uid}'
-                if crId in self.novel.characters:
-                    if scId[2:] in scapNotes[uid].pointTo:
-                        scCharacters.insert(0, crId)
-                        # setting the viewpoint
-                    else:
-                        scCharacters.append(crId)
-                    continue
-
-                lcId = f'{LOCATION_PREFIX}{uid}'
-                if lcId in self.novel.locations:
-                    scLocations.append(lcId)
-                    continue
-
-                itId = f'{ITEM_PREFIX}{uid}'
-                if itId in self.novel.items:
-                    scItems.append(itId)
-                    continue
-
-                if scapNotes[uid].isTag:
-                    scTags.append(scapNotes[uid].text)
-                    continue
-
-                if scapNotes[uid].isNote:
-                    sectionNotes = f'{sectionNotes}{scapNotes[uid].text}'
-
+                add_relationship(uid)
             self.novel.sections[scId].characters = scCharacters
             self.novel.sections[scId].locations = scLocations
             self.novel.sections[scId].items = scItems
-            self.novel.sections[scId].tags = scTags
-            self.novel.sections[scId].notes = sectionNotes
             self.novel.sections[scId].plotLines = scPlotLines
             for ppId in scPlotPoints:
                 plId = self.novel.tree.parent(ppId)
@@ -249,55 +275,96 @@ class ScapFile(NovxFile):
                     plSections = []
                 plSections.append(scId)
                 self.novel.plotLines[plId].sections = plSections
-            for uid in scapNotes[scId[2:]].connections:
-                if scapNotes[uid].isDescription:
-                    self.novel.sections[scId].desc = scapNotes[uid].text.strip()
 
-        #--- Assign tags/notes to the characters; set description.
+        #--- Assign notes to the sections.
+        for scId in self.novel.sections:
+            sectionNotes = []
+            for uid in scapNotes[scId[2:]].connections:
+                if scapNotes[uid].isNote:
+                    sectionNotes.append(scapNotes[uid].text)
+            self.novel.sections[scId].notes = '\n'.join(sectionNotes)
+
+        #--- Assign notes to the characters.
+        for crId in self.novel.characters:
+            characterNotes = []
+            for uid in scapNotes[crId[2:]].connections:
+                if scapNotes[uid].isNote:
+                    characterNotes .append(scapNotes[uid].text)
+            self.novel.characters[crId].notes = '\n'.join(characterNotes)
+
+        #--- Assign tags to the sections.
+        for scId in self.novel.sections:
+            scTags = []
+            for uid in scapNotes[scId[2:]].connections:
+                if scapNotes[uid].isTag:
+                    scTags.append(scapNotes[uid].text)
+            self.novel.sections[scId].tags = scTags
+
+        #--- Assign tags to the characters.
         for crId in self.novel.characters:
             characterTags = []
-            characterNotes = ''
             for uid in scapNotes[crId[2:]].connections:
                 if scapNotes[uid].isTag:
                     characterTags.append(scapNotes[uid].text)
-                elif scapNotes[uid].isNote:
-                    characterNotes = f'{characterNotes}{scapNotes[uid].text}'
-                elif scapNotes[uid].isDescription:
-                    self.novel.characters[crId].desc = scapNotes[uid].text.strip()
             self.novel.characters[crId].tags = characterTags
-            self.novel.characters[crId].notes = characterNotes
 
-        #--- Assign tags to the locations; set description.
+        #--- Assign tags to the locations.
         for lcId in self.novel.locations:
             locationTags = []
             for uid in scapNotes[lcId[2:]].connections:
                 if scapNotes[uid].isTag:
                     locationTags.append(scapNotes[uid].text)
-                elif scapNotes[uid].isDescription:
-                    self.novel.locations[lcId].desc = scapNotes[uid].text.strip()
             self.novel.locations[lcId].tags = locationTags
 
-        #--- Assign tags to the items; set description.
+        #--- Assign tags to the items.
         for itId in self.novel.items:
             itemTags = []
             for uid in scapNotes[itId[2:]].connections:
                 if scapNotes[uid].isTag:
                     itemTags.append(scapNotes[uid].text)
-                elif scapNotes[uid].isDescription:
-                    self.novel.items[itId].desc = scapNotes[uid].text.strip()
             self.novel.items[itId].tags = itemTags
+
+        #--- Set section description.
+        for scId in self.novel.sections:
+            for uid in scapNotes[scId[2:]].connections:
+                if scapNotes[uid].isDescription:
+                    self.novel.sections[scId].desc = scapNotes[uid].text.strip()
+                    break
+
+        #--- Set character description.
+        for crId in self.novel.characters:
+            for uid in scapNotes[crId[2:]].connections:
+                if scapNotes[uid].isDescription:
+                    self.novel.characters[crId].desc = scapNotes[uid].text.strip()
+                    break
+
+        #--- Set location description.
+        for lcId in self.novel.locations:
+            for uid in scapNotes[lcId[2:]].connections:
+                if scapNotes[uid].isDescription:
+                    self.novel.locations[lcId].desc = scapNotes[uid].text.strip()
+                    break
+
+        #--- Set item description.
+        for itId in self.novel.items:
+            for uid in scapNotes[itId[2:]].connections:
+                if scapNotes[uid].isDescription:
+                    self.novel.items[itId].desc = scapNotes[uid].text.strip()
+                    break
 
         #--- Set plot line description.
         for plId in self.novel.plotLines:
             for uid in scapNotes[plId[2:]].connections:
                 if scapNotes[uid].isDescription:
                     self.novel.plotLines[plId].desc = scapNotes[uid].text.strip()
+                    break
 
         #--- Set plot point description.
         for ppId in self.novel.plotPoints:
             for uid in scapNotes[ppId[2:]].connections:
                 if scapNotes[uid].isDescription:
                     self.novel.plotPoints[ppId].desc = scapNotes[uid].text.strip()
+                    break
 
         self.novel.check_locale()
 

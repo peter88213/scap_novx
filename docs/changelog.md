@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 5.2.2
+
+- Fixed a bug where the chain of plot points may not be recognized if not visually ordered. 
+- Refactored the code for better maintainability.
+
+Based on novelibre 5.16.0
+
+
 ### Version 5.2.1
 
 - Refactored (#2).
