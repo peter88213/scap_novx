@@ -55,7 +55,7 @@ class ScapNote:
         """
 
         def str_to_rgb(colorStr):
-            """Return a RGB tuple of floats for a given string."""
+            # Return a RGB tuple of floats for a given string.
             try:
                 red, green, blue = colorStr.split(' ')
                 return float(red), float(green), float(blue)
@@ -63,7 +63,7 @@ class ScapNote:
                 return (0.0, 0.0, 0.0)
 
         def color_matches(color1, color2):
-            """Return True if color1 is close to color2, otherwise return False."""
+            # Return True if color1 is close to color2, otherwise return False.
             TOLERANCE = 0.1
             c1 = str_to_rgb(color1)
             c2 = str_to_rgb(color2)
