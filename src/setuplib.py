@@ -42,8 +42,6 @@ Now you might want to create a shortcut on your desktop.
 On Windows, open the installation folder, hold down the Alt key on your keyboard, 
 and then drag and drop $Appname.py to your desktop.
 
-On Linux, create a launcher on your desktop. With xfce for instance, the launcher's command may look like this:
-python3 '$Apppath' %F
 '''
 
 root = Tk()
