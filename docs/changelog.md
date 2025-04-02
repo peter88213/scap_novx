@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 5.3.1
+
+- Fixed setup script.
+
+Based on novelibre 5.18.0
+
+
 ### Version 5.3.0
 
 - Processing locaton/item/plot line/plot point notes. 
