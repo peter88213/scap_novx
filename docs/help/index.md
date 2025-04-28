@@ -1,4 +1,4 @@
-[Project homepage](https://github.com/peter88213/scap_novx) > [Index](../) > Help
+[Project homepage](https://github.com/peter88213/scap_novx) > [Index](../) > User guide
 
 ![external-link](../img/external-link.png)[Deutsch](../help_de/)
 
