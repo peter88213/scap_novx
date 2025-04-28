@@ -256,3 +256,7 @@ Das Setup-Skript kopiert *scap_novx.py* an einen definierten Ort. Unter
 Windows ist das der folgende Ordner:
 
 `c:\Users\<Benutzername>\.novx\scap_novx`
+
+---
+
+Copyright (c) 2025 by Peter Triesberger. All rights reserved.
