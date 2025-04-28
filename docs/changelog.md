@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 5.3.2
+
+Updated the README file.
+
+Based on novelibre 5.23.0
+
+
 ### Version 5.3.1
 
 - Fixed setup script.
