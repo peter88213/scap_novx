@@ -1,7 +1,7 @@
 [![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v5.3.1.pyzw)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News/Feedback](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions)
-[![User guide](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/scap_novx/)
+[![User guide](docs/img/help-button.png)](https://peter88213.github.io/scap_novx/help/)
 
 # ![S](icons/sLogo32.png) scap_novx
 
@@ -65,7 +65,7 @@ Please make sure that your Python3 installation has the *tkinter* module. On Ubu
 
 ## Usage
 
-See the [online manual](https://peter88213.github.io/nvhelp-en/scap_novx/)
+See the [online manual](https://peter88213.github.io/scap_novx/help/)
 
 ## License
 
