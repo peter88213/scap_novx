@@ -1,8 +1,8 @@
-[Project homepage](https://github.com/peter88213/novx_xtg) > Index
+[Project homepage](https://github.com/peter88213/scap_novx) > Index
 
 ---
 
-# novx_xtg
+# Index
 
 Template-based XTG export for [novelibre](https://github.com/peter88213/novelibre/).
 

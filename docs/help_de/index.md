@@ -4,7 +4,7 @@
 
 ------------------------------------------------------------------------
 
-# scap_novx Benutzerhandbuch
+# Benutzerhandbuch
 
 Diese Seite gilt für die neueste Ausgabe von
 [scap_novx](https://github.com/peter88213/scap_novx/).
