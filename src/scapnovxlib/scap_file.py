@@ -191,10 +191,9 @@ class ScapFile(NovxFile):
                 crId = f'{CHARACTER_PREFIX}{uid}'
                 if crId in self.novel.characters:
                     if scId[2:] in scapNotes[uid].pointTo:
-                        scCharacters.insert(0, crId)
+                        self.novel.sections[scId].viewpoint = crId
                         # setting the viewpoint
-                    else:
-                        scCharacters.append(crId)
+                    scCharacters.append(crId)
                     return
 
                 lcId = f'{LOCATION_PREFIX}{uid}'

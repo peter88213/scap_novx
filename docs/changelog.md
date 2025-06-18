@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 5.4.0
+
+Writing novx version 1.7 files.
+
+Based on novelibre 5.27.1
+
+
 ### Version 5.3.2
 
 Updated the README file.

@@ -40,14 +40,14 @@ SETTINGS = dict(
     major_chara_color=RED,
     minor_chara_color=PURPLE,
     plot_line_color=SAND,
-    )
+)
 OPTIONS = dict(
     export_sections=True,
     export_plot_lines=True,
     export_characters=True,
     export_locations=True,
     export_items=True,
-    )
+)
 
 
 def main(sourcePath, silentMode=True, installDir='.'):

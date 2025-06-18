@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE novx SYSTEM "novx_1_5.dtd">
+<!DOCTYPE novx SYSTEM "novx_1_7.dtd">
 <?xml-stylesheet href="novx.css" type="text/css"?>
-<novx version="1.5" xml:lang="de-DE">
+<novx version="1.7" xml:lang="de-DE">
   <PROJECT />
   <CHAPTERS>
     <CHAPTER id="ch1">
@@ -19,6 +19,7 @@
           <p>Note 1</p>
         </Notes>
         <Tags>Tag 3;Tag 4</Tags>
+        <Viewpoint id="cr2" />
         <Characters ids="cr2 cr3 cr5" />
         <Locations ids="lc6" />
         <Items ids="it9 it10" />
@@ -26,7 +27,8 @@
       <SECTION id="sc7">
         <Title>section 2</Title>
         <Tags>Tag 1</Tags>
-        <Characters ids="cr5 cr3 cr4" />
+        <Viewpoint id="cr5" />
+        <Characters ids="cr3 cr4 cr5" />
         <Locations ids="lc8" />
         <Items ids="it10" />
       </SECTION>
