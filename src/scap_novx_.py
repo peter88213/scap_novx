@@ -61,7 +61,10 @@ def main(sourcePath, silentMode=True, installDir='.'):
     if not sourceDir:
         sourceDir = '.'
     iniFileName = f'{APPNAME}.ini'
-    iniFiles = [f'{installDir}/config/{iniFileName}', f'{sourceDir}/{iniFileName}']
+    iniFiles = [
+        f'{installDir}/config/{iniFileName}',
+        f'{sourceDir}/{iniFileName}',
+    ]
     configuration = Configuration(SETTINGS, OPTIONS)
     for iniFile in iniFiles:
         configuration.read(iniFile)

@@ -25,20 +25,30 @@ class ScapConverter:
         self.newFile = None
 
         if not os.path.isfile(sourcePath):
-            self.ui.set_status(f'!File "{os.path.normpath(sourcePath)}" not found.')
+            self.ui.set_status(
+                f'!File "{os.path.normpath(sourcePath)}" not found.'
+            )
             return
         fileName, fileExtension = os.path.splitext(sourcePath)
         if fileExtension == ScapFile.EXTENSION:
             if not os.path.isfile(f'{fileName}{NovxFile.EXTENSION}'):
                 target = NovxFile(f'{fileName}{NovxFile.EXTENSION}', **kwargs)
             else:
-                target = DataWriter(f'{fileName}{DataWriter.SUFFIX}{DataWriter.EXTENSION}', **kwargs)
+                target = DataWriter(
+                    f'{fileName}{DataWriter.SUFFIX}{DataWriter.EXTENSION}',
+                    **kwargs
+                )
             source = ScapFile(sourcePath, **kwargs)
             source.novel = Novel(tree=NvTree())
             source.read()
             target.novel = source.novel
             target.write()
         else:
-            self.ui.set_status(f'!File type of "{os.path.normpath(sourcePath)}" not supported.')
+            self.ui.set_status(
+                (
+                    f'!File type of "{os.path.normpath(sourcePath)}" '
+                    'not supported.'
+                )
+            )
         self.ui.set_status(f'{target.DESCRIPTION} successfully created.')
 

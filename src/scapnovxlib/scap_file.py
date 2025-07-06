@@ -42,17 +42,23 @@ class ScapFile(NovxFile):
         """Initialize instance variables and ScapNote class variables.
 
         Positional arguments:
-            filePath -- str: path to the file represented by the Novel instance.
+            filePath -- str: path to the Scapple file.
             
         Required keyword arguments:
-            location_color -- str: RGB text color that marks the locations in Scapple.
-            item_color -- str: RGB text color that marks the items in Scapple.
-            major_chara_color -- str: RGB text color that marks the major racters in Scapple.
-            minor_chara_color -- str: RGB text color that marks the minor characters in Scapple.
-            export_sections -- bool: if True, create sections from Scapple notes.
-            export_characters -- bool: if True, create characters from Scapple notes.
-            export_locations -- bool: if True, create location from Scapple notes. 
-            export_items -- bool: if True, create items from Scapple notes. 
+            location_color: str -- RGB text color that marks the 
+                                   locations in Scapple.
+            item_color: str -- RGB text color that marks the items in Scapple.
+            major_chara_color: str -- RGB text color that marks the 
+                                      major characters in Scapple.
+            minor_chara_color: str -- RGB text color that marks the 
+                                      minor characters in Scapple.
+            export_sections: bool -- if True, create sections 
+                                     from Scapple notes.
+            export_characters: bool -- if True, create characters 
+                                       from Scapple notes.
+            export_locations: bool -- if True, create location 
+                                      from Scapple notes. 
+            export_items: bool -- if True, create items from Scapple notes. 
         
         Extends the superclass constructor.
         """
@@ -100,7 +106,9 @@ class ScapFile(NovxFile):
                 self.novel.plotLines[plId] = PlotLine()
                 plotLineTitle = note.text.strip().split(':', maxsplit=1)
                 if len(plotLineTitle) > 1:
-                    self.novel.plotLines[plId].shortName = plotLineTitle[0].strip()
+                    self.novel.plotLines[plId].shortName = (
+                        plotLineTitle[0].strip()
+                    )
                     self.novel.plotLines[plId].title = plotLineTitle[1].strip()
                 else:
                     self.novel.plotLines[plId].shortName = plotLineTitle[0][0]
@@ -176,7 +184,8 @@ class ScapFile(NovxFile):
         def set_relationships(scId):
 
             def add_relationship(uid):
-                # Add related element specified by uid to the section's corresponding list.
+                # Add related element specified by uid
+                # to the section's corresponding list.
 
                 plId = f'{PLOT_LINE_PREFIX}{uid}'
                 if plId in self.novel.plotLines:

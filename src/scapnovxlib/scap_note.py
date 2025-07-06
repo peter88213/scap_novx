@@ -86,10 +86,13 @@ class ScapNote:
         self.textColor = ''
         self.text = xmlNote.find('String').text
         positionStr = xmlNote.attrib['Position'].split(',')
-        self.position = float(positionStr[1]) * self.Y_FACTOR + float(positionStr[0])
+        self.position = (
+            float(positionStr[1]) * self.Y_FACTOR + float(positionStr[0])
+        )
 
         # Set UID.
-        # Because Scapple UIDs begin with zero, they are all incremented by 1 for novelibre use.
+        # Because Scapple UIDs begin with zero, they are all
+        # incremented by 1 for novelibre use.
         scappId = xmlNote.attrib['ID']
         self.uid = str(int(scappId) + 1)
         appearance = xmlNote.find('Appearance')
