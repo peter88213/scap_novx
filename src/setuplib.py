@@ -18,7 +18,7 @@ from string import Template
 try:
     from tkinter import *
 except ModuleNotFoundError:
-    print(
+    input(
         (
             'The tkinter module is missing. '
             'Please install the tk support package for your python3 version.'

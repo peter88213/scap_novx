@@ -1,4 +1,4 @@
-[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v0.99.0.pyzw)
+[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v0.99.0.pyz)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News/Feedback](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions)
 [![User guide](docs/img/help-button.png)](https://peter88213.github.io/scap_novx/help/)
@@ -30,10 +30,10 @@ A Python script for creating new [novelibre](https://github.com/peter88213/novel
 
 ### Default: Executable Python zip archive
 
-Download the latest release [scap_novx_v0.99.0.pyzw](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v0.99.0.pyzw)
+Download the latest release [scap_novx_v0.99.0.pyz](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v0.99.0.pyz)
 
-- Launch *scap_novx_v0.99.0.pyzw* by double-clicking (Windows/Linux desktop),
-- or execute `python scap_novx_v0.99.0.pyzw` (Windows), resp. `python3 scap_novx_v0.99.0.pyzw` (Linux) on the command line.
+- Launch *scap_novx_v0.99.0.pyz* by double-clicking (Windows/Linux desktop),
+- or execute `python scap_novx_v0.99.0.pyz` (Windows), resp. `python3 scap_novx_v0.99.0.pyz` (Linux) on the command line.
 
 #### Important
 
