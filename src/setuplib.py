@@ -6,53 +6,20 @@ Copyright (c) 2025 Peter Triesberger
 For further information see https://github.com/peter88213/scap_novx
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-from shutil import copytree
-from shutil import copy2
-import zipfile
 import os
-import sys
-import stat
-from shutil import rmtree
 from pathlib import Path
-from string import Template
-try:
-    from tkinter import *
-except ModuleNotFoundError:
-    input(
-        (
-            'The tkinter module is missing. '
-            'Please install the tk support package for your python3 version.'
-        )
-    )
-    sys.exit(1)
-
-from tkinter import messagebox
-import relocate
+from shutil import copy2
+from shutil import copytree
+from shutil import rmtree
+import stat
+import sys
+import zipfile
 
 APPNAME = 'scap_novx'
 VERSION = ' @release'
 APP = f'{APPNAME}.py'
 INI_FILE = f'{APPNAME}.ini'
 INI_PATH = '/config/'
-SAMPLE_PATH = 'sample/'
-SUCCESS_MESSAGE = '''
-
-$Appname is installed here:
-
-$Apppath'''
-
-SHORTCUT_MESSAGE = '''
-Now you might want to create a shortcut on your desktop.  
-
-On Windows, open the installation folder, 
-hold down the Alt key on your keyboard, 
-and then drag and drop $Appname.py to your desktop.
-
-'''
-
-root = Tk()
-processInfo = Label(root, text='')
-message = []
 
 pyz = os.path.dirname(__file__)
 
@@ -73,31 +40,7 @@ def cp_tree(sourceDir, targetDir):
     copytree(sourceDir, f'{targetDir}/{sourceDir}', dirs_exist_ok=True)
 
 
-def output(text):
-    message.append(text)
-    processInfo.config(text=('\n').join(message))
-
-
-def open_folder(installDir):
-    """Open an installation folder window in the file manager.
-    """
-    try:
-        os.startfile(os.path.normpath(installDir))
-        # Windows
-    except:
-        try:
-            os.system('xdg-open "%s"' % os.path.normpath(installDir))
-            # Linux
-        except:
-            try:
-                os.system('open "%s"' % os.path.normpath(installDir))
-                # Mac
-            except:
-                pass
-
-
-def install(novxPath, zipped):
-    """Install the script."""
+def main(zipped=True):
     if zipped:
         copy_file = extract_file
         copy_tree = extract_tree
@@ -105,90 +48,55 @@ def install(novxPath, zipped):
         copy_file = copy2
         copy_tree = cp_tree
 
-    #--- Relocate the v1.x installation directory, if necessary.
-    message = relocate.main()
-    if message:
-        messagebox.showinfo(
-            'Moving the novelibre installation directory',
-            message
-        )
-
-    # Create a general novelibre installation directory, if necessary.
-    os.makedirs(novxPath, exist_ok=True)
-    installDir = f'{novxPath}{APPNAME}'
-    cnfDir = f'{installDir}{INI_PATH}'
-    if os.path.isfile(f'{installDir}/{APP}'):
-        simpleUpdate = True
-    else:
-        simpleUpdate = False
-    os.makedirs(cnfDir, exist_ok=True)
-
-    # Delete the old version, but retain configuration, if any.
-    rmtree(f'{installDir}/icons', ignore_errors=True)
-    rmtree(f'{installDir}/sample', ignore_errors=True)
-    with os.scandir(installDir) as files:
-        for file in files:
-            if 'config' in file.name:
-                continue
-
-            os.remove(file)
-            output(f'Removing "{file.name}"')
-
-    # Install the new version.
-    output(f'Copying "{APP}" ...')
-    copy_file(APP, installDir)
-
-    # Install the icon files.
-    output('Copying icons ...')
-    copy_tree('icons', installDir)
-
-    # Make the script executable under Linux.
-    st = os.stat(f'{installDir}/{APP}')
-    os.chmod(f'{installDir}/{APP}', st.st_mode | stat.S_IEXEC)
-
-    # Provide the sample files.
-    output('Copying sample files ...')
-    copy_tree('sample', installDir)
-
-    # Display a success message.
-    mapping = {'Appname': APPNAME, 'Apppath': f'{installDir}/{APP}'}
-    output(Template(SUCCESS_MESSAGE).safe_substitute(mapping))
-
-    # Ask for shortcut creation.
-    if not simpleUpdate:
-        output(Template(SHORTCUT_MESSAGE).safe_substitute(mapping))
-
-
-def main(zipped=True):
     scriptPath = os.path.abspath(sys.argv[0])
     scriptDir = os.path.dirname(scriptPath)
     os.chdir(scriptDir)
 
-    # Open a tk window.
-    root.title('Setup')
-    output(f'*** Installing {APPNAME}{VERSION} ***\n')
-    header = Label(root, text='')
-    header.pack(padx=5, pady=5)
-
-    # Prepare the messaging area.
-    processInfo.pack(padx=5, pady=5)
-
-    # Run the installation.
+    print(f'*** Installing {APPNAME} {VERSION} *** ')
     homePath = str(Path.home()).replace('\\', '/')
-    novxPath = f'{homePath}/.novx/'
-    try:
-        install(novxPath, zipped)
-    except Exception as ex:
-        output(str(ex))
+    applicationDir = f'{homePath}/.novx/'
+    if os.path.isdir(applicationDir):
+        installDir = f'{applicationDir}{APPNAME}'
+        cnfDir = f'{installDir}{INI_PATH}'
+        os.makedirs(cnfDir, exist_ok=True)
 
-    # Show options: open installation folders or quit.
-    root.openButton = Button(
-        text="Open installation folder",
-        command=lambda: open_folder(f'{homePath}/.novx/{APPNAME}'),
-    )
-    root.openButton.config(height=1, width=30)
-    root.openButton.pack(padx=5, pady=5)
-    root.quitButton = Button(text="Quit", command=quit)
-    root.quitButton.config(height=1, width=30)
-    root.quitButton.pack(padx=5, pady=5)
-    root.mainloop()
+        # Delete the old version, but retain configuration, if any.
+        rmtree(f'{installDir}/icons', ignore_errors=True)
+        rmtree(f'{installDir}/sample', ignore_errors=True)
+        with os.scandir(installDir) as files:
+            for file in files:
+                if 'config' in file.name:
+                    continue
+
+                os.remove(file)
+                print(f'Removing "{file.name}"')
+
+        # Install the new version.
+        print(f'Copying "{APP}" ...')
+        copy_file(APP, installDir)
+
+        # Install the icon files.
+        print('Copying icons ...')
+        copy_tree('icons', installDir)
+
+        # Make the script executable under Linux.
+        st = os.stat(f'{installDir}/{APP}')
+        os.chmod(f'{installDir}/{APP}', st.st_mode | stat.S_IEXEC)
+
+        # Provide the sample files.
+        print('Copying sample files ...')
+        copy_tree('sample', installDir)
+
+        # Show a success message.
+        print(
+            f'Sucessfully installed "{APPNAME}" '
+            f'at "{os.path.normpath(installDir)}".'
+        )
+    else:
+        print(
+            'ERROR: Cannot find a novelibre installation '
+            f'at "{os.path.normpath(applicationDir)}".'
+        )
+
+    input('Press any key to quit.')
+
