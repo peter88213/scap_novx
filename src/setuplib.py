@@ -13,13 +13,21 @@ from shutil import copytree
 from shutil import rmtree
 import stat
 import sys
+from tkinter import messagebox
 import zipfile
 
 APPNAME = 'scap_novx'
 VERSION = ' @release'
 APP = f'{APPNAME}.py'
-INI_FILE = f'{APPNAME}.ini'
 INI_PATH = '/config/'
+
+SHORTCUT_MESSAGE = f'''
+Now you might want to create a shortcut on your desktop.  
+
+Open the installation folder, 
+hold down the Alt key on your keyboard, 
+and then drag and drop {APP} to your desktop.
+'''
 
 pyz = os.path.dirname(__file__)
 
@@ -40,6 +48,22 @@ def cp_tree(sourceDir, targetDir):
     copytree(sourceDir, f'{targetDir}/{sourceDir}', dirs_exist_ok=True)
 
 
+def open_folder(installDir):
+    try:
+        os.startfile(os.path.normpath(installDir))
+        # Windows
+    except:
+        try:
+            os.system('xdg-open "%s"' % os.path.normpath(installDir))
+            # Linux
+        except:
+            try:
+                os.system('open "%s"' % os.path.normpath(installDir))
+                # Mac
+            except:
+                pass
+
+
 def main(zipped=True):
     if zipped:
         copy_file = extract_file
@@ -52,51 +76,67 @@ def main(zipped=True):
     scriptDir = os.path.dirname(scriptPath)
     os.chdir(scriptDir)
 
-    print(f'*** Installing {APPNAME} {VERSION} *** ')
+    print(f'*** Installing {APPNAME} {VERSION} ***\n')
     homePath = str(Path.home()).replace('\\', '/')
     applicationDir = f'{homePath}/.novx/'
-    if os.path.isdir(applicationDir):
-        installDir = f'{applicationDir}{APPNAME}'
-        cnfDir = f'{installDir}{INI_PATH}'
-        os.makedirs(cnfDir, exist_ok=True)
-
-        # Delete the old version, but retain configuration, if any.
-        rmtree(f'{installDir}/icons', ignore_errors=True)
-        rmtree(f'{installDir}/sample', ignore_errors=True)
-        with os.scandir(installDir) as files:
-            for file in files:
-                if 'config' in file.name:
-                    continue
-
-                os.remove(file)
-                print(f'Removing "{file.name}"')
-
-        # Install the new version.
-        print(f'Copying "{APP}" ...')
-        copy_file(APP, installDir)
-
-        # Install the icon files.
-        print('Copying icons ...')
-        copy_tree('icons', installDir)
-
-        # Make the script executable under Linux.
-        st = os.stat(f'{installDir}/{APP}')
-        os.chmod(f'{installDir}/{APP}', st.st_mode | stat.S_IEXEC)
-
-        # Provide the sample files.
-        print('Copying sample files ...')
-        copy_tree('sample', installDir)
-
-        # Show a success message.
-        print(
-            f'Sucessfully installed "{APPNAME}" '
-            f'at "{os.path.normpath(installDir)}".'
-        )
-    else:
+    if not os.path.isdir(applicationDir):
         print(
             'ERROR: Cannot find a novelibre installation '
             f'at "{os.path.normpath(applicationDir)}".'
         )
+        input('Press any key to quit.')
+        sys.exit(1)
 
-    input('Press any key to quit.')
+    installDir = f'{applicationDir}{APPNAME}'
+    if os.path.isfile(f'{installDir}/{APP}'):
+        simpleUpdate = True
+    else:
+        simpleUpdate = False
+    cnfDir = f'{installDir}{INI_PATH}'
+    os.makedirs(cnfDir, exist_ok=True)
+
+    #--- Delete the old version, but retain configuration, if any.
+    rmtree(f'{installDir}/icons', ignore_errors=True)
+    rmtree(f'{installDir}/sample', ignore_errors=True)
+    with os.scandir(installDir) as files:
+        for file in files:
+            if 'config' in file.name:
+                continue
+
+            os.remove(file)
+            print(f'"{os.path.normpath(file)}" removed.')
+
+    #--- Install the new version.
+    print(f'Copying "{APP}" ...')
+    copy_file(APP, installDir)
+
+    #--- Install the icon files.
+    print('Copying icons ...')
+    copy_tree('icons', installDir)
+
+    #--- Make the script executable under Linux.
+    st = os.stat(f'{installDir}/{APP}')
+    os.chmod(f'{installDir}/{APP}', st.st_mode | stat.S_IEXEC)
+
+    #--- Provide the sample files.
+    print('Copying sample files ...')
+    copy_tree('sample', installDir)
+
+    #--- Display a success message.
+    print(
+        f'\nSucessfully installed {APPNAME} '
+        f'at "{os.path.normpath(installDir)}".'
+    )
+
+    #--- Ask for shortcut creation.
+    if not simpleUpdate:
+        print(SHORTCUT_MESSAGE)
+        if messagebox.askyesno(
+            title=f'{APPNAME} {VERSION} Setup',
+            message='Open the installation folder now?',
+        ):
+            open_folder(installDir)
+            input('Press any key to quit.')
+    else:
+        input('Press any key to quit.')
 
