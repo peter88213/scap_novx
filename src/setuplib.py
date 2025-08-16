@@ -17,7 +17,7 @@ from tkinter import messagebox
 import zipfile
 
 APPNAME = 'scap_novx'
-VERSION = ' @release'
+VERSION = '@release'
 APP = f'{APPNAME}.py'
 INI_PATH = '/config/'
 
