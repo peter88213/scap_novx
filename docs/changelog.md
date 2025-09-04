@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 5.4.2
+
+Checking the Python version (must be 3.7 or newer).
+
+Based on novelibre 5.35.1
+
+
 ### Version 5.4.1
 
 Reformatted the code.
