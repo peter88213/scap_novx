@@ -22,7 +22,7 @@ A Python script for creating new [novelibre](https://github.com/peter88213/novel
  
 ## Requirements
 
-- [Python](https://www.python.org/) version 3.6+.
+- [Python](https://www.python.org/) version 3.7+.
 - [Scapple 1.x](https://www.literatureandlatte.com/scapple/overview).
 
 
