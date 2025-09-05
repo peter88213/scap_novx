@@ -32,13 +32,13 @@ A Python script for creating new [novelibre](https://github.com/peter88213/novel
 
 Download the latest release [scap_novx_v0.99.0.pyz](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v0.99.0.pyz)
 
-- Launch *scap_novx_v0.99.0.pyz* by double-clicking (Windows/Linux desktop),
+- Launch *scap_novx_v0.99.0.pyz* by double-clicking (Windows desktop),
 - or execute `python scap_novx_v0.99.0.pyz` (Windows), resp. `python3 scap_novx_v0.99.0.pyz` (Linux) on the command line.
 
 #### Important
 
 Many web browsers recognize the download as an executable file and offer to open it immediately. 
-This starts the installation.
+This starts the installation under Windows.
 
 However, depending on your security settings, your browser may 
 initially  refuse  to download the executable file. 
