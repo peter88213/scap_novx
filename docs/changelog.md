@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 5.5.0
+
+- Writing novx version 1.8 files.
+
+Based on novelibre 5.37.2
+
+
 ### Version 5.4.2
 
 Checking the Python version (must be 3.7 or newer).
