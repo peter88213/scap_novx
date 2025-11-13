@@ -46,12 +46,16 @@ Der Dateipfad der *Scapple*-Gliederungsdatei.
 Verzeichnis und mit dem selben Namen wie die Scapple-Quelldatei, doch
 mit der Erweiterung [.novx]{.title-ref}\`.
 
-> [!NOTE]
-> Falls das *novelibre*-Projekt bereits existiert, wird es nicht
-> überschrieben. Stattdessen werden XML-Figuren-, Schauplatz- und
-> Gegenstandsdateien erzeugt, die in jedes *novelibre*-Projekt importiert
-> werden können.
+---
 
+***Anmerkung***
+
+Falls das *novelibre*-Projekt bereits existiert, wird es nicht
+überschrieben. Stattdessen werden XML-Figuren-, Schauplatz- und
+Gegenstandsdateien erzeugt, die in jedes *novelibre*-Projekt importiert
+werden können.
+
+---
 
 ## Konvertierungsregeln
 
