@@ -47,15 +47,11 @@ overwriting
 name as the Scapple source file, but with the extension `.novx`. It is
 placed in the same directory as the source file.
 
----
+> [!NOTE]
+> If the *novelibre* project already exists, it would not be overwritten.
+> Character/Location/Item XML files are generated instead. They can be
+> imported into any *novelibre* project.
 
-**Note**
-
-If the *novelibre* project already exists, it would not be overwritten.
-Character/Location/Item XML files are generated instead. They can be
-imported into any *novelibre* project.
-
----
 
 ## Conversion rules
 
