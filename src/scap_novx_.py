@@ -23,8 +23,8 @@ from pathlib import Path
 import sys
 
 from nvlib.configuration.configuration import Configuration
-from nvlib.user_interface.ui import Ui
-from nvlib.user_interface.ui_tk import UiTk
+from nvlib.alternative_ui.ui import Ui
+from nvlib.alternative_ui.ui_tk import UiTk
 from scapnovxlib.scap_converter import ScapConverter
 
 SUFFIX = ''

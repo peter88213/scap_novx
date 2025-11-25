@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 5.5.1
+
+- Refactored the code.
+
+Based on novelibre 5.43.3
+
+
 ### Version 5.5.0
 
 - Writing novx version 1.8 files.
