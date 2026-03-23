@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 5.6.1
+
+- Fixed the Python version check.
+
+Based on novelibre 5.53.5
+
+
 ### Version 5.6.0
 
 - Writing novx version 1.9 files.
