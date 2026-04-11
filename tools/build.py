@@ -43,6 +43,7 @@ class ApplicationBuilder(PackageBuilder):
         target = f'{targetDir}/{release}'
         print(f'Writing "{target}.zip" ...')
         make_archive(target, 'zip', sourceDir)
+        self.zipPath = f"{target}.zip"
 
 
 def main():

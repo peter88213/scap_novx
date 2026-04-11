@@ -1,4 +1,4 @@
-[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v0.99.0.pyz)
+[![Download the latest release](docs/img/download-button.png)](https://raw.githubusercontent.com/peter88213/scap_novx/main/dist/scap_novx_v$Version.pyz)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News/Feedback](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions)
 [![User guide](docs/img/help-button.png)](https://peter88213.github.io/scap_novx/help/)
@@ -30,10 +30,10 @@ A Python script for creating new [novelibre](https://github.com/peter88213/novel
 
 ### Default: Executable Python zip archive
 
-Download the latest release [scap_novx_v0.99.0.pyz](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v0.99.0.pyz)
+Download the latest release [scap_novx_v$Version.pyz](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v$Version.pyz) ($PyzSize)
 
-- Launch *scap_novx_v0.99.0.pyz* by double-clicking (Windows desktop),
-- or execute `python scap_novx_v0.99.0.pyz` (Windows), resp. `python3 scap_novx_v0.99.0.pyz` (Linux) on the command line.
+- Launch *scap_novx_v$Version.pyz* by double-clicking (Windows desktop),
+- or execute `python scap_novx_v$Version.pyz` (Windows), resp. `python3 scap_novx_v$Version.pyz` (Linux) on the command line.
 
 > [!IMPORTANT]
 > Many web browsers recognize the download as an executable file and offer to open it immediately. 
@@ -48,9 +48,9 @@ Download the latest release [scap_novx_v0.99.0.pyz](https://github.com/peter8821
 
 ### Alternative: Zip file
 
-The package is also available in zip format: [scap_novx_v0.99.0.zip](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v0.99.0.zip)
+The package is also available in zip format: [scap_novx_v$Version.zip](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v$Version.zip) ($ZipSize)
 
-- Extract the *scap_novx_v0.99.0* folder from the downloaded zipfile "scap_novx_v0.99.0.zip".
+- Extract the *scap_novx_v$Version* folder from the downloaded zipfile "scap_novx_v$Version.zip".
 - Move into this new folder and launch *setup.py* by double-clicking (Windows/Linux desktop), 
 - or execute `python setup.py` (Windows), resp. `python3 setup.py` (Linux) on the command line.
 

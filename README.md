@@ -30,7 +30,7 @@ A Python script for creating new [novelibre](https://github.com/peter88213/novel
 
 ### Default: Executable Python zip archive
 
-Download the latest release [scap_novx_v5.6.1.pyz](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v5.6.1.pyz)
+Download the latest release [scap_novx_v5.6.1.pyz](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v5.6.1.pyz) (37 KB)
 
 - Launch *scap_novx_v5.6.1.pyz* by double-clicking (Windows desktop),
 - or execute `python scap_novx_v5.6.1.pyz` (Windows), resp. `python3 scap_novx_v5.6.1.pyz` (Linux) on the command line.
@@ -48,7 +48,7 @@ Download the latest release [scap_novx_v5.6.1.pyz](https://github.com/peter88213
 
 ### Alternative: Zip file
 
-The package is also available in zip format: [scap_novx_v5.6.1.zip](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v5.6.1.zip)
+The package is also available in zip format: [scap_novx_v5.6.1.zip](https://github.com/peter88213/scap_novx/raw/main/dist/scap_novx_v5.6.1.zip) (39 KB)
 
 - Extract the *scap_novx_v5.6.1* folder from the downloaded zipfile "scap_novx_v5.6.1.zip".
 - Move into this new folder and launch *setup.py* by double-clicking (Windows/Linux desktop), 
