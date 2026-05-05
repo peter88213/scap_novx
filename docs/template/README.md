@@ -70,7 +70,7 @@ See the [online manual](https://peter88213.github.io/scap_novx/help/)
 
 This is Open Source software, and scap_novx is licensed under GPLv3. See the
 [GNU General Public License website](https://www.gnu.org/licenses/gpl-3.0.en.html) for more
-details, or consult the [LICENSE](https://github.com/peter88213/scap_novx/blob/main/LICENSE) file.
+details, or consult the [LICENSE](LICENSE) file.
 
 
  
