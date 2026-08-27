@@ -75,7 +75,8 @@ def main(sourcePath, silentMode=True, installDir='.'):
     ]
     configuration = Configuration(SETTINGS, OPTIONS)
     for iniFile in iniFiles:
-        configuration.read(iniFile)
+        configuration.filePath = iniFile
+        configuration.read()
     kwargs = {'suffix': SUFFIX}
     kwargs.update(configuration.settings)
     kwargs.update(configuration.options)

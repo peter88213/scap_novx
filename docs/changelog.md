@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 5.6.2
+
+- Fixed a bug where local configuration files may be ignored.
+
+Based on novelibre 5.65.2
+
+
 ### Version 5.6.1
 
 - Fixed the Python version check.
