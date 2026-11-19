@@ -5,7 +5,7 @@
 
 # ![S](icons/sLogo32.png) scap_novx
 
-A Python script for creating new [novelibre](https://github.com/peter88213/novelibre/) projects from Scapple diagrams 
+A Python script for creating new [novelibre](https://peter88213.github.io/novelibre/en/) projects from Scapple diagrams 
 
 ![Screenshot: Example](docs/Screenshots/screen01.png)
 

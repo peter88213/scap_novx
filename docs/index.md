@@ -4,7 +4,7 @@
 
 # Index
 
-Template-based XTG export for [novelibre](https://github.com/peter88213/novelibre/).
+Template-based XTG export for [novelibre](https://peter88213.github.io/novelibre/en/).
 
 - [User guide](help) 
 - [Benutzerhandbuch (deutsch)](help_de) 
